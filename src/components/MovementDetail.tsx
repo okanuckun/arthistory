@@ -1,9 +1,10 @@
 import { ArtMovement } from '@/data/artMovements';
 import Quiz from './Quiz';
 import ArtworkGallery from './ArtworkGallery';
-import { ArrowLeft, Palette, Wrench, Sparkles } from 'lucide-react';
+import { ArrowLeft, Palette, Wrench, Sparkles, Volume2, Pause, Square, Loader2 } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useTranslatedContent } from '@/hooks/use-translation';
+import { useTTS } from '@/hooks/use-tts';
 
 interface MovementDetailProps {
   movement: ArtMovement;
@@ -17,6 +18,7 @@ const MovementDetail = ({ movement, onBack, onQuizComplete, existingScore }: Mov
   if (!content) return null;
   const { t } = useLanguage();
   const { translated, isTranslating } = useTranslatedContent(movement.id, content);
+  const { speak, stop, pause, resume, isSpeaking, isPaused, isLoading } = useTTS();
 
   const summary = translated?.summary || content.summary;
   const summaryParagraphs = summary.split('\n\n').filter(Boolean);
@@ -37,15 +39,58 @@ const MovementDetail = ({ movement, onBack, onQuizComplete, existingScore }: Mov
     description: translated?.artworks?.[i]?.description || a.description,
   }));
 
+  const handleReadAloud = () => {
+    if (isSpeaking && !isPaused) {
+      pause();
+      return;
+    }
+    if (isSpeaking && isPaused) {
+      resume();
+      return;
+    }
+    const fullText = [
+      summary,
+      characteristics.join('. '),
+      artists.map(a => `${a.name}. ${a.description}`).join(' '),
+    ].join('\n\n');
+    speak(fullText);
+  };
+
   return (
     <div className="max-w-3xl mx-auto px-6 py-12">
       <button
         onClick={onBack}
-        className="flex items-center gap-2 text-sm font-body text-muted-foreground hover:text-foreground transition-colors mb-12 active:scale-[0.97]"
+        className="flex items-center gap-2 text-sm font-body text-muted-foreground hover:text-foreground transition-colors mb-6 active:scale-[0.97]"
       >
         <ArrowLeft className="w-4 h-4" />
         {t('detail.back')}
       </button>
+
+      <div className="flex gap-2 mb-12">
+        <button
+          onClick={handleReadAloud}
+          disabled={isLoading}
+          className="flex items-center gap-2 text-xs font-body px-3 py-1.5 rounded-full border border-border/50 text-muted-foreground hover:text-foreground hover:border-primary/30 transition-all active:scale-[0.97] disabled:opacity-50"
+        >
+          {isLoading ? (
+            <Loader2 className="w-3.5 h-3.5 animate-spin" />
+          ) : isSpeaking && !isPaused ? (
+            <Pause className="w-3.5 h-3.5" />
+          ) : (
+            <Volume2 className="w-3.5 h-3.5" />
+          )}
+          {isLoading ? t('detail.loading') || 'Loading…' : isSpeaking && !isPaused ? t('detail.pause') || 'Pause' : isSpeaking && isPaused ? t('detail.resume') || 'Resume' : t('detail.listen') || 'Listen'}
+        </button>
+        {isSpeaking && (
+          <button
+            onClick={stop}
+            className="flex items-center gap-2 text-xs font-body px-3 py-1.5 rounded-full border border-border/50 text-muted-foreground hover:text-foreground hover:border-destructive/30 transition-all active:scale-[0.97]"
+          >
+            <Square className="w-3 h-3" />
+            {t('detail.stop') || 'Stop'}
+          </button>
+        )}
+      </div>
 
       {isTranslating && (
         <div className="mb-6 flex items-center gap-2 text-sm font-body text-gold/70">
