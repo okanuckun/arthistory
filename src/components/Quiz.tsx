@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { QuizQuestion } from '@/data/artMovements';
-import { CheckCircle2, XCircle, RotateCcw } from 'lucide-react';
+import { CheckCircle2, XCircle, RotateCcw, Share2 } from 'lucide-react';
+import ScoreCard from './ScoreCard';
 
 interface QuizProps {
   questions: QuizQuestion[];
@@ -13,6 +14,7 @@ interface QuizProps {
 const Quiz = ({ questions, movementName, movementId, onComplete, existingScore }: QuizProps) => {
   const [answers, setAnswers] = useState<Record<number, number>>({});
   const [submitted, setSubmitted] = useState(!!existingScore);
+  const [showScoreCard, setShowScoreCard] = useState(false);
 
   const handleSelect = (qIndex: number, optionIndex: number) => {
     if (submitted) return;
@@ -24,6 +26,7 @@ const Quiz = ({ questions, movementName, movementId, onComplete, existingScore }
     setSubmitted(true);
     const score = questions.reduce((acc, q, i) => acc + (answers[i] === q.correctIndex ? 1 : 0), 0);
     onComplete(movementId, score, questions.length);
+    setShowScoreCard(true);
   };
 
   const handleReset = () => {
@@ -51,15 +54,33 @@ const Quiz = ({ questions, movementName, movementId, onComplete, existingScore }
                 You've already completed this quiz.
               </p>
             </div>
-            <button
-              onClick={handleReset}
-              className="flex items-center gap-2 text-sm font-body text-muted-foreground hover:text-foreground transition-colors active:scale-[0.97]"
-            >
-              <RotateCcw className="w-4 h-4" />
-              Retake
-            </button>
+            <div className="flex items-center gap-3">
+              <button
+                onClick={() => setShowScoreCard(true)}
+                className="flex items-center gap-2 text-sm font-body text-gold hover:text-gold-light transition-colors active:scale-[0.97]"
+              >
+                <Share2 className="w-4 h-4" />
+                Share
+              </button>
+              <button
+                onClick={handleReset}
+                className="flex items-center gap-2 text-sm font-body text-muted-foreground hover:text-foreground transition-colors active:scale-[0.97]"
+              >
+                <RotateCcw className="w-4 h-4" />
+                Retake
+              </button>
+            </div>
           </div>
         </div>
+
+        {showScoreCard && (
+          <ScoreCard
+            score={existingScore.score}
+            total={existingScore.total}
+            movementName={movementName}
+            onClose={() => setShowScoreCard(false)}
+          />
+        )}
       </div>
     );
   }
@@ -84,14 +105,32 @@ const Quiz = ({ questions, movementName, movementId, onComplete, existingScore }
                   : 'You might want to re-read the content above.'}
               </p>
             </div>
-            <button
-              onClick={handleReset}
-              className="flex items-center gap-2 text-sm font-body text-muted-foreground hover:text-foreground transition-colors active:scale-[0.97]"
-            >
-              <RotateCcw className="w-4 h-4" />
-              Retake
-            </button>
+            <div className="flex items-center gap-3">
+              <button
+                onClick={() => setShowScoreCard(true)}
+                className="flex items-center gap-2 text-sm font-body text-gold hover:text-gold-light transition-colors active:scale-[0.97]"
+              >
+                <Share2 className="w-4 h-4" />
+                Share
+              </button>
+              <button
+                onClick={handleReset}
+                className="flex items-center gap-2 text-sm font-body text-muted-foreground hover:text-foreground transition-colors active:scale-[0.97]"
+              >
+                <RotateCcw className="w-4 h-4" />
+                Retake
+              </button>
+            </div>
           </div>
+
+          {showScoreCard && (
+            <ScoreCard
+              score={score}
+              total={questions.length}
+              movementName={movementName}
+              onClose={() => setShowScoreCard(false)}
+            />
+          )}
         </div>
       )}
 
