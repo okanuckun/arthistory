@@ -77,7 +77,7 @@ const Navbar = () => {
 
       <div className="flex items-center gap-1 sm:gap-2">
         {/* Language selector */}
-        <div className="relative" ref={langRef}>
+        <div className="relative" ref={langRef} data-tour="language">
           <button
             onClick={() => setLangOpen(!langOpen)}
             className="flex items-center gap-1 px-2 py-1.5 rounded-lg text-muted-foreground hover:text-foreground hover:bg-secondary transition-all active:scale-[0.95] text-xs"
