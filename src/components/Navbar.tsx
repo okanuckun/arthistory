@@ -14,9 +14,14 @@ const Navbar = () => {
     <nav className="flex items-center justify-between px-6 py-4 border-b border-border/50">
       <button
         onClick={() => navigate('/')}
-        className="font-display text-sm text-gold tracking-tight hover:opacity-80 transition-opacity"
+        className="flex flex-col items-start hover:opacity-80 transition-opacity"
       >
-        Art Movements
+        <span className="font-display text-sm text-gold tracking-tight leading-none">
+          Monolith Studio
+        </span>
+        <span className="text-[9px] font-body tracking-[0.15em] uppercase text-muted-foreground leading-none mt-0.5">
+          Art Movements
+        </span>
       </button>
 
       <div className="flex items-center gap-4">
