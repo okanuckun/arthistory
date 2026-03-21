@@ -220,6 +220,8 @@ const translations: Record<Language, Record<string, string>> = {
     'detail.loading': 'Cargando…',
     'detail.continue': 'Continuar',
     'detail.restart': 'Desde el Inicio',
+    'updates.title': 'Novedades',
+    'updates.empty': 'Sin actualizaciones aún. ¡Mantente atento!',
   },
   ko: {
     'landing.tagline': '타투 아티스트를 위한',
