@@ -163,9 +163,9 @@ const Index = () => {
         step={tour.step}
         currentStep={tour.currentStep}
         totalSteps={tour.totalSteps}
-        onNext={tour.next}
+        onNext={tour.currentStep === tour.totalSteps - 1 ? handleHomeTourFinish : tour.next}
         onPrev={tour.prev}
-        onFinish={tour.finish}
+        onFinish={handleHomeTourFinish}
       />
       <div className="min-h-screen">
         <header className="max-w-3xl mx-auto px-4 sm:px-6 pt-8 sm:pt-12 pb-6 sm:pb-10">
