@@ -75,7 +75,7 @@ const Navbar = () => {
         </span>
       </button>
 
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-1 sm:gap-2">
         {/* Language selector */}
         <div className="relative" ref={langRef}>
           <button
