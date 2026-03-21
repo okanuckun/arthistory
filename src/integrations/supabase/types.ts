@@ -14,6 +14,33 @@ export type Database = {
   }
   public: {
     Tables: {
+      content_translations: {
+        Row: {
+          created_at: string
+          field: string
+          id: string
+          language: string
+          movement_id: string
+          translated_text: string
+        }
+        Insert: {
+          created_at?: string
+          field: string
+          id?: string
+          language: string
+          movement_id: string
+          translated_text: string
+        }
+        Update: {
+          created_at?: string
+          field?: string
+          id?: string
+          language?: string
+          movement_id?: string
+          translated_text?: string
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           created_at: string

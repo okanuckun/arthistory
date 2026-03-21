@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { QuizQuestion } from '@/data/artMovements';
 import { CheckCircle2, XCircle, RotateCcw, Share2 } from 'lucide-react';
 import ScoreCard from './ScoreCard';
+import { useLanguage } from '@/contexts/LanguageContext';
+import { TranslatedContent } from '@/hooks/use-translation';
 
 interface QuizProps {
   questions: QuizQuestion[];
@@ -9,9 +11,11 @@ interface QuizProps {
   movementId: string;
   onComplete: (movementId: string, score: number, total: number) => void;
   existingScore?: { score: number; total: number };
+  translatedQuiz?: TranslatedContent['quiz'];
 }
 
-const Quiz = ({ questions, movementName, movementId, onComplete, existingScore }: QuizProps) => {
+const Quiz = ({ questions, movementName, movementId, onComplete, existingScore, translatedQuiz }: QuizProps) => {
+  const { t } = useLanguage();
   const [answers, setAnswers] = useState<Record<number, number>>({});
   const [submitted, setSubmitted] = useState(!!existingScore);
   const [showScoreCard, setShowScoreCard] = useState(false);
@@ -44,6 +48,7 @@ const Quiz = ({ questions, movementName, movementId, onComplete, existingScore }
     return (
       <div className="border-t border-border pt-12">
         <h2 className="font-display text-2xl text-gold-light mb-2 tracking-tight">Knowledge Quiz</h2>
+
         <div className="bg-surface-elevated rounded-lg p-6 border border-primary/20">
           <div className="flex items-center justify-between">
             <div>
@@ -51,7 +56,7 @@ const Quiz = ({ questions, movementName, movementId, onComplete, existingScore }
                 {existingScore.score}/{existingScore.total}
               </p>
               <p className="text-sm font-body text-muted-foreground mt-1">
-                You've already completed this quiz.
+                {t('quiz.already')}
               </p>
             </div>
             <div className="flex items-center gap-3">
@@ -67,7 +72,7 @@ const Quiz = ({ questions, movementName, movementId, onComplete, existingScore }
                 className="flex items-center gap-2 text-sm font-body text-muted-foreground hover:text-foreground transition-colors active:scale-[0.97]"
               >
                 <RotateCcw className="w-4 h-4" />
-                Retake
+                {t('quiz.retake')}
               </button>
             </div>
           </div>
@@ -87,10 +92,8 @@ const Quiz = ({ questions, movementName, movementId, onComplete, existingScore }
 
   return (
     <div className="border-t border-border pt-12">
-      <h2 className="font-display text-2xl text-gold-light mb-2 tracking-tight">Knowledge Quiz</h2>
-      <p className="text-sm font-body text-muted-foreground mb-8">
-        How much did you learn about {movementName}?
-      </p>
+      <h2 className="font-display text-2xl text-gold-light mb-2 tracking-tight">{t('quiz.title')}</h2>
+      <p className="text-sm font-body text-muted-foreground mb-8">{movementName}</p>
 
       {submitted && Object.keys(answers).length > 0 && (
         <div className="bg-surface-elevated rounded-lg p-6 mb-8 border border-primary/20">
@@ -118,7 +121,7 @@ const Quiz = ({ questions, movementName, movementId, onComplete, existingScore }
                 className="flex items-center gap-2 text-sm font-body text-muted-foreground hover:text-foreground transition-colors active:scale-[0.97]"
               >
                 <RotateCcw className="w-4 h-4" />
-                Retake
+                {t('quiz.retake')}
               </button>
             </div>
           </div>
@@ -143,10 +146,11 @@ const Quiz = ({ questions, movementName, movementId, onComplete, existingScore }
             <div key={qIndex}>
               <p className="text-sm font-body text-foreground/90 mb-3 leading-relaxed">
                 <span className="text-gold-dim font-medium mr-2">{qIndex + 1}.</span>
-                {q.question}
+                {translatedQuiz?.[qIndex]?.question || q.question}
               </p>
               <div className="grid gap-2">
-                {q.options.map((option, oIndex) => {
+                {q.options.map((_option, oIndex) => {
+                  const displayOption = translatedQuiz?.[qIndex]?.options?.[oIndex] || q.options[oIndex];
                   let stateClasses = 'border-border/50 hover:border-primary/30';
                   if (isSelected(oIndex) && !showResult) stateClasses = 'border-primary bg-primary/10';
                   if (showResult && q.correctIndex === oIndex) stateClasses = 'border-green-600/50 bg-green-950/20';
@@ -168,7 +172,7 @@ const Quiz = ({ questions, movementName, movementId, onComplete, existingScore }
                           <XCircle className="w-4 h-4 text-red-500 shrink-0" />
                         )}
                         <span className={showResult && q.correctIndex === oIndex ? 'text-green-400' : 'text-foreground/80'}>
-                          {option}
+                          {displayOption}
                         </span>
                       </span>
                     </button>
@@ -190,7 +194,7 @@ const Quiz = ({ questions, movementName, movementId, onComplete, existingScore }
               : 'bg-muted text-muted-foreground cursor-not-allowed'
           }`}
         >
-          Check Answers
+          {t('quiz.finish')}
         </button>
       )}
     </div>
