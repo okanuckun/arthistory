@@ -171,7 +171,7 @@ const MovementDetail = ({ movement, onBack, onQuizComplete, existingScore }: Mov
         <ArtworkGallery artworks={artworksTranslated} movementName={movement.name} />
       )}
 
-      <section className="opacity-0 animate-fade-up mb-16" style={{ animationDelay: '300ms' }}>
+      <section className="opacity-0 animate-fade-up mb-16" style={{ animationDelay: '300ms' }} data-tour="detail-artists">
         <h2 className="font-display text-2xl text-gold-light mb-8 tracking-tight">
           {t('detail.artists')}
         </h2>
