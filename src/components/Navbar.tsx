@@ -2,14 +2,16 @@ import { useState, useRef, useEffect } from 'react';
 import { useAuth } from '@/contexts/AuthContext';
 import { useTheme } from '@/contexts/ThemeContext';
 import { useLanguage, LANGUAGES, Language } from '@/contexts/LanguageContext';
-import { LogOut, Sun, Moon, Trophy, Globe, Bell } from 'lucide-react';
+import { LogOut, Sun, Moon, Trophy, Globe, Bell, Download } from 'lucide-react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
+import { usePWAInstall } from '@/hooks/use-pwa-install';
 
 const Navbar = () => {
   const { user, displayName, signOut } = useAuth();
   const { theme, toggleTheme } = useTheme();
   const { language, setLanguage, t } = useLanguage();
+  const { canInstall, install } = usePWAInstall();
   const navigate = useNavigate();
   const location = useLocation();
   const isLeaderboard = location.pathname === '/leaderboard';
@@ -101,6 +103,16 @@ const Navbar = () => {
             </div>
           )}
         </div>
+
+        {canInstall && (
+          <button
+            onClick={install}
+            className="p-2 rounded-lg text-gold hover:text-gold/80 hover:bg-secondary transition-all active:scale-[0.95] animate-fade-in"
+            title="Uygulamayı yükle"
+          >
+            <Download className="w-4 h-4" />
+          </button>
+        )}
 
         <button
           onClick={toggleTheme}
