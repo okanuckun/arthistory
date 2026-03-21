@@ -11,6 +11,7 @@ const Navbar = () => {
   const { user, displayName, signOut } = useAuth();
   const { theme, toggleTheme } = useTheme();
   const { language, setLanguage, t } = useLanguage();
+  const { canInstall, install } = usePWAInstall();
   const navigate = useNavigate();
   const location = useLocation();
   const isLeaderboard = location.pathname === '/leaderboard';
