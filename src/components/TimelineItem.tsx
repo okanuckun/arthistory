@@ -5,9 +5,10 @@ interface TimelineItemProps {
   movement: ArtMovement;
   onClick: (id: string) => void;
   index: number;
+  quizScore?: { score: number; total: number };
 }
 
-const TimelineItem = ({ movement, onClick, index }: TimelineItemProps) => {
+const TimelineItem = ({ movement, onClick, index, quizScore }: TimelineItemProps) => {
   const isActive = movement.status === 'active';
   const isCompleted = movement.status === 'completed';
   const isLocked = movement.status === 'locked';
@@ -18,7 +19,6 @@ const TimelineItem = ({ movement, onClick, index }: TimelineItemProps) => {
       style={{ animationDelay: `${Math.min(index * 80, 800)}ms` }}
       onClick={() => !isLocked && onClick(movement.id)}
     >
-      {/* Timeline dot & line */}
       <div className="flex flex-col items-center shrink-0 w-10">
         <div
           className={`w-3 h-3 rounded-full mt-2 transition-all duration-300 ${
@@ -31,7 +31,6 @@ const TimelineItem = ({ movement, onClick, index }: TimelineItemProps) => {
         />
       </div>
 
-      {/* Content */}
       <div
         className={`flex-1 pb-10 transition-all duration-300 ${
           isLocked ? 'opacity-35' : 'opacity-100'
@@ -55,7 +54,6 @@ const TimelineItem = ({ movement, onClick, index }: TimelineItemProps) => {
           {movement.period}
         </p>
 
-        {/* Color palette swatches */}
         <div className="flex gap-1 mb-2">
           {movement.colorPalette.map((color, i) => (
             <div
@@ -66,16 +64,15 @@ const TimelineItem = ({ movement, onClick, index }: TimelineItemProps) => {
           ))}
         </div>
 
-        {/* Status badges */}
         {isCompleted && (
           <div className="flex items-center gap-3 mt-1">
             <span className="flex items-center gap-1.5 text-xs font-body text-completed">
               <CheckCircle2 className="w-3.5 h-3.5" />
-              Tamamlandı
+              Completed
             </span>
-            {movement.quizScore !== undefined && (
+            {quizScore && (
               <span className="text-xs font-body text-gold-dim">
-                Quiz: {movement.quizScore}/{movement.quizTotal}
+                Quiz: {quizScore.score}/{quizScore.total}
               </span>
             )}
           </div>
@@ -83,7 +80,7 @@ const TimelineItem = ({ movement, onClick, index }: TimelineItemProps) => {
 
         {isActive && (
           <span className="inline-block mt-1 text-xs font-body font-medium text-gold tracking-wider uppercase">
-            Şimdi Keşfet →
+            Explore Now →
           </span>
         )}
       </div>
