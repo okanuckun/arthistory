@@ -159,7 +159,7 @@ const TourOverlay = ({ active, step, currentStep, totalSteps, onNext, onPrev, on
       {/* Tooltip */}
       <div
         ref={tooltipRef}
-        className="absolute z-10 w-[280px] sm:w-[320px] bg-card border border-border rounded-xl shadow-2xl shadow-black/30 p-5 transition-all duration-300 animate-fade-up"
+        className="absolute z-10 w-[calc(100vw-16px)] max-w-[280px] sm:max-w-[320px] bg-card border border-border rounded-xl shadow-2xl shadow-black/30 p-4 sm:p-5 transition-all duration-300 animate-fade-up"
         style={{
           top: rect ? tooltipPos.top : '50%',
           left: rect ? tooltipPos.left : '50%',
