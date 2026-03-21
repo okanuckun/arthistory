@@ -1,5 +1,5 @@
 import { ArtMovement } from '@/data/artMovements';
-import { Lock, CheckCircle2 } from 'lucide-react';
+import { Lock, CheckCircle2, Award } from 'lucide-react';
 
 interface TimelineItemProps {
   movement: ArtMovement;
