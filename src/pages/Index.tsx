@@ -66,28 +66,28 @@ const Index = () => {
     <>
       <Navbar />
       <div className="min-h-screen">
-        <header className="max-w-3xl mx-auto px-6 pt-12 pb-10">
-          <div className="opacity-0 animate-fade-up flex items-end justify-between mb-10">
+        <header className="max-w-3xl mx-auto px-4 sm:px-6 pt-8 sm:pt-12 pb-6 sm:pb-10">
+          <div className="opacity-0 animate-fade-up flex flex-col sm:flex-row sm:items-end sm:justify-between mb-6 sm:mb-10 gap-4">
             <div>
-              <p className="text-xs font-body tracking-[0.25em] uppercase text-muted-foreground mb-3">
+              <p className="text-xs font-body tracking-[0.25em] uppercase text-muted-foreground mb-2 sm:mb-3">
                 {t('header.tagline')}
               </p>
-              <h1 className="font-display text-4xl md:text-5xl font-medium text-warm-bright tracking-tight leading-[1.05]">
+              <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-medium text-warm-bright tracking-tight leading-[1.05]">
                 The Great Art<br />
                 <span className="text-gold italic">Movements</span>
               </h1>
             </div>
-            <div className="flex gap-6 text-right opacity-0 animate-fade-up" style={{ animationDelay: '200ms' }}>
+            <div className="flex gap-6 sm:text-right opacity-0 animate-fade-up" style={{ animationDelay: '200ms' }}>
               <div>
-                <p className="font-display text-2xl text-warm-bright">{totalMovements}</p>
+                <p className="font-display text-xl sm:text-2xl text-warm-bright">{totalMovements}</p>
                 <p className="text-[10px] font-body tracking-wider uppercase text-muted-foreground">{t('header.total')}</p>
               </div>
               <div>
-                <p className="font-display text-2xl text-warm-bright">{liveCount}</p>
+                <p className="font-display text-xl sm:text-2xl text-warm-bright">{liveCount}</p>
                 <p className="text-[10px] font-body tracking-wider uppercase text-muted-foreground">{t('header.live')}</p>
               </div>
               <div>
-                <p className="font-display text-2xl text-warm-bright">{upcomingCount}</p>
+                <p className="font-display text-xl sm:text-2xl text-warm-bright">{upcomingCount}</p>
                 <p className="text-[10px] font-body tracking-wider uppercase text-muted-foreground">{t('header.soon')}</p>
               </div>
             </div>
