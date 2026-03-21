@@ -167,7 +167,7 @@ Two technical inventions defined the era's visual language above all else: linea
           type: 'sculpture',
           medium: 'White Carrara marble',
           location: `Galleria dell'Accademia, Florence`,
-          imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Michelangelo%27s_David_-_right_view_2.jpg/480px-Michelangelo%27s_David_-_right_view_2.jpg',
+          imageUrl: davidMichelangelo,
           description: 'The definitive statement on the Renaissance ideal of the heroic human body. Michelangelo captured David in the moment before battle -- coiled with tension, every muscle and vein rendered with anatomical precision. At 5.17 meters, it dominates any room it inhabits.',
         },
         {
