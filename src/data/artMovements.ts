@@ -10,10 +10,18 @@ export interface Artist {
   description: string;
 }
 
+export interface TattooTips {
+  intro: string;
+  design: string[];
+  technical: string[];
+  inspiration: string;
+}
+
 export interface MovementContent {
   summary: string;
   characteristics: string[];
   artists: Artist[];
+  tattooTips: TattooTips;
   quiz: QuizQuestion[];
 }
 
@@ -36,64 +44,144 @@ export const artMovements: ArtMovement[] = [
     colorPalette: ['#8B6914', '#5C4033', '#6B7F3B', '#D4A76A', '#3E5F8A'],
     status: 'active',
     content: {
-      summary: 'The Renaissance was a profound cultural and artistic rebirth that began in 14th-century Italy and spread across Europe through the 17th century. Marked by a return to the ideals of Ancient Greece and Rome, a human-centered worldview (humanism), scientific observation, and the discovery of perspective, this era fundamentally transformed art. For the first time, paintings featured realistic human anatomy, the illusion of depth, and masterful play of light and shadow.',
+      summary: `The Renaissance — meaning "rebirth" in French — was one of the most transformative cultural revolutions in human history. Born in the city-states of 14th-century Italy, particularly Florence, it represented a sweeping rediscovery of Classical Antiquity and a radical reimagining of what art could be. After nearly a millennium in which medieval art had prioritized spiritual symbolism over physical reality, Renaissance artists turned their gaze toward the observable world with a passion that bordered on the scientific.
+
+At its core, the Renaissance was driven by Humanism — a philosophical movement that placed human beings, rather than divine authority, at the center of intellectual life. Artists and thinkers studied ancient Greek and Roman texts, sculptures, and architecture not merely as historical relics, but as living models for a new civilization. This shift had profound consequences for visual art: figures became anatomically believable, landscapes receded convincingly into the distance, and emotions were rendered with psychological depth.
+
+The movement unfolded in distinct phases. The Early Renaissance (roughly 1400–1490) was centered in Florence, where artists like Botticelli and Masaccio laid the groundwork. The High Renaissance (1490–1527), dominated by Leonardo, Michelangelo, and Raphael, represented the peak of technical achievement and idealized beauty. The Late Renaissance, or Mannerism (post-1527), saw artists deliberately distorting Renaissance ideals — elongating figures, intensifying colors, and introducing emotional unease — as a response to political and religious turmoil.
+
+Two technical inventions defined the era's visual language above all else: linear perspective, which created the mathematical illusion of three-dimensional space on a flat surface, and chiaroscuro, the mastery of light and shadow to model three-dimensional form. Together they gave Renaissance paintings a sense of weight, depth, and drama never seen before. Oil paint, gradually replacing tempera, allowed artists to build up translucent layers of color, achieving a luminous realism that still astonishes viewers today.`,
+
       characteristics: [
-        'Discovery and application of linear perspective',
-        'Scientific study of human anatomy',
-        'Chiaroscuro technique — dramatic light and shadow',
-        'Sfumato technique — soft, smoky transitions',
-        'Humanism philosophy — human-centered worldview',
-        'Renewed interest in Ancient Greek and Roman art',
-        'Widespread adoption of oil painting',
-        'Patronage system — supporters like the Medici family',
+        'Linear perspective — mathematical system for creating the illusion of depth on a flat surface',
+        'Chiaroscuro — dramatic contrasts of light and shadow to model three-dimensional form',
+        'Sfumato — Leonardo\'s technique of blurring outlines with soft, smoky transitions',
+        'Anatomical accuracy — figures based on direct observation and dissection of the human body',
+        'Humanism — philosophy placing human experience, reason, and beauty at the center of art',
+        'Classical revival — direct study and reinterpretation of Ancient Greek and Roman models',
+        'Idealized naturalism — beauty rooted in observation but elevated toward an ideal form',
+        'Oil painting — layered glazes enabling luminous color depth and subtle texture',
+        'Fresco technique — large-scale wall painting in wet plaster, mastered for architectural spaces',
+        'Triangular composition — figures arranged in stable pyramid structures for visual harmony',
+        'Psychological portraiture — faces and gestures conveying inner emotional states',
+        'Patronage culture — wealthy families like the Medici funding art as political and spiritual prestige',
+        'Secular subjects alongside religious — mythology, portraiture, and allegory gaining prominence',
+        'Architectural integration — paintings and sculptures designed in dialogue with their spaces',
       ],
+
       artists: [
         {
           name: 'Leonardo da Vinci',
           years: '1452 – 1519',
-          description: 'Creator of the Mona Lisa and The Last Supper. Painter, engineer, scientist, and inventor who earned the title of "universal genius." Master of the sfumato technique.',
+          description: 'The archetypal "Renaissance man," Leonardo was simultaneously a painter, anatomist, engineer, musician, and theorist. His notebooks — filled with dissections, mechanical inventions, and studies of water, light, and botany — reveal a mind driven by insatiable curiosity. In painting, he developed the sfumato technique to its peak: the edges of forms dissolve into atmospheric haze, giving figures like the Mona Lisa an ineffable presence. His The Last Supper revolutionized narrative painting by using architecture, gesture, and psychological tension to dramatize a single frozen moment. Leonardo completed relatively few paintings, yet each one fundamentally altered the course of art history.',
         },
         {
           name: 'Michelangelo Buonarroti',
           years: '1475 – 1564',
-          description: 'Known for the Sistine Chapel ceiling and the statue of David. One of the rare artists who reached the pinnacle in painting, sculpture, and architecture alike.',
+          description: 'Michelangelo approached every medium with the ferocity of a man who believed art was an act of spiritual release. As a sculptor, his concept of "non-finito" — leaving parts of the marble uncarved — suggested figures struggling to emerge from raw stone. His David stands as the supreme Renaissance statement on the heroic human body: every muscle, vein, and tendon rendered with anatomical precision and charged with psychological tension. On the Sistine Chapel ceiling, painted almost entirely alone over four years, he compressed an entire theological universe into some 500 figures, each a masterwork of foreshortening and dramatic gesture. In his late career, his style grew increasingly tormented and spiritual, anticipating the emotional intensity of Mannerism and Baroque.',
         },
         {
           name: 'Raphael Sanzio',
           years: '1483 – 1520',
-          description: 'Famous for The School of Athens fresco. Represents the Renaissance ideal of beauty in its purest form. A master of composition and harmony.',
+          description: 'Where Leonardo probed and Michelangelo struggled, Raphael made everything look effortless. His paintings radiate a serene, luminous harmony that represents perhaps the purest expression of Renaissance ideals. His Madonnas elevated the sacred feminine through perfect compositional balance and tender psychological warmth. The School of Athens — a vast fresco in the Vatican\'s Stanza della Segnatura — organized the great philosophers of antiquity into a theatrical, architecturally convincing space, effectively writing a visual encyclopedia of human knowledge. Raphael died at 37, yet his influence on Western painting\'s sense of grace and beauty persisted for centuries.',
         },
         {
           name: 'Sandro Botticelli',
           years: '1445 – 1510',
-          description: 'Known for The Birth of Venus and Primavera. With his elegant lines and mythological subjects, he is a key figure of the Early Renaissance.',
+          description: 'Botticelli\'s work occupies a unique place in the Renaissance: deeply personal, richly symbolic, and visually unlike anyone else. His figures have an otherworldly elongation and a melancholy grace that sets them apart from the more grounded naturalism of his contemporaries. The Birth of Venus and Primavera are among the first large-scale mythological paintings in Western art — commissioned by the Medici and saturated with Neoplatonic philosophy about love, beauty, and the soul. His lines are exquisite: contours flow like music, drapery cascades in elegant arcs, and faces carry a haunting introspective quality. In later life, under the influence of the preacher Savonarola, he reportedly destroyed many of his secular works and his style grew stark and spiritual.',
+        },
+        {
+          name: 'Titian (Tiziano Vecellio)',
+          years: 'c. 1488 – 1576',
+          description: 'The undisputed master of Venetian painting, Titian transformed oil paint into something almost magical. His loose, gestural brushwork — applied in dozens of translucent layers — created surfaces that seemed to glow from within, capturing the texture of skin, silk, armor, and foliage with equal virtuosity. Where Florentine Renaissance prized line and disegno (drawing), the Venetian tradition championed colore (color), and Titian was its supreme exponent. His late works, painted when he was in his eighties, are among the most proto-Impressionist paintings in art history — dissolving form into pure light and pigment. His portraits of popes, emperors, and noblemen defined the visual language of power for a century.',
+        },
+        {
+          name: 'Albrecht Dürer',
+          years: '1471 – 1528',
+          description: 'The Northern Renaissance found its greatest voice in Dürer, a German artist who made multiple trips to Italy and synthesized Italian spatial and anatomical knowledge with the Northern European tradition of meticulous observation and intense naturalism. His self-portraits — confident, almost Christ-like — were radical statements of artistic identity and dignity. As a printmaker, he elevated woodcut and engraving to the level of fine art, achieving a tonal range and detail in black-and-white that rivals painting. His Melencolia I is one of the most analyzed images in Western art, dense with symbolism about creativity, knowledge, and melancholy. Dürer essentially brought the Renaissance to Northern Europe single-handedly.',
         },
       ],
+
+      tattooTips: {
+        intro: `The Renaissance is one of the richest sources a tattoo artist can draw from — not just for its iconic imagery, but for its underlying technical philosophy. The masters of this period solved exactly the problems that every tattooist faces: how to create the illusion of volume on a flat surface, how to make a figure feel alive, how to organize complex compositions into something visually harmonious. Understanding how they worked is directly applicable to the needle.`,
+        design: [
+          'Study triangular composition: Renaissance masters organized figures into pyramid or triangle structures to create visual stability and guide the eye. This principle translates perfectly to body placement — wrap a composition around the natural triangular forms of the shoulder, chest, or knee.',
+          'Use architectural framing: Raphael and Leonardo frequently placed figures within arches, columns, or window frames. For sleeve or back pieces, consider creating an architectural "stage" that gives the scene a sense of place and grandeur.',
+          'Master the contrapposto pose: figures in Renaissance art stand in contrapposto — weight on one leg, hips and shoulders tilting in opposite directions — giving the body a natural, living S-curve. When designing figures, avoid static symmetry; use this S-tension to bring energy to the composition.',
+          'Reference drapery studies: Renaissance artists obsessed over the way fabric falls and folds. Drapery creates rhythm, frames the figure, and adds visual complexity without competing with the face or focal point. Incorporate flowing fabric into portraits or figurative work to add movement.',
+          'Incorporate atmospheric perspective: backgrounds were painted progressively lighter and bluer in the distance to suggest depth. In black-and-grey tattooing, use progressively lighter values and softer edges for background elements to push them back and make the foreground pop.',
+          'Draw from mythological subjects: scenes like The Birth of Venus, Perseus, or the Three Graces offer timeless narrative content with universal emotional resonance — ideal for large-scale pieces where the client wants meaning as well as beauty.',
+          'Explore portrait conventions: Renaissance portraiture used three-quarter angle views (neither full frontal nor profile) to capture personality and dimension simultaneously. This is still the most flattering and dynamic angle for portrait tattoos.',
+          'Use hands deliberately: Renaissance masters considered the hands as expressive as the face. Study the hands in works by Leonardo and Raphael — outstretched, pointing, clasped — and incorporate expressive hands into figurative tattoos to amplify emotional storytelling.',
+        ],
+        technical: [
+          'Chiaroscuro is your most important tool: the entire Renaissance model of form is built on the transition from light to shadow. In tattooing, this means understanding how to build a full value range from bright highlight whites through midtones into deep, saturated blacks — with smooth, controlled gradation throughout.',
+          'Think in layers, not lines: Renaissance painters built form through transparent glazes, each layer modifying the one beneath. Similarly, approach shading in multiple passes — establish your darkest darks first, then build midtones, then work back up toward highlights with lighter passes and needle pressure.',
+          'Softness of edge is as important as darkness of shadow: sfumato means "smoked" — boundaries between light and dark are blurred, not hard. Practice achieving seamless whip shading and long feathered transitions. A hard edge where there should be a soft one instantly flattens form.',
+          'Study muscle anatomy directly: Michelangelo dissected cadavers to understand the body. If you tattoo figurative work, invest time in anatomy — understand how muscles layer over each other, how skin stretches over bone, how fat deposits change contour. A figure tattooed without anatomical understanding will always look unconvincing.',
+          'Replicate the luminosity of oil glazes with ink layering: Titian achieved glowing skin tones through dozens of transparent color layers. In color realism tattooing, build skin tones similarly — warm undertones first, cooler glazes over the top, highlights last. Avoid mixing everything into a flat opaque layer.',
+          'Handle negative space deliberately: Renaissance compositions used background darks to make light figures emerge dramatically. In tattooing, push backgrounds dark enough that the subject genuinely "lifts" off the skin — a common mistake is leaving backgrounds too light, which flattens the whole piece.',
+          'Use a restricted value structure for large pieces: Renaissance paintings achieve harmony partly because they limit their tonal extremes — the darkest dark and the brightest light are reserved for the most important focal area. In large tattoo compositions, resist putting maximum contrast everywhere; save your white highlights and deepest blacks for the intended focal point.',
+          'Study Dürer\'s engravings specifically for black-and-grey technique: Dürer achieved extraordinary tonal range in pure black ink through systematic crosshatching and stippling. His prints are essentially advanced manuals for building form with a single pigment — directly applicable to black-and-grey realism and illustrative tattoo styles.',
+        ],
+        inspiration: `Contemporary tattooers working in Renaissance aesthetics tend to fall into two camps: those pursuing hyper-realistic recreations of specific masterworks (the Sistine Chapel ceiling, Botticelli\'s Venus) as full back pieces or sleeves, and those abstracting the era\'s visual principles into their own figurative style. The latter approach — internalizing chiaroscuro, contrapposto, and classical composition without literally copying paintings — tends to produce the most lasting and personal work. Artists like Chucho Ochoa and Nikko Hurtado demonstrate how Renaissance light-modeling principles can be applied to contemporary portraiture. For sleeve concepts, consider organizing the progression of human figures from Early to High Renaissance across the arm — from Botticelli\'s ethereal linearity through Leonardo\'s atmospheric depth to Michelangelo\'s muscular dynamism — as a visual timeline of the Renaissance itself.`,
+      },
+
       quiz: [
         {
-          question: 'Which Renaissance architect was the first to systematically use perspective?',
+          question: 'Which Renaissance architect was the first to systematically codify and use linear perspective?',
           options: ['Filippo Brunelleschi', 'Leon Battista Alberti', 'Donato Bramante', 'Andrea Palladio'],
           correctIndex: 0,
         },
         {
-          question: 'What is the name of the technique developed by Leonardo da Vinci for soft color transitions?',
+          question: 'What is the name of Leonardo da Vinci\'s technique for creating soft, smoky transitions between light and shadow?',
           options: ['Chiaroscuro', 'Sfumato', 'Impasto', 'Fresco'],
           correctIndex: 1,
         },
         {
-          question: 'Which of the following is the fundamental philosophy of the Renaissance?',
-          options: ['Nihilism', 'Humanism', 'Romanticism', 'Positivism'],
+          question: 'Which philosophical movement placed human beings at the center of Renaissance intellectual and artistic life?',
+          options: ['Nihilism', 'Humanism', 'Scholasticism', 'Positivism'],
           correctIndex: 1,
         },
         {
-          question: 'Who painted the ceiling frescoes of the Sistine Chapel?',
+          question: 'Who painted the ceiling frescoes of the Sistine Chapel in the Vatican?',
           options: ['Raphael', 'Leonardo da Vinci', 'Michelangelo', 'Titian'],
           correctIndex: 2,
         },
         {
-          question: 'In which city was the Renaissance born?',
+          question: 'In which Italian city was the Renaissance born?',
           options: ['Rome', 'Venice', 'Florence', 'Milan'],
           correctIndex: 2,
+        },
+        {
+          question: 'What does "contrapposto" refer to in Renaissance figure drawing?',
+          options: [
+            'A technique for painting on wet plaster',
+            'A pose where weight shifts to one leg, creating opposing tilts in hips and shoulders',
+            'The use of gold leaf in panel paintings',
+            'A method of grinding pigments for oil paint',
+          ],
+          correctIndex: 1,
+        },
+        {
+          question: 'Which Renaissance master is primarily associated with the Venetian tradition of colore — prioritizing color over line?',
+          options: ['Michelangelo', 'Raphael', 'Dürer', 'Titian'],
+          correctIndex: 3,
+        },
+        {
+          question: 'What does the term "Renaissance" literally mean?',
+          options: ['New Beginning', 'Rebirth', 'Enlightenment', 'Revolution'],
+          correctIndex: 1,
+        },
+        {
+          question: 'Which wealthy Florentine family is most associated with patronage of the Renaissance arts?',
+          options: ['The Borgia', 'The Sforza', 'The Medici', 'The Visconti'],
+          correctIndex: 2,
+        },
+        {
+          question: 'Albrecht Dürer is significant primarily because he brought Renaissance ideas to which region?',
+          options: ['Spain', 'France', 'England', 'Northern Europe'],
+          correctIndex: 3,
         },
       ],
     },
