@@ -84,6 +84,8 @@ const translations: Record<Language, Record<string, string>> = {
     'detail.loading': 'Loading…',
     'detail.continue': 'Continue',
     'detail.restart': 'From Start',
+    'updates.title': "What's New",
+    'updates.empty': 'No updates yet. Stay tuned!',
   },
   tr: {
     'landing.tagline': 'Dövme Sanatçıları İçin',
