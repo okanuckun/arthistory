@@ -12,7 +12,32 @@ interface MovementDetailProps {
 
 const MovementDetail = ({ movement, onBack, onQuizComplete, existingScore }: MovementDetailProps) => {
   const content = movement.content;
+  const { speak, stop, pause, resume, isSpeaking, isPaused } = useTTS();
   if (!content) return null;
+
+  const buildReadText = () => {
+    const parts: string[] = [];
+    parts.push(movement.name + '. ' + content.summary);
+    parts.push('Temel Özellikler. ' + content.characteristics.join('. '));
+    parts.push('Önemli Sanatçılar. ' + content.artists.map(a => a.name + '. ' + a.description).join('. '));
+    if (content.tattooTips) {
+      parts.push('Dövme Sanatçısı Rehberi. ' + content.tattooTips.intro);
+      parts.push('Tasarım İpuçları. ' + content.tattooTips.design.join('. '));
+      parts.push('Teknik İpuçları. ' + content.tattooTips.technical.join('. '));
+      parts.push(content.tattooTips.inspiration);
+    }
+    return parts.join('. ');
+  };
+
+  const handleSpeak = () => {
+    if (isSpeaking && !isPaused) {
+      pause();
+    } else if (isSpeaking && isPaused) {
+      resume();
+    } else {
+      speak(buildReadText());
+    }
+  };
 
   return (
     <div className="max-w-3xl mx-auto px-6 py-12">
