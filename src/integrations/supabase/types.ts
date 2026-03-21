@@ -14,13 +14,61 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      profiles: {
+        Row: {
+          created_at: string
+          display_name: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          display_name: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          display_name?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      quiz_scores: {
+        Row: {
+          completed_at: string
+          id: string
+          movement_id: string
+          score: number
+          total: number
+          user_id: string
+        }
+        Insert: {
+          completed_at?: string
+          id?: string
+          movement_id: string
+          score: number
+          total: number
+          user_id: string
+        }
+        Update: {
+          completed_at?: string
+          id?: string
+          movement_id?: string
+          score?: number
+          total?: number
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      is_own_profile: { Args: { user_id_to_check: string }; Returns: boolean }
+      is_own_quiz_score: {
+        Args: { user_id_to_check: string }
+        Returns: boolean
+      }
     }
     Enums: {
       [_ in never]: never
