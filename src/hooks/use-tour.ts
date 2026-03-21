@@ -16,6 +16,16 @@ export const useTour = (steps: TourStep[]) => {
   const isCompleted = () => localStorage.getItem(TOUR_KEY) === 'true';
 
   useEffect(() => {
+    // Allow resetting tour via URL param ?tour=reset
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('tour') === 'reset') {
+      localStorage.removeItem(TOUR_KEY);
+      localStorage.removeItem('arthistory_detail_tour_completed');
+      // Clean URL
+      params.delete('tour');
+      const newUrl = params.toString() ? `${window.location.pathname}?${params}` : window.location.pathname;
+      window.history.replaceState({}, '', newUrl);
+    }
     if (!isCompleted()) {
       const timer = setTimeout(() => setActive(true), 1200);
       return () => clearTimeout(timer);
