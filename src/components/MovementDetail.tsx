@@ -51,13 +51,21 @@ const MovementDetail = ({ movement, onBack, onQuizComplete, existingScore }: Mov
         </button>
         <button
           onClick={handleSpeak}
+          disabled={isLoading}
           className={`flex items-center gap-2 text-sm font-body px-3 py-1.5 rounded-md transition-all active:scale-[0.97] ${
-            isSpeaking
+            isLoading
+              ? 'text-muted-foreground border border-border/50 opacity-70 cursor-wait'
+              : isSpeaking
               ? 'bg-primary/10 text-primary border border-primary/20'
               : 'text-muted-foreground hover:text-foreground hover:bg-muted/50 border border-border/50'
           }`}
         >
-          {isSpeaking && !isPaused ? (
+          {isLoading ? (
+            <>
+              <Loader2 className="w-4 h-4 animate-spin" />
+              Yükleniyor...
+            </>
+          ) : isSpeaking && !isPaused ? (
             <>
               <Pause className="w-4 h-4" />
               Duraklat
