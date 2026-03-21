@@ -12,7 +12,7 @@ serve(async (req) => {
   }
 
   try {
-    const { text, languageCode = "tr-TR" } = await req.json();
+    const { text, languageCode = "en-US" } = await req.json();
 
     if (!text || typeof text !== "string") {
       return new Response(JSON.stringify({ error: "text is required" }), {
@@ -26,77 +26,41 @@ serve(async (req) => {
       throw new Error("GOOGLE_CLOUD_TTS_API_KEY is not configured");
     }
 
-    // Google Cloud TTS has a 5000 byte limit per request
-    // Split text into chunks if needed
-    const maxChunkSize = 4500;
-    const chunks: string[] = [];
-    
-    if (text.length <= maxChunkSize) {
-      chunks.push(text);
-    } else {
-      // Split by sentences
-      const sentences = text.split(/(?<=[.!?])\s+/);
-      let current = "";
-      for (const sentence of sentences) {
-        if ((current + " " + sentence).length > maxChunkSize && current) {
-          chunks.push(current.trim());
-          current = sentence;
-        } else {
-          current = current ? current + " " + sentence : sentence;
-        }
+    const response = await fetch(
+      `https://texttospeech.googleapis.com/v1/text:synthesize?key=${apiKey}`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          input: { text },
+          voice: {
+            languageCode,
+            name: languageCode === "tr-TR" ? "tr-TR-Wavenet-E" : "en-US-Wavenet-F",
+            ssmlGender: "FEMALE",
+          },
+          audioConfig: {
+            audioEncoding: "MP3",
+            speakingRate: 0.95,
+            pitch: 0,
+          },
+        }),
       }
-      if (current.trim()) chunks.push(current.trim());
+    );
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.error("Google TTS error:", response.status, errorText);
+      throw new Error(`Google TTS API error: ${response.status}`);
     }
 
-    const audioBuffers: Uint8Array[] = [];
-
-    for (const chunk of chunks) {
-      const response = await fetch(
-        `https://texttospeech.googleapis.com/v1/text:synthesize?key=${apiKey}`,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            input: { text: chunk },
-            voice: {
-              languageCode,
-              name: languageCode === "tr-TR" ? "tr-TR-Wavenet-E" : "en-US-Wavenet-F",
-              ssmlGender: "FEMALE",
-            },
-            audioConfig: {
-              audioEncoding: "MP3",
-              speakingRate: 0.95,
-              pitch: 0,
-            },
-          }),
-        }
-      );
-
-      if (!response.ok) {
-        const errorText = await response.text();
-        console.error("Google TTS error:", response.status, errorText);
-        throw new Error(`Google TTS API error: ${response.status}`);
-      }
-
-      const data = await response.json();
-      const binaryString = atob(data.audioContent);
-      const bytes = new Uint8Array(binaryString.length);
-      for (let i = 0; i < binaryString.length; i++) {
-        bytes[i] = binaryString.charCodeAt(i);
-      }
-      audioBuffers.push(bytes);
+    const data = await response.json();
+    const binaryString = atob(data.audioContent);
+    const bytes = new Uint8Array(binaryString.length);
+    for (let i = 0; i < binaryString.length; i++) {
+      bytes[i] = binaryString.charCodeAt(i);
     }
 
-    // Combine all audio buffers
-    const totalLength = audioBuffers.reduce((sum, buf) => sum + buf.length, 0);
-    const combined = new Uint8Array(totalLength);
-    let offset = 0;
-    for (const buf of audioBuffers) {
-      combined.set(buf, offset);
-      offset += buf.length;
-    }
-
-    return new Response(combined, {
+    return new Response(bytes, {
       headers: {
         ...corsHeaders,
         "Content-Type": "audio/mpeg",
