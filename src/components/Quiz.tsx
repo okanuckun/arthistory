@@ -14,6 +14,7 @@ interface QuizProps {
 const Quiz = ({ questions, movementName, movementId, onComplete, existingScore }: QuizProps) => {
   const [answers, setAnswers] = useState<Record<number, number>>({});
   const [submitted, setSubmitted] = useState(!!existingScore);
+  const [showScoreCard, setShowScoreCard] = useState(false);
 
   const handleSelect = (qIndex: number, optionIndex: number) => {
     if (submitted) return;
