@@ -1,6 +1,6 @@
 import { ArtMovement } from '@/data/artMovements';
 import Quiz from './Quiz';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, Palette, Wrench, Sparkles } from 'lucide-react';
 
 interface MovementDetailProps {
   movement: ArtMovement;
@@ -76,7 +76,64 @@ const MovementDetail = ({ movement, onBack, onQuizComplete, existingScore }: Mov
         </div>
       </section>
 
-      <section className="opacity-0 animate-fade-up" style={{ animationDelay: '450ms' }}>
+      {content.tattooTips && (
+        <section className="opacity-0 animate-fade-up mb-16" style={{ animationDelay: '400ms' }}>
+          <h2 className="font-display text-2xl text-gold-light mb-3 tracking-tight">
+            Tattoo Artist's Guide
+          </h2>
+          <p className="text-sm font-body text-foreground/60 leading-relaxed mb-8 max-w-prose" style={{ textWrap: 'pretty' as any }}>
+            {content.tattooTips.intro}
+          </p>
+
+          <div className="space-y-8">
+            <div>
+              <div className="flex items-center gap-2 mb-4">
+                <Palette className="w-4 h-4 text-gold" />
+                <h3 className="font-display text-base text-warm-bright tracking-tight">Design Tips</h3>
+              </div>
+              <ul className="space-y-4">
+                {content.tattooTips.design.map((tip, i) => (
+                  <li key={i} className="flex items-start gap-3 text-sm font-body text-foreground/75 leading-relaxed">
+                    <span className="text-xs font-body text-gold/60 shrink-0 mt-0.5 w-4">
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
+                    {tip}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <div className="flex items-center gap-2 mb-4">
+                <Wrench className="w-4 h-4 text-gold" />
+                <h3 className="font-display text-base text-warm-bright tracking-tight">Technical Tips</h3>
+              </div>
+              <ul className="space-y-4">
+                {content.tattooTips.technical.map((tip, i) => (
+                  <li key={i} className="flex items-start gap-3 text-sm font-body text-foreground/75 leading-relaxed">
+                    <span className="text-xs font-body text-gold/60 shrink-0 mt-0.5 w-4">
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
+                    {tip}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="bg-surface-elevated rounded-lg p-6 border border-primary/20">
+              <div className="flex items-center gap-2 mb-3">
+                <Sparkles className="w-4 h-4 text-gold" />
+                <h3 className="font-display text-base text-warm-bright tracking-tight">Modern Inspiration</h3>
+              </div>
+              <p className="text-sm font-body text-foreground/70 leading-relaxed" style={{ textWrap: 'pretty' as any }}>
+                {content.tattooTips.inspiration}
+              </p>
+            </div>
+          </div>
+        </section>
+      )}
+
+      <section className="opacity-0 animate-fade-up" style={{ animationDelay: '550ms' }}>
         <Quiz
           questions={content.quiz}
           movementName={movement.name}
