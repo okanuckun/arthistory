@@ -95,7 +95,7 @@ const Index = () => {
           <div className="h-px bg-border mb-2 opacity-0 animate-fade-in" style={{ animationDelay: '400ms' }} />
         </header>
 
-        <main className="max-w-3xl mx-auto px-6 pb-24">
+        <main className="max-w-3xl mx-auto px-4 sm:px-6 pb-24">
           <div className="relative">
             <div className="absolute left-[19px] top-0 bottom-0 w-px bg-border" />
             {artMovements.map((movement, i) => (
