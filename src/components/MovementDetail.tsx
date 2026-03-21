@@ -153,7 +153,7 @@ const MovementDetail = ({ movement, onBack, onQuizComplete, existingScore }: Mov
         </div>
       </div>
 
-      <section className="opacity-0 animate-fade-up mb-16" style={{ animationDelay: '150ms' }}>
+      <section className="opacity-0 animate-fade-up mb-16" style={{ animationDelay: '150ms' }} data-tour="detail-characteristics">
         <h2 className="font-display text-2xl text-gold-light mb-6 tracking-tight">
           {t('detail.characteristics')}
         </h2>
