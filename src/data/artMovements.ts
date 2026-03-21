@@ -21,7 +21,7 @@ export interface Artwork {
   title: string;
   artist: string;
   year: string;
-  type: 'painting' | 'sculpture' | 'architecture' | 'drawing' | 'fresco';
+  type: 'painting\' | \'sculpture\' | \'architecture\' | \'drawing\' | \'fresco';
   medium: string;
   location: string;
   imageUrl: string;
@@ -29,7 +29,7 @@ export interface Artwork {
 }
 
 export interface MovementOrigin {
-  type: 'reaction' | 'evolution' | 'parallel';
+  type: 'reaction\' | \'evolution\' | \'parallel';
   targetId: string;
   targetName: string;
   explanation: string;
@@ -51,7 +51,7 @@ export interface ArtMovement {
   name: string;
   period: string;
   colorPalette: string[];
-  status: 'completed' | 'active' | 'locked';
+  status: 'completed\' | \'active\' | \'locked';
   content?: MovementContent;
 }
 
@@ -132,7 +132,7 @@ Two technical inventions defined the era's visual language above all else: linea
           medium: 'Oil on poplar panel',
           location: 'Musée du Louvre, Paris',
           imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/402px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg',
-          description: 'The most recognized painting in the world. Leonardo's mastery of sfumato gives the figure an ethereal, atmospheric presence. The ambiguous smile and direct gaze have fascinated viewers for five centuries.',
+          description: 'The most recognized painting in the world. Leonardo\'s mastery of sfumato gives the figure an ethereal, atmospheric presence. The ambiguous smile and direct gaze have fascinated viewers for five centuries.',
         },
         {
           title: 'The Creation of Adam',
@@ -142,7 +142,7 @@ Two technical inventions defined the era's visual language above all else: linea
           medium: 'Fresco on plaster',
           location: 'Sistine Chapel, Vatican City',
           imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Michelangelo_-_Creation_of_Adam_%28cropped%29.jpg/1280px-Michelangelo_-_Creation_of_Adam_%28cropped%29.jpg',
-          description: 'The iconic image of God reaching toward Adam represents the pinnacle of Renaissance figure painting. The composition's tension between two outstretched hands — almost but not quite touching — is one of the most powerful gestures in art history.',
+          description: 'The iconic image of God reaching toward Adam represents the pinnacle of Renaissance figure painting. The composition\'s tension between two outstretched hands — almost but not quite touching — is one of the most powerful gestures in art history.',
         },
         {
           title: 'The Birth of Venus',
@@ -152,7 +152,7 @@ Two technical inventions defined the era's visual language above all else: linea
           medium: 'Tempera on canvas',
           location: 'Uffizi Gallery, Florence',
           imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Sandro_Botticelli_-_La_nascita_di_Venere_-_Google_Art_Project_-_edited.jpg/1280px-Sandro_Botticelli_-_La_nascita_di_Venere_-_Google_Art_Project_-_edited.jpg',
-          description: 'One of the first large-scale mythological paintings of the Renaissance. Botticelli's Venus embodies the Neoplatonic ideal of divine beauty — her elegant, elongated form rising from the sea in a swirl of wind, flowers, and drapery.',
+          description: 'One of the first large-scale mythological paintings of the Renaissance. Botticelli\'s Venus embodies the Neoplatonic ideal of divine beauty — her elegant, elongated form rising from the sea in a swirl of wind, flowers, and drapery.',
         },
         {
           title: 'The School of Athens',
@@ -162,7 +162,7 @@ Two technical inventions defined the era's visual language above all else: linea
           medium: 'Fresco',
           location: 'Apostolic Palace, Vatican City',
           imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/%22The_School_of_Athens%22_by_Raffaello_Sanzio_da_Urbino.jpg/1280px-%22The_School_of_Athens%22_by_Raffaello_Sanzio_da_Urbino.jpg',
-          description: 'Raphael's supreme achievement in composition. All the great philosophers of antiquity gather beneath a vast classical arch — Plato and Aristotle at center, surrounded by Socrates, Pythagoras, Euclid, and Diogenes. A visual encyclopedia of human knowledge.',
+          description: 'Raphael\'s supreme achievement in composition. All the great philosophers of antiquity gather beneath a vast classical arch — Plato and Aristotle at center, surrounded by Socrates, Pythagoras, Euclid, and Diogenes. A visual encyclopedia of human knowledge.',
         },
         {
           title: 'David',
@@ -170,7 +170,7 @@ Two technical inventions defined the era's visual language above all else: linea
           year: '1501 – 1504',
           type: 'sculpture',
           medium: 'White Carrara marble',
-          location: 'Galleria dell'Accademia, Florence',
+          location: 'Galleria dell\'Accademia, Florence',
           imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/%27David%27_by_Michelangelo_Fir_JBU002.jpg/480px-%27David%27_by_Michelangelo_Fir_JBU002.jpg',
           description: 'The definitive statement on the Renaissance ideal of the heroic human body. Michelangelo captured David in the moment before battle — coiled with tension, every muscle and vein rendered with anatomical precision. At 5.17 meters, it dominates any room it inhabits.',
         },
@@ -182,7 +182,7 @@ Two technical inventions defined the era's visual language above all else: linea
           medium: 'Tempera and oil on plaster',
           location: 'Santa Maria delle Grazie, Milan',
           imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/%C3%9Altima_Cena_-_Da_Vinci_5.jpg/1280px-%C3%9Altima_Cena_-_Da_Vinci_5.jpg',
-          description: 'Leonardo revolutionized narrative painting by freezing the precise moment Christ announces his betrayal. Each apostle's reaction is psychologically distinct. The architectural perspective draws the eye directly to Christ's face, making him the calm center of an emotional storm.',
+          description: 'Leonardo revolutionized narrative painting by freezing the precise moment Christ announces his betrayal. Each apostle\'s reaction is psychologically distinct. The architectural perspective draws the eye directly to Christ\'s face, making him the calm center of an emotional storm.',
         },
         {
           title: 'Primavera',
@@ -200,7 +200,7 @@ Two technical inventions defined the era's visual language above all else: linea
           year: 'c. 1490',
           type: 'drawing',
           medium: 'Pen, ink, and watercolor on paper',
-          location: 'Gallerie dell'Accademia, Venice',
+          location: 'Gallerie dell\'Accademia, Venice',
           imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Da_Vinci_Vitruve_Luc_Viatour.jpg/400px-Da_Vinci_Vitruve_Luc_Viatour.jpg',
           description: 'The ultimate Renaissance image of human proportion. Based on the writings of the Roman architect Vitruvius, Leonardo inscribed the ideal male figure within both a circle and a square — demonstrating the relationship between human geometry and the geometry of the cosmos.',
         },
@@ -212,17 +212,17 @@ Two technical inventions defined the era's visual language above all else: linea
           medium: 'Oil on oak panel',
           location: 'National Gallery, London',
           imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Van_Eyck_-_Arnolfini_Portrait.jpg/350px-Van_Eyck_-_Arnolfini_Portrait.jpg',
-          description: 'A landmark of Northern Renaissance painting. Van Eyck's mastery of oil paint created a surface of jewel-like detail — every texture from velvet to brass to fur rendered with breathtaking precision. The convex mirror in the background reflects the entire room, including two mysterious witnesses.',
+          description: 'A landmark of Northern Renaissance painting. Van Eyck\'s mastery of oil paint created a surface of jewel-like detail — every texture from velvet to brass to fur rendered with breathtaking precision. The convex mirror in the background reflects the entire room, including two mysterious witnesses.',
         },
         {
-          title: 'St. Peter's Basilica',
+          title: 'St. Peter\'s Basilica',
           artist: 'Bramante, Michelangelo, della Porta',
           year: '1506 – 1626',
           type: 'architecture',
           medium: 'Travertine marble, brick, concrete',
           location: 'Vatican City',
           imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/St_Peter%27s_Basilica%2C_view_from_Sant%27Angelo_Castle.jpg/1280px-St_Peter%27s_Basilica%2C_view_from_Sant%27Angelo_Castle.jpg',
-          description: 'The greatest architectural achievement of the Renaissance. Michelangelo's dome — designed when he was 72 — became the model for dome architecture worldwide. The basilica synthesizes a century of Renaissance architectural thought into a single overwhelming monument to human ambition and faith.',
+          description: 'The greatest architectural achievement of the Renaissance. Michelangelo\'s dome — designed when he was 72 — became the model for dome architecture worldwide. The basilica synthesizes a century of Renaissance architectural thought into a single overwhelming monument to human ambition and faith.',
         },
       ],
 
@@ -322,7 +322,7 @@ Two technical inventions defined the era's visual language above all else: linea
         type: 'reaction',
         targetId: 'renaissance',
         targetName: 'Renaissance',
-        explanation: 'The Baroque emerged as a deliberate rupture with Renaissance ideals of calm, balance, and rational harmony. Driven partly by the Catholic Church's Counter-Reformation — a campaign to reclaim souls lost to Protestantism through overwhelming emotional and sensory experience — Baroque artists abandoned the serene idealization of the Renaissance and replaced it with raw drama, intense chiaroscuro, dynamic movement, and psychological intensity. Where Renaissance sought to elevate, Baroque sought to overwhelm.',
+        explanation: 'The Baroque emerged as a deliberate rupture with Renaissance ideals of calm, balance, and rational harmony. Driven partly by the Catholic Church\'s Counter-Reformation — a campaign to reclaim souls lost to Protestantism through overwhelming emotional and sensory experience — Baroque artists abandoned the serene idealization of the Renaissance and replaced it with raw drama, intense chiaroscuro, dynamic movement, and psychological intensity. Where Renaissance sought to elevate, Baroque sought to overwhelm.',
       },
       summary: `The Baroque period — spanning roughly 1600 to 1750 — represents one of the most emotionally powerful chapters in Western art history. Born in Rome at the height of the Counter-Reformation, it spread rapidly across Catholic Europe and then into the Protestant north, adapting its visual language to each culture it encountered. At its core, the Baroque was an art of persuasion: designed to move viewers, to sweep them up in torrents of feeling, to make the spiritual tangible and the abstract visceral.
 
@@ -337,7 +337,7 @@ The Baroque also coincided with the Scientific Revolution, the Age of Exploratio
         'Dynamic movement — figures caught in motion, drapery swirling, compositions built on diagonal rather than vertical axes',
         'Emotional intensity — faces and gestures conveying ecstasy, anguish, terror, rapture, and grief with psychological directness',
         'Theatrical staging — scenes composed like frozen moments from a drama, inviting the viewer into the narrative',
-        'Illusionistic ceiling painting — trompe-l'oeil architecture and figures appearing to burst through the ceiling into heaven',
+        'Illusionistic ceiling painting — trompe-l\'oeil architecture and figures appearing to burst through the ceiling into heaven',
         'Counter-Reformation iconography — saints, martyrdoms, and ecstatic visions designed to inspire Catholic devotion',
         'Portraiture of power — monarchs and nobles portrayed with grandeur, authority, and symbolic props',
         'Genre painting (Dutch) — scenes of everyday domestic life elevated to the level of high art',
@@ -345,7 +345,7 @@ The Baroque also coincided with the Scientific Revolution, the Age of Exploratio
         'Architectural drama — curved facades, oval spaces, and theatrical interiors designed to create awe and disorientation',
         'Tactile realism — surfaces rendered with extraordinary attention to texture (skin, velvet, metal, water)',
         'Foreshortening mastery — extreme perspective effects, especially in ceiling frescoes and figure groups',
-        'Choral and orchestral parallels — visual counterpart to the era's great musical developments (Bach, Handel, Vivaldi)',
+        'Choral and orchestral parallels — visual counterpart to the era\'s great musical developments (Bach, Handel, Vivaldi)',
         'Expanded secular subjects — mythology, history painting, and portraiture gaining equal status alongside religious themes',
       ],
 
@@ -358,12 +358,12 @@ The Baroque also coincided with the Scientific Revolution, the Age of Exploratio
         {
           name: 'Gian Lorenzo Bernini',
           years: '1598 – 1680',
-          description: 'The supreme genius of Baroque sculpture and architecture, Bernini made marble behave like fabric, flesh, and cloud. His Apollo and Daphne captures the exact instant of metamorphosis — bark forming over living skin — with a virtuosity that seems to defy the nature of stone. His Ecstasy of Saint Teresa is simultaneously a theological statement and a psychological portrait of transcendent experience. As architect of St. Peter's Square, he created the greatest ceremonial urban space in the Western world. Bernini essentially defined what Rome looked like for three centuries, and his conception of sculpture as theatrical event changed the medium permanently.',
+          description: 'The supreme genius of Baroque sculpture and architecture, Bernini made marble behave like fabric, flesh, and cloud. His Apollo and Daphne captures the exact instant of metamorphosis — bark forming over living skin — with a virtuosity that seems to defy the nature of stone. His Ecstasy of Saint Teresa is simultaneously a theological statement and a psychological portrait of transcendent experience. As architect of St. Peter\'s Square, he created the greatest ceremonial urban space in the Western world. Bernini essentially defined what Rome looked like for three centuries, and his conception of sculpture as theatrical event changed the medium permanently.',
         },
         {
           name: 'Rembrandt van Rijn',
           years: '1606 – 1669',
-          description: 'The greatest Dutch master and arguably the most psychologically penetrating portraitist in Western art history. Rembrandt's use of light was unlike anyone before or since — warm, golden, emerging from undefined darkness, falling on faces with the gentleness of revelation. His late self-portraits, painted through financial ruin and personal loss, are among the most honest and moving images of human aging ever made. The Night Watch transformed group portraiture into dramatic narrative. His etchings — over 300 survive — demonstrate equal mastery in a completely different medium, with a freedom of line that anticipates Expressionism.',
+          description: 'The greatest Dutch master and arguably the most psychologically penetrating portraitist in Western art history. Rembrandt\'s use of light was unlike anyone before or since — warm, golden, emerging from undefined darkness, falling on faces with the gentleness of revelation. His late self-portraits, painted through financial ruin and personal loss, are among the most honest and moving images of human aging ever made. The Night Watch transformed group portraiture into dramatic narrative. His etchings — over 300 survive — demonstrate equal mastery in a completely different medium, with a freedom of line that anticipates Expressionism.',
         },
         {
           name: 'Peter Paul Rubens',
@@ -391,7 +391,7 @@ The Baroque also coincided with the Scientific Revolution, the Age of Exploratio
           medium: 'Oil on canvas',
           location: 'Contarelli Chapel, San Luigi dei Francesi, Rome',
           imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Caravaggio_-_The_Calling_of_Saint_Matthew.jpg/1280px-Caravaggio_-_The_Calling_of_Saint_Matthew.jpg',
-          description: 'A defining Baroque masterpiece. Christ enters a dark tavern, arm outstretched like God's in the Sistine Chapel, while Matthew — a tax collector mid-count — looks up in disbelief. The diagonal light cuts through darkness with the force of divine intervention.',
+          description: 'A defining Baroque masterpiece. Christ enters a dark tavern, arm outstretched like God\'s in the Sistine Chapel, while Matthew — a tax collector mid-count — looks up in disbelief. The diagonal light cuts through darkness with the force of divine intervention.',
         },
         {
           title: 'The Night Watch',
@@ -411,7 +411,7 @@ The Baroque also coincided with the Scientific Revolution, the Age of Exploratio
           medium: 'White marble, gilded bronze',
           location: 'Santa Maria della Vittoria, Rome',
           imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Ecstasy_of_Saint_Teresa_September_2015-2a.jpg/640px-Ecstasy_of_Saint_Teresa_September_2015-2a.jpg',
-          description: 'Bernini's supreme achievement in marble. Teresa floats on a cloud, pierced by a divine arrow, her face in a state of spiritual ecstasy. The impossibly soft drapery, the weightless cloud, and the gilded rays of divine light make this one of the most psychologically complex sculptures ever carved.',
+          description: 'Bernini\'s supreme achievement in marble. Teresa floats on a cloud, pierced by a divine arrow, her face in a state of spiritual ecstasy. The impossibly soft drapery, the weightless cloud, and the gilded rays of divine light make this one of the most psychologically complex sculptures ever carved.',
         },
         {
           title: 'Girl with a Pearl Earring',
@@ -421,7 +421,7 @@ The Baroque also coincided with the Scientific Revolution, the Age of Exploratio
           medium: 'Oil on canvas',
           location: 'Mauritshuis, The Hague',
           imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/1665_Girl_with_a_Pearl_Earring.jpg/800px-1665_Girl_with_a_Pearl_Earring.jpg',
-          description: 'Often called the "Mona Lisa of the North." An unknown young woman turns to glance over her shoulder, her gaze direct and arrestingly alive. The luminous pearl, the cool blue and yellow turban, and Vermeer's extraordinary rendering of light on skin make this one of the most recognizable portraits in history.',
+          description: 'Often called the "Mona Lisa of the North." An unknown young woman turns to glance over her shoulder, her gaze direct and arrestingly alive. The luminous pearl, the cool blue and yellow turban, and Vermeer\'s extraordinary rendering of light on skin make this one of the most recognizable portraits in history.',
         },
         {
           title: 'Las Meninas',
@@ -431,7 +431,7 @@ The Baroque also coincided with the Scientific Revolution, the Age of Exploratio
           medium: 'Oil on canvas',
           location: 'Museo del Prado, Madrid',
           imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Las_Meninas_01.jpg/800px-Las_Meninas_01.jpg',
-          description: 'Possibly the greatest painting in Western art. Velázquez depicts himself at work on a large canvas while the Infanta Margarita stands surrounded by her ladies-in-waiting. The viewer's position and the mirror in the background create a labyrinth of spatial and conceptual complexity that has fascinated painters and philosophers for centuries.',
+          description: 'Possibly the greatest painting in Western art. Velázquez depicts himself at work on a large canvas while the Infanta Margarita stands surrounded by her ladies-in-waiting. The viewer\'s position and the mirror in the background create a labyrinth of spatial and conceptual complexity that has fascinated painters and philosophers for centuries.',
         },
         {
           title: 'Judith Slaying Holofernes',
@@ -441,7 +441,7 @@ The Baroque also coincided with the Scientific Revolution, the Age of Exploratio
           medium: 'Oil on canvas',
           location: 'Uffizi Gallery, Florence',
           imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Artemisia_Gentileschi_-_Judith_Slaying_Holofernes_%28Uffizi%29.jpg/800px-Artemisia_Gentileschi_-_Judith_Slaying_Holofernes_%28Uffizi%29.jpg',
-          description: 'Artemisia Gentileschi's definitive masterpiece. Her Judith is not the delicate heroine of earlier depictions — she and her maidservant wrestle a massive general to the ground with fierce physical determination. The tenebrism, the crimson blood, and the women's expressions of concentrated effort make this one of the most viscerally powerful paintings of the Baroque.',
+          description: 'Artemisia Gentileschi\'s definitive masterpiece. Her Judith is not the delicate heroine of earlier depictions — she and her maidservant wrestle a massive general to the ground with fierce physical determination. The tenebrism, the crimson blood, and the women\'s expressions of concentrated effort make this one of the most viscerally powerful paintings of the Baroque.',
         },
         {
           title: 'The Descent from the Cross',
@@ -451,7 +451,7 @@ The Baroque also coincided with the Scientific Revolution, the Age of Exploratio
           medium: 'Oil on panel',
           location: 'Cathedral of Our Lady, Antwerp',
           imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/The_Descent_from_the_Cross_-_Rubens.jpg/640px-The_Descent_from_the_Cross_-_Rubens.jpg',
-          description: 'The central panel of Rubens's famous triptych. Christ's body — rendered with breathtaking anatomical mastery — is lowered from the cross in a cascade of white linen and human hands. The composition's diagonal energy and emotional intensity represent Flemish Baroque at its absolute peak.',
+          description: 'The central panel of Rubens\'s famous triptych. Christ\'s body — rendered with breathtaking anatomical mastery — is lowered from the cross in a cascade of white linen and human hands. The composition\'s diagonal energy and emotional intensity represent Flemish Baroque at its absolute peak.',
         },
         {
           title: 'Apollo and Daphne',
@@ -471,7 +471,7 @@ The Baroque also coincided with the Scientific Revolution, the Age of Exploratio
           medium: 'Oil on canvas',
           location: 'Kenwood House, London',
           imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Rembrandt_van_Rijn_-_Self-Portrait_with_Two_Circles_c1665-9.jpg/640px-Rembrandt_van_Rijn_-_Self-Portrait_with_Two_Circles_c1665-9.jpg',
-          description: 'One of Rembrandt's final self-portraits, painted in old age after financial ruin and personal loss. The aged face — painted with extraordinary freedom and psychological honesty — stares outward with an expression of deep, unsentimental self-knowledge. The mysterious circles in the background have never been fully explained.',
+          description: 'One of Rembrandt\'s final self-portraits, painted in old age after financial ruin and personal loss. The aged face — painted with extraordinary freedom and psychological honesty — stares outward with an expression of deep, unsentimental self-knowledge. The mysterious circles in the background have never been fully explained.',
         },
         {
           title: 'Palace of Versailles',
@@ -481,7 +481,7 @@ The Baroque also coincided with the Scientific Revolution, the Age of Exploratio
           medium: 'Stone, marble, gilded bronze',
           location: 'Versailles, France',
           imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Versailles_2008_05.jpg/1280px-Versailles_2008_05.jpg',
-          description: 'The ultimate expression of Baroque architecture as political power. Louis XIV's palace — with its Hall of Mirrors, formal gardens, and seemingly infinite facades — was designed to make every visitor feel the absolute supremacy of the French crown. It became the template for royal architecture across Europe for a century.',
+          description: 'The ultimate expression of Baroque architecture as political power. Louis XIV\'s palace — with its Hall of Mirrors, formal gardens, and seemingly infinite facades — was designed to make every visitor feel the absolute supremacy of the French crown. It became the template for royal architecture across Europe for a century.',
         },
       ],
 
@@ -489,23 +489,23 @@ The Baroque also coincided with the Scientific Revolution, the Age of Exploratio
         intro: `The Baroque is perhaps the richest single source for tattooing in all of Western art history. Its preoccupations — drama, light emerging from darkness, the human body under extreme emotional and physical stress, the texture of skin and fabric rendered with obsessive realism — map directly onto the challenges and opportunities of tattooing. Every serious tattoo artist who works in black-and-grey realism, neo-traditional portraiture, or religious iconography is working in the shadow of the Baroque whether they know it or not.`,
         design: [
           'Build compositions on diagonals: Renaissance used stable triangles and vertical axes; Baroque deliberately destabilized these with diagonal lines of force. A figure reaching upward at an angle, a beam of light cutting across a dark background — diagonal composition creates dynamism and urgency that reads powerfully on skin.',
-          'Use dramatic cropping: Caravaggio frequently cut figures at unexpected angles — a hand emerging from darkness, a face half in shadow. Tight, dramatic cropping on a tattoo creates the same cinematic tension and forces the viewer's eye to complete what it cannot see.',
+          'Use dramatic cropping: Caravaggio frequently cut figures at unexpected angles — a hand emerging from darkness, a face half in shadow. Tight, dramatic cropping on a tattoo creates the same cinematic tension and forces the viewer\'s eye to complete what it cannot see.',
           'Design with a single light source: Tenebrism means one light, one shadow, no ambient fill. Pick your imaginary light source before you begin and maintain it ruthlessly throughout the piece. Every surface, every fold of fabric, every plane of the face should be consistent with that single source.',
           'Reference martyrdom and ecstasy imagery: Saints Sebastian, Bartholomew, and Teresa offer iconic compositional archetypes — the upward-gazing face, the vulnerable exposed body, the contrast between violence and transcendence — that translate powerfully into tattoo imagery with universal emotional resonance.',
           'Exploit the contrast between flesh and darkness: Baroque painters built their compositions around the emergence of skin from shadow. In tattooing, this means treating the background not as empty space but as active darkness that the figure pushes against. The darkest areas of a tattoo should feel like consuming shadow, not just fill.',
           'Use fabric as compositional rhythm: Rubens and Bernini were obsessed with drapery — the way cloth twists, bunches, and flows creates rhythm and movement throughout a composition. Incorporating fabric, clothing, or robes into figurative tattoos adds visual complexity and allows the eye to travel through the piece.',
-          'Study Bernini for three-dimensional tattooing: His sculptures are essentially studies in how form reads from every angle. For tattoos that wrap around limbs or the body, think about how the design behaves in three dimensions — Bernini's compositional principles are directly applicable.',
-          'Mine the Dutch Golden Age for still life and portrait tattoos: Vanitas still lifes — skulls alongside flowers, hourglasses, musical instruments — offer iconographically rich imagery for meaningful tattoos. Vermeer's interior scenes offer intimate compositional models for sleeve backgrounds.',
+          'Study Bernini for three-dimensional tattooing: His sculptures are essentially studies in how form reads from every angle. For tattoos that wrap around limbs or the body, think about how the design behaves in three dimensions — Bernini\'s compositional principles are directly applicable.',
+          'Mine the Dutch Golden Age for still life and portrait tattoos: Vanitas still lifes — skulls alongside flowers, hourglasses, musical instruments — offer iconographically rich imagery for meaningful tattoos. Vermeer\'s interior scenes offer intimate compositional models for sleeve backgrounds.',
         ],
         technical: [
-          'Master the transition from absolute black to white: Baroque tenebrism demands a full value range. In tattooing, this means being willing to pack true blacks — not grey — into shadow areas, and reserving clean skin or white ink for the brightest highlights. The contrast between these extremes is the source of the style's power.',
+          'Master the transition from absolute black to white: Baroque tenebrism demands a full value range. In tattooing, this means being willing to pack true blacks — not grey — into shadow areas, and reserving clean skin or white ink for the brightest highlights. The contrast between these extremes is the source of the style\'s power.',
           'Study Caravaggio specifically for light logic: His light is not naturalistic — it is theatrical, focused, almost interrogatory. Understanding how he constructed his light sources (always from above, often from the left, always raking across form rather than flooding it) will transform how you think about shadow placement.',
           'Layer skin tones for Baroque warmth: Baroque painters built warm, luminous skin by layering warm reds and yellows under cooler surface glazes. In color tattooing, lay in warm undertones first, then cool the surface — this replicates the subsurface warmth that makes Baroque flesh feel alive.',
           'Use scattered highlights sparingly: In tenebrism, highlights are rare and precious — a rim of light on a cheekbone, the gleam of an eye, the shine on a lip. Resist the temptation to over-highlight; reserve your brightest points for the single most important area of the face or figure.',
-          'Render fabric with structural logic: When tattooing robes, cloaks, or drapery in the Baroque style, understand the underlying form the fabric covers. Folds follow gravity and the shape beneath — cloth over a raised knee creates different folds than cloth hanging freely. Study Rubens's drapery drawings for this logic.',
-          'Exploit the needle's capacity for texture: The Baroque obsession with tactile surfaces — velvet, fur, metal armor, wet skin — translates directly to tattooing. Different needle configurations and techniques (mag shaders, liners, stippling) can create distinct textural qualities. Build a vocabulary of textures and deploy them consistently.',
-          'Don't fear asymmetry: Baroque compositions are rarely symmetrical — they are balanced through tension rather than mirroring. A heavy dark mass on one side is counterbalanced by a bright figure on the other. Apply this principle to sleeve layouts and back pieces for a more dynamic result than simple bilateral symmetry.',
-          'Study Rembrandt's etchings for line quality: His etched lines range from razor-fine to deeply bitten, building form through crosshatch, parallel line, and open space with extraordinary control. These techniques translate directly to black-and-grey shading approaches and to the illustrative tattoo style.',
+          'Render fabric with structural logic: When tattooing robes, cloaks, or drapery in the Baroque style, understand the underlying form the fabric covers. Folds follow gravity and the shape beneath — cloth over a raised knee creates different folds than cloth hanging freely. Study Rubens\'s drapery drawings for this logic.',
+          'Exploit the needle\'s capacity for texture: The Baroque obsession with tactile surfaces — velvet, fur, metal armor, wet skin — translates directly to tattooing. Different needle configurations and techniques (mag shaders, liners, stippling) can create distinct textural qualities. Build a vocabulary of textures and deploy them consistently.',
+          'Don\'t fear asymmetry: Baroque compositions are rarely symmetrical — they are balanced through tension rather than mirroring. A heavy dark mass on one side is counterbalanced by a bright figure on the other. Apply this principle to sleeve layouts and back pieces for a more dynamic result than simple bilateral symmetry.',
+          'Study Rembrandt\'s etchings for line quality: His etched lines range from razor-fine to deeply bitten, building form through crosshatch, parallel line, and open space with extraordinary control. These techniques translate directly to black-and-grey shading approaches and to the illustrative tattoo style.',
         ],
         inspiration: `Contemporary tattooing has a deep and largely unacknowledged debt to the Baroque. The entire black-and-grey realism tradition — with its tenebristic light, its dramatic portraits, its religious iconography — is essentially Baroque painting translated onto skin. Artists like Robert Hernandez, Nikko Hurtado, and Paul Booth all work in a visual language that traces directly to Caravaggio and Rembrandt. For sleeve concepts, consider organizing a Baroque sleeve around a single dramatic light source — as if a lantern illuminates the entire composition from one end of the arm. Religious scenes, martyrdom imagery, and Vanitas still lifes offer powerful thematic material. For black-and-grey portraiture, study Rembrandt's late self-portraits: the way he built a face from darkness using the minimum number of deliberate marks is the most advanced lesson in tonal economy available to any artist working in a single pigment.`,
       },
@@ -546,13 +546,13 @@ The Baroque also coincided with the Scientific Revolution, the Age of Exploratio
           options: [
             'She invented tenebrism',
             'She was one of the first women to achieve recognition as a major painter',
-            'She designed St. Peter's Square',
+            'She designed St. Peter\'s Square',
             'She founded the Dutch Golden Age tradition',
           ],
           correctIndex: 1,
         },
         {
-          question: 'Rembrandt's The Night Watch was revolutionary because it transformed what type of traditional painting?',
+          question: 'Rembrandt\'s The Night Watch was revolutionary because it transformed what type of traditional painting?',
           options: ['Landscape painting', 'Still life painting', 'Group portrait painting', 'Religious altarpiece painting'],
           correctIndex: 2,
         },
@@ -586,7 +586,7 @@ The Baroque also coincided with the Scientific Revolution, the Age of Exploratio
         type: 'reaction',
         targetId: 'baroque',
         targetName: 'Baroque',
-        explanation: 'Rococo was a direct reaction to the grandeur, weight, and religious solemnity of the Baroque. As the French court moved from Versailles back to Paris after Louis XIV's death in 1715, aristocratic taste shifted from overwhelming public spectacle toward intimate, playful, and sensually delightful spaces. Where Baroque was dark, Rococo was pastel; where Baroque was monumental and morally serious, Rococo was small-scale, witty, and devoted to pleasure. It was the art of a ruling class that wanted to enjoy its privilege rather than justify it.',
+        explanation: 'Rococo was a direct reaction to the grandeur, weight, and religious solemnity of the Baroque. As the French court moved from Versailles back to Paris after Louis XIV\'s death in 1715, aristocratic taste shifted from overwhelming public spectacle toward intimate, playful, and sensually delightful spaces. Where Baroque was dark, Rococo was pastel; where Baroque was monumental and morally serious, Rococo was small-scale, witty, and devoted to pleasure. It was the art of a ruling class that wanted to enjoy its privilege rather than justify it.',
       },
       summary: `Rococo — from the French "rocaille," meaning shell-work or pebble decoration — was the dominant visual style of European aristocratic culture from approximately 1720 to 1780. Originating in the Parisian salons and private apartments of the French nobility following the death of Louis XIV, it represented a decisive turn away from public grandeur toward private pleasure: an art of intimacy, elegance, wit, and unabashed sensuality.
 
@@ -604,10 +604,10 @@ Rococo eventually collapsed under the weight of its own frivolity. By the 1760s,
         'Erotic and amorous subjects — flirtation, seduction, and playful love as legitimate and dominant artistic themes',
         'Total interior design — painting, sculpture, furniture, and decorative arts unified into integrated visual environments',
         'Porcelain and the decorative arts elevated to fine art status — Meissen, Sèvres, Capodimonte',
-        'Theatrical and operatic subjects — commedia dell'arte figures, masked balls, theatrical scenes',
+        'Theatrical and operatic subjects — commedia dell\'arte figures, masked balls, theatrical scenes',
         'Chinese and Turkish exoticism — chinoiserie and turquerie as fashionable decorative vocabularies',
         'Light, feathery brushwork — visible, delicate, almost caressing — replacing Baroque solidity',
-        'Curved architecture — oval rooms, shell-encrusted grottoes, serpentine facades rejecting Baroque's straight axes',
+        'Curved architecture — oval rooms, shell-encrusted grottoes, serpentine facades rejecting Baroque\'s straight axes',
         'Soft, diffused lighting — no dramatic tenebrism; light seems to come from everywhere and nowhere, bathing scenes in a gentle glow',
         'Mythological fantasy — Venus, Cupid, and the Graces in idealized pastoral settings',
         'Self-conscious artifice — Rococo acknowledged and celebrated its own theatrical unreality',
@@ -617,22 +617,22 @@ Rococo eventually collapsed under the weight of its own frivolity. By the 1760s,
         {
           name: 'Jean-Antoine Watteau',
           years: '1684 – 1721',
-          description: 'The inventor and greatest practitioner of the fête galante, Watteau created an entirely new genre of painting — elegantly dressed figures in dreamlike garden settings, suffused with a melancholy that contradicts their apparent pleasures. He was accepted into the French Academy with a new category invented specifically for his work. Despite dying of tuberculosis at 36, he produced paintings of extraordinary poetic delicacy, particularly his late masterpiece Gersaint's Shopsign — a full-scale painting depicting his art dealer's shop, painted reportedly in just eight days, combining the social observation of Vermeer with the atmospheric grace that only Watteau possessed.',
+          description: 'The inventor and greatest practitioner of the fête galante, Watteau created an entirely new genre of painting — elegantly dressed figures in dreamlike garden settings, suffused with a melancholy that contradicts their apparent pleasures. He was accepted into the French Academy with a new category invented specifically for his work. Despite dying of tuberculosis at 36, he produced paintings of extraordinary poetic delicacy, particularly his late masterpiece Gersaint\'s Shopsign — a full-scale painting depicting his art dealer\'s shop, painted reportedly in just eight days, combining the social observation of Vermeer with the atmospheric grace that only Watteau possessed.',
         },
         {
           name: 'François Boucher',
           years: '1703 – 1770',
-          description: 'The official painter of Rococo pleasure, Boucher was the favorite artist of Madame de Pompadour and the dominant figure of the French court's visual culture for three decades. His mythological scenes — Venus reclining, nymphs bathing, Cupid disarmed — are painted with a technical brilliance that is easy to overlook because the subjects seem so decorative. His understanding of how to render soft, warm flesh against silks and cloud-like linens was unparalleled. Diderot hated him ("this man has everything except truth") but Renoir and Fragonard adored him.',
+          description: 'The official painter of Rococo pleasure, Boucher was the favorite artist of Madame de Pompadour and the dominant figure of the French court\'s visual culture for three decades. His mythological scenes — Venus reclining, nymphs bathing, Cupid disarmed — are painted with a technical brilliance that is easy to overlook because the subjects seem so decorative. His understanding of how to render soft, warm flesh against silks and cloud-like linens was unparalleled. Diderot hated him ("this man has everything except truth") but Renoir and Fragonard adored him.',
         },
         {
           name: 'Jean-Honoré Fragonard',
           years: '1732 – 1806',
-          description: 'The last great master of Rococo and one of the most technically brilliant painters of the 18th century. The Swing — a young woman on a garden swing, her pink dress billowing, a young man watching from below — distills Rococo's entire sensibility into a single image. But Fragonard was also capable of extraordinary seriousness: his decorative panels for Madame du Barry and the erotic series now in the Frick Collection demonstrate a command of narrative, atmosphere, and brushwork that would place him among the greats of any era. He survived the Revolution by reinventing himself and died almost forgotten — one of art history's crueler ironies.',
+          description: 'The last great master of Rococo and one of the most technically brilliant painters of the 18th century. The Swing — a young woman on a garden swing, her pink dress billowing, a young man watching from below — distills Rococo\'s entire sensibility into a single image. But Fragonard was also capable of extraordinary seriousness: his decorative panels for Madame du Barry and the erotic series now in the Frick Collection demonstrate a command of narrative, atmosphere, and brushwork that would place him among the greats of any era. He survived the Revolution by reinventing himself and died almost forgotten — one of art history\'s crueler ironies.',
         },
         {
           name: 'Giovanni Battista Tiepolo',
           years: '1696 – 1770',
-          description: 'The last great master of the Italian fresco tradition and the supreme decorator of the 18th century. Working across Venice, Würzburg, and Madrid, Tiepolo filled ceilings with visions of impossible lightness — heavens populated by gods, angels, and allegorical figures that seem to float effortlessly in an infinity of blue air. Where Baroque ceiling painting was overwhelming, Tiepolo's was exhilarating. His color — cool silvers, pale blues, warm creams — transformed the tradition he inherited into something entirely his own. The Würzburg Residence staircase ceiling is perhaps the greatest single Rococo commission ever executed.',
+          description: 'The last great master of the Italian fresco tradition and the supreme decorator of the 18th century. Working across Venice, Würzburg, and Madrid, Tiepolo filled ceilings with visions of impossible lightness — heavens populated by gods, angels, and allegorical figures that seem to float effortlessly in an infinity of blue air. Where Baroque ceiling painting was overwhelming, Tiepolo\'s was exhilarating. His color — cool silvers, pale blues, warm creams — transformed the tradition he inherited into something entirely his own. The Würzburg Residence staircase ceiling is perhaps the greatest single Rococo commission ever executed.',
         },
         {
           name: 'Jean-Baptiste-Siméon Chardin',
@@ -655,7 +655,7 @@ Rococo eventually collapsed under the weight of its own frivolity. By the 1760s,
           medium: 'Oil on canvas',
           location: 'The Wallace Collection, London',
           imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Fragonard%2C_The_Swing.jpg/800px-Fragonard%2C_The_Swing.jpg',
-          description: 'The definitive Rococo image. A young woman swings in a garden while a hidden admirer watches from below. Her pink dress, the flying slipper, the garden's theatrical artifice — every element distills the period's sensibility of playful, elegant pleasure into a single perfect composition.',
+          description: 'The definitive Rococo image. A young woman swings in a garden while a hidden admirer watches from below. Her pink dress, the flying slipper, the garden\'s theatrical artifice — every element distills the period\'s sensibility of playful, elegant pleasure into a single perfect composition.',
         },
         {
           title: 'Pilgrimage to Cythera',
@@ -665,7 +665,7 @@ Rococo eventually collapsed under the weight of its own frivolity. By the 1760s,
           medium: 'Oil on canvas',
           location: 'Musée du Louvre, Paris',
           imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/L%27Embarquement_pour_Cythere%2C_by_Antoine_Watteau%2C_from_C2RMF_retouched.jpg/1280px-L%27Embarquement_pour_Cythere%2C_by_Antoine_Watteau%2C_from_C2RMF_retouched.jpg',
-          description: 'The painting that defined the fête galante genre and earned Watteau his place in the French Academy. Elegant couples prepare to depart — or have just arrived — on the island of love. The painting's genius lies in its ambiguity: are they coming or going? The melancholy undertone beneath the gaiety is Watteau's personal signature.',
+          description: 'The painting that defined the fête galante genre and earned Watteau his place in the French Academy. Elegant couples prepare to depart — or have just arrived — on the island of love. The painting\'s genius lies in its ambiguity: are they coming or going? The melancholy undertone beneath the gaiety is Watteau\'s personal signature.',
         },
         {
           title: 'The Birth of Venus (Boucher)',
@@ -675,7 +675,7 @@ Rococo eventually collapsed under the weight of its own frivolity. By the 1760s,
           medium: 'Oil on canvas',
           location: 'National Museum of Sweden, Stockholm',
           imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Fran%C3%A7ois_Boucher_-_The_Birth_of_Venus_-_WGA02717.jpg/800px-Fran%C3%A7ois_Boucher_-_The_Birth_of_Venus_-_WGA02717.jpg',
-          description: 'Boucher's Venus is the Rococo's ideal of feminine beauty — soft, warm, utterly confident in her own desirability. The pearlescent skin, cascading draperies, and jubilant attendant figures create a visual celebration of sensual pleasure that represents the period at its most unabashedly hedonistic.',
+          description: 'Boucher\'s Venus is the Rococo\'s ideal of feminine beauty — soft, warm, utterly confident in her own desirability. The pearlescent skin, cascading draperies, and jubilant attendant figures create a visual celebration of sensual pleasure that represents the period at its most unabashedly hedonistic.',
         },
         {
           title: 'Würzburg Residence Ceiling Fresco',
@@ -695,7 +695,7 @@ Rococo eventually collapsed under the weight of its own frivolity. By the 1760s,
           medium: 'Oil on canvas',
           location: 'National Gallery, London',
           imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Gainsborough_mrsmrAndrews.jpg/1280px-Gainsborough_mrsmrAndrews.jpg',
-          description: 'A revolutionary rethinking of the society portrait, combining full-length figures with a genuinely observed Suffolk landscape. The Andrews stand before their estate with proprietorial ease. Gainsborough's feathery handling of the foliage and sky marks him as one of the great painters of atmosphere in any era.',
+          description: 'A revolutionary rethinking of the society portrait, combining full-length figures with a genuinely observed Suffolk landscape. The Andrews stand before their estate with proprietorial ease. Gainsborough\'s feathery handling of the foliage and sky marks him as one of the great painters of atmosphere in any era.',
         },
         {
           title: 'The Joys of Motherhood',
@@ -705,7 +705,7 @@ Rococo eventually collapsed under the weight of its own frivolity. By the 1760s,
           medium: 'Oil on canvas',
           location: 'Musée du Louvre, Paris',
           imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Fran%C3%A7ois_Boucher_-_La_toilette_de_V%C3%A9nus_-_WGA02721.jpg/640px-Fran%C3%A7ois_Boucher_-_La_toilette_de_V%C3%A9nus_-_WGA02721.jpg',
-          description: 'A masterwork of Rococo mythological painting. Venus at her toilet, surrounded by putti and the instruments of beauty, embodies the period's conviction that the cultivation of beauty is itself a meaningful activity. Boucher's rendering of silk, pearls, and luminous skin is virtuoso painting by any standard.',
+          description: 'A masterwork of Rococo mythological painting. Venus at her toilet, surrounded by putti and the instruments of beauty, embodies the period\'s conviction that the cultivation of beauty is itself a meaningful activity. Boucher\'s rendering of silk, pearls, and luminous skin is virtuoso painting by any standard.',
         },
         {
           title: 'The Rape of Europa',
@@ -725,7 +725,7 @@ Rococo eventually collapsed under the weight of its own frivolity. By the 1760s,
           medium: 'Oil on canvas',
           location: 'Metropolitan Museum of Art, New York',
           imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Jean-Baptiste_Sim%C3%A9on_Chardin_-_Soap_Bubbles.jpg/640px-Jean-Baptiste_Sim%C3%A9on_Chardin_-_Soap_Bubbles.jpg',
-          description: 'Chardin's quietly radical counter-vision to Rococo opulence. A boy blows a soap bubble — a traditional vanitas symbol of life's fragility — with absorbed concentration. The painting's domestic simplicity and genuine psychological observation stand apart from the period's prevailing taste for fantasy.',
+          description: 'Chardin\'s quietly radical counter-vision to Rococo opulence. A boy blows a soap bubble — a traditional vanitas symbol of life\'s fragility — with absorbed concentration. The painting\'s domestic simplicity and genuine psychological observation stand apart from the period\'s prevailing taste for fantasy.',
         },
         {
           title: 'Amalienburg Pavilion Interior',
@@ -745,7 +745,7 @@ Rococo eventually collapsed under the weight of its own frivolity. By the 1760s,
           medium: 'Oil on canvas',
           location: 'Musée du Louvre, Paris',
           imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Boucher_-_Diana_After_the_Hunt.jpg/800px-Boucher_-_Diana_After_the_Hunt.jpg',
-          description: 'One of Boucher's most celebrated mythological paintings. Diana and a nymph rest after hunting — their porcelain-white skin gleaming against the warm landscape. The painting's frank celebration of feminine beauty, rendered with extraordinary technical refinement, epitomizes Rococo's conviction that beauty itself is a sufficient subject for art.',
+          description: 'One of Boucher\'s most celebrated mythological paintings. Diana and a nymph rest after hunting — their porcelain-white skin gleaming against the warm landscape. The painting\'s frank celebration of feminine beauty, rendered with extraordinary technical refinement, epitomizes Rococo\'s conviction that beauty itself is a sufficient subject for art.',
         },
       ],
 
@@ -756,13 +756,13 @@ Rococo eventually collapsed under the weight of its own frivolity. By the 1760s,
           'Use asymmetry as a design principle: Rococo frames, cartouches, and decorative panels are almost never symmetrical. One side grows in a different direction from the other, creating visual interest through imbalance. Apply this to ornamental tattoo borders, frames, and filler elements for a more organic, sophisticated result.',
           'Incorporate botanical elements with precision: Rococo decoration is saturated with roses, garlands, ribbons, and garden flowers — rendered with delicate specificity rather than generic stylization. For fine-line botanical work, study Rococo engravings and textile designs for compositional ideas that are already designed to wrap around and fill complex shapes.',
           'Mine chinoiserie for design inspiration: The Rococo fascination with Chinese motifs — pagodas, birds, flowering branches, figures in exotic landscapes — produced a rich visual language that blends Eastern and Western sensibilities. These elements offer fresh compositional options for ornamental tattooing that avoid clichéd Western iconography.',
-          'Design intimate narrative scenes for inner arm and thigh placements: Rococo's small-scale, domestic, and intimate subjects — lovers in gardens, women at their toilette, musicians in conversation — are ideally scaled for the intimate body placements that fine-line portraiture requires. Study Watteau's drawings specifically for figural scale and gesture.',
+          'Design intimate narrative scenes for inner arm and thigh placements: Rococo\'s small-scale, domestic, and intimate subjects — lovers in gardens, women at their toilette, musicians in conversation — are ideally scaled for the intimate body placements that fine-line portraiture requires. Study Watteau\'s drawings specifically for figural scale and gesture.',
           'Use cartouches and frames as active design elements: Rococo cartouches — the ornate frames around inscriptions, mirrors, and panels — are themselves beautifully designed objects. Incorporating an elegant cartouche frame around a fine-line portrait or botanical scene elevates the whole composition and gives it a period elegance.',
           'Consider the palette for color work: Rococo pastels — blush rose, sage green, powder blue, champagne, lavender — are not simply diluted versions of stronger colors. They are a coherent aesthetic system. For color tattoos drawing on this tradition, resist the urge to punch up the saturation; the muted, almost powdery quality is essential to the aesthetic.',
-          'Study Fragonard's brushwork for loose figurative style: His feathery, almost impressionistic brushwork dissolves form at the edges while maintaining clarity at the focal center. This approach translates to a loose, gestural fine-line figurative style that feels fresh and non-literal.',
+          'Study Fragonard\'s brushwork for loose figurative style: His feathery, almost impressionistic brushwork dissolves form at the edges while maintaining clarity at the focal center. This approach translates to a loose, gestural fine-line figurative style that feels fresh and non-literal.',
         ],
         technical: [
-          'Achieve pastel gradients through layering, not dilution: Rococo's soft palette comes from the careful layering of translucent color, not from simply adding white. In color tattooing, build pastel areas through thin, repeated passes — this creates a depth and luminosity that flat diluted color cannot achieve.',
+          'Achieve pastel gradients through layering, not dilution: Rococo\'s soft palette comes from the careful layering of translucent color, not from simply adding white. In color tattooing, build pastel areas through thin, repeated passes — this creates a depth and luminosity that flat diluted color cannot achieve.',
           'Prioritize line quality for ornamental work: Rococo decorative art is fundamentally linear — the grace of a cartouche depends entirely on the quality of its curves. In fine-line ornamental tattooing, invest in perfect line execution. A slightly wavering curve in a Rococo-inspired frame immediately destroys the aesthetic.',
           'Understand negative space as a design element: Rococo interiors used the space between ornamental elements as carefully as the elements themselves — the "breathing room" between curves and motifs is what gives the style its airiness. Do not fill every corner of an ornamental tattoo; let the skin show.',
           'Study how Rococo handled transitions between decorative and figurative elements: In integrated Rococo panels, figures dissolve into ornament and ornament grows into figures without abrupt transitions. This skill — blending figurative and decorative elements seamlessly — is one of the most valuable in large-scale tattooing.',
@@ -804,14 +804,14 @@ Rococo eventually collapsed under the weight of its own frivolity. By the 1760s,
           question: 'What characteristic distinguishes Rococo lighting from Baroque lighting?',
           options: [
             'Rococo used tenebrism while Baroque used soft light',
-            'Rococo used soft, diffused light from all directions rather than Baroque's dramatic single light source',
+            'Rococo used soft, diffused light from all directions rather than Baroque\'s dramatic single light source',
             'Rococo used candlelight while Baroque used daylight',
             'There is no meaningful difference in their approaches to light',
           ],
           correctIndex: 1,
         },
         {
-          question: 'Which Rococo artist represented a counter-current to the period's fantasy, painting ordinary domestic subjects with quiet gravity?',
+          question: 'Which Rococo artist represented a counter-current to the period\'s fantasy, painting ordinary domestic subjects with quiet gravity?',
           options: ['Boucher', 'Fragonard', 'Tiepolo', 'Chardin'],
           correctIndex: 3,
         },
@@ -826,8 +826,8 @@ Rococo eventually collapsed under the weight of its own frivolity. By the 1760s,
           correctIndex: 1,
         },
         {
-          question: 'Giovanni Battista Tiepolo's most famous commission was the ceiling fresco of which building?',
-          options: ['Versailles Palace', 'The Louvre', 'Würzburg Residence', 'St. Peter's Basilica'],
+          question: 'Giovanni Battista Tiepolo\'s most famous commission was the ceiling fresco of which building?',
+          options: ['Versailles Palace', 'The Louvre', 'Würzburg Residence', 'St. Peter\'s Basilica'],
           correctIndex: 2,
         },
         {
@@ -855,7 +855,7 @@ Rococo eventually collapsed under the weight of its own frivolity. By the 1760s,
         type: 'reaction',
         targetId: 'rococo',
         targetName: 'Rococo',
-        explanation: 'Neoclassicism was a direct and deliberate rejection of Rococo's frivolity, moral emptiness, and decorative excess. Fueled by Enlightenment philosophy, the rediscovery of Pompeii and Herculaneum (excavated from 1738), and a new moral seriousness in political thought that would culminate in the French and American Revolutions, Neoclassicism demanded an art of civic virtue, rational clarity, and historical gravitas. Where Rococo was curved, soft, and private, Neoclassicism was angular, austere, and public — an art that aspired to teach rather than merely please.',
+        explanation: 'Neoclassicism was a direct and deliberate rejection of Rococo\'s frivolity, moral emptiness, and decorative excess. Fueled by Enlightenment philosophy, the rediscovery of Pompeii and Herculaneum (excavated from 1738), and a new moral seriousness in political thought that would culminate in the French and American Revolutions, Neoclassicism demanded an art of civic virtue, rational clarity, and historical gravitas. Where Rococo was curved, soft, and private, Neoclassicism was angular, austere, and public — an art that aspired to teach rather than merely please.',
       },
       summary: `Neoclassicism — the revival and reinterpretation of ancient Greek and Roman art — emerged in the mid-18th century as one of Western civilization's most self-conscious artistic programs. It was not merely a stylistic preference but a moral and political manifesto: a conviction that the arts could — and should — teach citizens the virtues of the ancient republics: stoic self-sacrifice, civic duty, rational order, and heroic resolve. In an age when revolutions were being planned in Paris and Philadelphia, Neoclassical art provided the visual language of republican virtue.
 
@@ -878,7 +878,7 @@ Neoclassicism was deeply connected to politics in a way few art movements have b
         'The Grand Tour as artistic education — young aristocrats traveling to Rome to study ancient monuments and Renaissance masters',
         'Engraving and print culture — Neoclassical images disseminated across Europe through high-quality reproductive engravings',
         'Moral subject matter — painting as a vehicle for civic education rather than sensory pleasure',
-        'Winckelmann's "noble simplicity and quiet grandeur" as the explicit aesthetic ideal',
+        'Winckelmann\'s "noble simplicity and quiet grandeur" as the explicit aesthetic ideal',
         'Rejection of color as morally suspect — line and form privileged over color, which was associated with feminine Rococo sensuality',
       ],
 
@@ -886,17 +886,17 @@ Neoclassicism was deeply connected to politics in a way few art movements have b
         {
           name: 'Jacques-Louis David',
           years: '1748 – 1825',
-          description: 'The supreme painter of Neoclassicism and one of the most politically engaged artists in history. His Oath of the Horatii arrived in Paris in 1785 — four years before the Revolution — and was immediately read as a manifesto of republican sacrifice over private sentiment. He became the official painter of the French Revolution, organizing its public ceremonies and painting its martyrs. Under Napoleon, he became the regime's visual architect, transforming the General into a Roman emperor across a series of monumental history paintings. His portraits — cold, precise, psychologically penetrating — are as compelling as his history paintings. He died in Brussels exile, never allowed to return to France.',
+          description: 'The supreme painter of Neoclassicism and one of the most politically engaged artists in history. His Oath of the Horatii arrived in Paris in 1785 — four years before the Revolution — and was immediately read as a manifesto of republican sacrifice over private sentiment. He became the official painter of the French Revolution, organizing its public ceremonies and painting its martyrs. Under Napoleon, he became the regime\'s visual architect, transforming the General into a Roman emperor across a series of monumental history paintings. His portraits — cold, precise, psychologically penetrating — are as compelling as his history paintings. He died in Brussels exile, never allowed to return to France.',
         },
         {
           name: 'Antonio Canova',
           years: '1757 – 1822',
-          description: 'The greatest sculptor of Neoclassicism and arguably the most technically accomplished marble worker since Bernini — though in almost every other way his opposite. Where Bernini's marble was warm, dynamic, and emotionally turbulent, Canova's was cool, still, and ideally perfect. His figures — Psyche Revived by Cupid's Kiss, the Three Graces, his reclining portraits of Napoleon's family — achieve a smooth, polished beauty that seems to transcend material reality. He was, in Stendhal's words, "the man who makes you feel the most acutely that marble can express everything." His international reputation was unprecedented — even Britain's enemies admired him.',
+          description: 'The greatest sculptor of Neoclassicism and arguably the most technically accomplished marble worker since Bernini — though in almost every other way his opposite. Where Bernini\'s marble was warm, dynamic, and emotionally turbulent, Canova\'s was cool, still, and ideally perfect. His figures — Psyche Revived by Cupid\'s Kiss, the Three Graces, his reclining portraits of Napoleon\'s family — achieve a smooth, polished beauty that seems to transcend material reality. He was, in Stendhal\'s words, "the man who makes you feel the most acutely that marble can express everything." His international reputation was unprecedented — even Britain\'s enemies admired him.',
         },
         {
           name: 'Jean-Auguste-Dominique Ingres',
           years: '1780 – 1867',
-          description: 'David's greatest student and the last major practitioner of the Neoclassical tradition, Ingres extended it into the mid-19th century while also complicating and transforming it. His obsession with line — described as "the probity of art" — produced figures of almost hallucinatory precision and cool sensuality. His female nudes (La Grande Odalisque, The Turkish Bath) are anatomically impossible — vertebrae added, proportions distorted — yet feel perfectly convincing because the line is so authoritative. His portraits are among the finest of any era. He fought a famous public battle against Delacroix (who represented color, movement, and Romanticism) that organized French artistic opinion for decades.',
+          description: 'David\'s greatest student and the last major practitioner of the Neoclassical tradition, Ingres extended it into the mid-19th century while also complicating and transforming it. His obsession with line — described as "the probity of art" — produced figures of almost hallucinatory precision and cool sensuality. His female nudes (La Grande Odalisque, The Turkish Bath) are anatomically impossible — vertebrae added, proportions distorted — yet feel perfectly convincing because the line is so authoritative. His portraits are among the finest of any era. He fought a famous public battle against Delacroix (who represented color, movement, and Romanticism) that organized French artistic opinion for decades.',
         },
         {
           name: 'Bertel Thorvaldsen',
@@ -911,7 +911,7 @@ Neoclassicism was deeply connected to politics in a way few art movements have b
         {
           name: 'John Flaxman',
           years: '1755 – 1826',
-          description: 'A sculptor and draughtsman whose outline illustrations to Homer, Aeschylus, and Dante became among the most influential images of the Neoclassical era. Flaxman's line drawings — pure, unshaded contour lines on white paper, derived from Greek vase painting — were reproduced and disseminated across Europe, influencing everything from Wedgwood pottery to William Blake's visual style. As a sculptor, his funerary monuments in English cathedrals set the standard for memorial sculpture for a generation. His work represents the extreme Neoclassical commitment to line as the foundation of all art.',
+          description: 'A sculptor and draughtsman whose outline illustrations to Homer, Aeschylus, and Dante became among the most influential images of the Neoclassical era. Flaxman\'s line drawings — pure, unshaded contour lines on white paper, derived from Greek vase painting — were reproduced and disseminated across Europe, influencing everything from Wedgwood pottery to William Blake\'s visual style. As a sculptor, his funerary monuments in English cathedrals set the standard for memorial sculpture for a generation. His work represents the extreme Neoclassical commitment to line as the foundation of all art.',
         },
       ],
 
@@ -927,14 +927,14 @@ Neoclassicism was deeply connected to politics in a way few art movements have b
           description: 'The manifesto of Neoclassicism. Three brothers swear to fight to the death for Rome while their female relatives weep. The frieze-like composition, stoic male resolve contrasted with female grief, and archaeological precision of the Roman setting made this painting the visual language of the coming Revolution.',
         },
         {
-          title: 'Psyche Revived by Cupid's Kiss',
+          title: 'Psyche Revived by Cupid\'s Kiss',
           artist: 'Antonio Canova',
           year: '1787 – 1793',
           type: 'sculpture',
           medium: 'Marble',
           location: 'Musée du Louvre, Paris',
           imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Psyche_Revived_by_Cupid%27s_Kiss.jpg/640px-Psyche_Revived_by_Cupid%27s_Kiss.jpg',
-          description: 'Canova's most beloved work. Cupid leans down to revive the unconscious Psyche, their faces nearly touching in a moment of exquisite tenderness. The technical challenge — marble rendered as soft flesh, floating drapery, intertwined limbs — is solved with such apparent ease that the difficulty becomes invisible.',
+          description: 'Canova\'s most beloved work. Cupid leans down to revive the unconscious Psyche, their faces nearly touching in a moment of exquisite tenderness. The technical challenge — marble rendered as soft flesh, floating drapery, intertwined limbs — is solved with such apparent ease that the difficulty becomes invisible.',
         },
         {
           title: 'Napoleon Crossing the Alps',
@@ -944,7 +944,7 @@ Neoclassicism was deeply connected to politics in a way few art movements have b
           medium: 'Oil on canvas',
           location: 'Château de Malmaison, France',
           imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/David_-_Napoleon_crossing_the_Alps_-_Malmaison2.jpg/800px-David_-_Napoleon_crossing_the_Alps_-_Malmaison2.jpg',
-          description: 'Political propaganda elevated to art. Napoleon gestures forward on a rearing horse against a dramatic sky — the image of imperial command. In reality Napoleon crossed the Alps on a mule. David's transformation of the prosaic into the heroic is Neoclassicism functioning precisely as intended: history painting as political myth-making.',
+          description: 'Political propaganda elevated to art. Napoleon gestures forward on a rearing horse against a dramatic sky — the image of imperial command. In reality Napoleon crossed the Alps on a mule. David\'s transformation of the prosaic into the heroic is Neoclassicism functioning precisely as intended: history painting as political myth-making.',
         },
         {
           title: 'La Grande Odalisque',
@@ -954,7 +954,7 @@ Neoclassicism was deeply connected to politics in a way few art movements have b
           medium: 'Oil on canvas',
           location: 'Musée du Louvre, Paris',
           imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/La_Grande_Odalisque.jpg/1280px-La_Grande_Odalisque.jpg',
-          description: 'Ingres's most controversial and celebrated work. A reclining harem concubine turns to regard the viewer with cool detachment. Her spine has too many vertebrae, her proportions are anatomically impossible — yet the authority of Ingres's line makes every distortion feel like a necessity. It represents Neoclassicism's cool sensuality at its most paradoxical.',
+          description: 'Ingres\'s most controversial and celebrated work. A reclining harem concubine turns to regard the viewer with cool detachment. Her spine has too many vertebrae, her proportions are anatomically impossible — yet the authority of Ingres\'s line makes every distortion feel like a necessity. It represents Neoclassicism\'s cool sensuality at its most paradoxical.',
         },
         {
           title: 'The Death of Marat',
@@ -974,7 +974,7 @@ Neoclassicism was deeply connected to politics in a way few art movements have b
           medium: 'Marble',
           location: 'Victoria and Albert Museum, London / Hermitage, St. Petersburg',
           imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Canova-three-graces-2.jpg/640px-Canova-three-graces-2.jpg',
-          description: 'Three mythological goddesses of charm — Euphrosyne, Aglaea, and Thalia — stand intertwined in mutual embrace. Canova carved two versions, each exploring the challenge of three interlinked figures from every angle. The work represents his absolute technical peak: the surfaces have a warmth and translucency that seems to deny the marble's nature.',
+          description: 'Three mythological goddesses of charm — Euphrosyne, Aglaea, and Thalia — stand intertwined in mutual embrace. Canova carved two versions, each exploring the challenge of three interlinked figures from every angle. The work represents his absolute technical peak: the surfaces have a warmth and translucency that seems to deny the marble\'s nature.',
         },
         {
           title: 'Portrait of Madame Récamier',
@@ -994,7 +994,7 @@ Neoclassicism was deeply connected to politics in a way few art movements have b
           medium: 'Oil on canvas',
           location: 'Musée du Louvre, Paris',
           imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Jacques-Louis_David_-_Leonidas_at_Thermopylae_-_WGA06079.jpg/1280px-Jacques-Louis_David_-_Leonidas_at_Thermopylae_-_WGA06079.jpg',
-          description: 'David's meditation on heroic sacrifice. Leonidas and his 300 Spartans prepare to meet their death defending Greece against the Persian army. The frieze of idealized male bodies — stoic, accepting, magnificent — represents the Neoclassical ideal of civic virtue elevated to its most pure expression.',
+          description: 'David\'s meditation on heroic sacrifice. Leonidas and his 300 Spartans prepare to meet their death defending Greece against the Persian army. The frieze of idealized male bodies — stoic, accepting, magnificent — represents the Neoclassical ideal of civic virtue elevated to its most pure expression.',
         },
         {
           title: 'Panthéon',
@@ -1004,7 +1004,7 @@ Neoclassicism was deeply connected to politics in a way few art movements have b
           medium: 'Stone',
           location: 'Paris, France',
           imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Pantheon_of_Paris_007.JPG/1280px-Pantheon_of_Paris_007.JPG',
-          description: 'The defining monument of French Neoclassical architecture. Soufflot's design synthesized ancient Roman (the Pantheon's portico and dome) with Gothic structural principles to create a building of extraordinary lightness and clarity. Originally a church, it was secularized during the Revolution as the resting place for France's national heroes.',
+          description: 'The defining monument of French Neoclassical architecture. Soufflot\'s design synthesized ancient Roman (the Pantheon\'s portico and dome) with Gothic structural principles to create a building of extraordinary lightness and clarity. Originally a church, it was secularized during the Revolution as the resting place for France\'s national heroes.',
         },
         {
           title: 'Cornelia, Mother of the Gracchi',
@@ -1028,7 +1028,7 @@ Neoclassicism was deeply connected to politics in a way few art movements have b
           'Reference cameo and intaglio design: Neoclassical jewelry and decorative arts produced extraordinary profile portraits and mythological scenes in the cameo format — white relief against a dark ground. This is essentially a tattoo-native format: consider designing profile portraits and classical scenes in a cameo-inspired visual language.',
           'Use drapery to describe the body beneath: Neoclassical sculptors used thin, clinging drapery (the "wet drapery" technique) to simultaneously clothe and reveal the body underneath. This creates a more sophisticated and classical result than either nudity or opaque clothing alone — applicable to any figurative tattoo.',
           'Choose subjects with civic or philosophical resonance: Neoclassical subjects — Oath scenes, sacrificial moments, mythological allegories — carry layers of meaning that purely decorative tattoos cannot. For clients who want meaning as well as beauty, the Neoclassical subject repertoire offers tested, culturally resonant imagery.',
-          'Study Flaxman's outline drawings for pure line work: His silhouette-style illustrations, derived from Greek vase painting, represent the extreme of Neoclassical linear thinking. For fine-line blackwork or outline tattoos, Flaxman's drawings offer a masterclass in how to build a convincing figurative scene with the minimum number of lines.',
+          'Study Flaxman\'s outline drawings for pure line work: His silhouette-style illustrations, derived from Greek vase painting, represent the extreme of Neoclassical linear thinking. For fine-line blackwork or outline tattoos, Flaxman\'s drawings offer a masterclass in how to build a convincing figurative scene with the minimum number of lines.',
         ],
         technical: [
           'Prioritize line precision above all else: Neoclassicism is fundamentally a linear art — it privileges the clarity of the outline over the atmosphere of shadow. This means that in Neoclassical-inspired tattooing, the quality of your lines — their consistency, confidence, and precision — is more important than the sophistication of your shading.',
@@ -1045,7 +1045,7 @@ Neoclassicism was deeply connected to politics in a way few art movements have b
 
       quiz: [
         {
-          question: 'Which German art historian's writings helped launch the Neoclassical movement with his concept of "noble simplicity and quiet grandeur"?',
+          question: 'Which German art historian\'s writings helped launch the Neoclassical movement with his concept of "noble simplicity and quiet grandeur"?',
           options: ['Immanuel Kant', 'Johann Joachim Winckelmann', 'Friedrich Schiller', 'Georg Hegel'],
           correctIndex: 1,
         },
@@ -1055,7 +1055,7 @@ Neoclassicism was deeply connected to politics in a way few art movements have b
           correctIndex: 2,
         },
         {
-          question: 'Jacques-Louis David's Oath of the Horatii was painted in which year, just before the French Revolution?',
+          question: 'Jacques-Louis David\'s Oath of the Horatii was painted in which year, just before the French Revolution?',
           options: ['1776', '1785', '1793', '1799'],
           correctIndex: 1,
         },
@@ -1119,7 +1119,7 @@ Neoclassicism was deeply connected to politics in a way few art movements have b
         type: 'reaction',
         targetId: 'neoclassicism',
         targetName: 'Neoclassicism',
-        explanation: 'Romanticism erupted as a profound reaction against Neoclassicism's cold rationalism, civic restraint, and worship of ancient models. Where Neoclassicism trusted reason, clear outlines, and historical precedent, Romanticism trusted feeling, emotion, imagination, and individual experience. The Romantic movement was also a response to the Industrial Revolution's mechanization of life and the disillusionment that followed the French Revolution's turn to Terror and Napoleon's imperial ambitions — both of which had been partly justified in Neoclassical terms. Romanticism declared that the inner life — passion, longing, terror, sublimity, the confrontation with nature's overwhelming power — was the proper subject of art.',
+        explanation: 'Romanticism erupted as a profound reaction against Neoclassicism\'s cold rationalism, civic restraint, and worship of ancient models. Where Neoclassicism trusted reason, clear outlines, and historical precedent, Romanticism trusted feeling, emotion, imagination, and individual experience. The Romantic movement was also a response to the Industrial Revolution\'s mechanization of life and the disillusionment that followed the French Revolution\'s turn to Terror and Napoleon\'s imperial ambitions — both of which had been partly justified in Neoclassical terms. Romanticism declared that the inner life — passion, longing, terror, sublimity, the confrontation with nature\'s overwhelming power — was the proper subject of art.',
       },
       summary: `Romanticism — spanning roughly 1780 to 1850 — was one of the most culturally comprehensive movements in Western history, transforming not just visual art but literature, music, philosophy, and politics simultaneously. It was both a reaction against the Enlightenment's faith in rational progress and an emotional response to the upheavals of revolution, war, and industrialization that reshaped European society in the late 18th and early 19th centuries.
 
@@ -1160,7 +1160,7 @@ Romanticism produced a remarkable diversity of national schools — German lands
         {
           name: 'Eugène Delacroix',
           years: '1798 – 1863',
-          description: 'The greatest French Romantic painter and the leading opponent of Ingres's Neoclassical line in the famous "Poussinistes vs. Rubenistes" controversy that polarized French artistic opinion. Delacroix championed color over line, movement over stillness, and emotional intensity over rational calm. His Liberty Leading the People fused allegory and eyewitness journalism into one image of revolutionary power; his Massacre at Chios was called "a massacre of painting" by critics who couldn't accept its deliberate coloristic chaos. His journal — published after his death — is one of the greatest documents on painting ever written. He was also an extraordinary colorist who directly influenced the Impressionists.',
+          description: 'The greatest French Romantic painter and the leading opponent of Ingres\'s Neoclassical line in the famous "Poussinistes vs. Rubenistes" controversy that polarized French artistic opinion. Delacroix championed color over line, movement over stillness, and emotional intensity over rational calm. His Liberty Leading the People fused allegory and eyewitness journalism into one image of revolutionary power; his Massacre at Chios was called "a massacre of painting" by critics who couldn\'t accept its deliberate coloristic chaos. His journal — published after his death — is one of the greatest documents on painting ever written. He was also an extraordinary colorist who directly influenced the Impressionists.',
         },
         {
           name: 'J.M.W. Turner',
@@ -1175,7 +1175,7 @@ Romanticism produced a remarkable diversity of national schools — German lands
         {
           name: 'William Blake',
           years: '1757 – 1827',
-          description: 'The most visionary and intellectually complex artist of the Romantic era — a poet, engraver, painter, and prophet who inhabited a world entirely his own. Blake rejected both Neoclassical rationalism and the Church of England's conventional Christianity, developing an elaborate private mythology of good and evil, imagination and reason, body and spirit, that he expressed through illustrated books combining text and image in unprecedented ways. His figures — muscular, flame-like, bursting with energy — are unlike anything in academic painting. His Ancient of Days, Newton, and illustrations to Dante and the Book of Job are among the most powerful images in the English visual tradition.',
+          description: 'The most visionary and intellectually complex artist of the Romantic era — a poet, engraver, painter, and prophet who inhabited a world entirely his own. Blake rejected both Neoclassical rationalism and the Church of England\'s conventional Christianity, developing an elaborate private mythology of good and evil, imagination and reason, body and spirit, that he expressed through illustrated books combining text and image in unprecedented ways. His figures — muscular, flame-like, bursting with energy — are unlike anything in academic painting. His Ancient of Days, Newton, and illustrations to Dante and the Book of Job are among the most powerful images in the English visual tradition.',
         },
       ],
 
@@ -1218,7 +1218,7 @@ Romanticism produced a remarkable diversity of national schools — German lands
           medium: 'Oil on canvas',
           location: 'Museo del Prado, Madrid',
           imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/El_Tres_de_Mayo%2C_by_Francisco_de_Goya%2C_from_Prado_thin_black_margin.jpg/1280px-El_Tres_de_Mayo%2C_by_Francisco_de_Goya%2C_from_Prado_thin_black_margin.jpg',
-          description: 'The greatest anti-war painting ever made. A Spanish civilian, arms spread in a Christ-like gesture, faces a line of French soldiers in the moment before execution. Goya's masterstroke was making the soldiers anonymous, mechanical, faceless — while the victim's face blazes with terror and defiance. Every great anti-war image since owes something to this painting.',
+          description: 'The greatest anti-war painting ever made. A Spanish civilian, arms spread in a Christ-like gesture, faces a line of French soldiers in the moment before execution. Goya\'s masterstroke was making the soldiers anonymous, mechanical, faceless — while the victim\'s face blazes with terror and defiance. Every great anti-war image since owes something to this painting.',
         },
         {
           title: 'The Fighting Temeraire',
@@ -1228,7 +1228,7 @@ Romanticism produced a remarkable diversity of national schools — German lands
           medium: 'Oil on canvas',
           location: 'National Gallery, London',
           imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/The_Fighting_Temeraire%2C_JMW_Turner%2C_National_Gallery.jpg/1280px-The_Fighting_Temeraire%2C_JMW_Turner%2C_National_Gallery.jpg',
-          description: 'Turner's elegy for the age of sail, repeatedly voted the greatest painting in Britain. The Temeraire — a veteran of Trafalgar — is towed to the breakers' yard by a steam tugboat at sunset. The ghostly white ship and the blazing industrial sun create a meditation on time, progress, and loss that is also one of the most visually spectacular paintings in history.',
+          description: 'Turner\'s elegy for the age of sail, repeatedly voted the greatest painting in Britain. The Temeraire — a veteran of Trafalgar — is towed to the breakers\' yard by a steam tugboat at sunset. The ghostly white ship and the blazing industrial sun create a meditation on time, progress, and loss that is also one of the most visually spectacular paintings in history.',
         },
         {
           title: 'Saturn Devouring His Son',
@@ -1238,7 +1238,7 @@ Romanticism produced a remarkable diversity of national schools — German lands
           medium: 'Oil mural transferred to canvas',
           location: 'Museo del Prado, Madrid',
           imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Francisco_de_Goya%2C_Saturno_devorando_a_su_hijo_%281819-1823%29.jpg/640px-Francisco_de_Goya%2C_Saturno_devorando_a_su_hijo_%281819-1823%29.jpg',
-          description: 'The most terrifying of Goya's Black Paintings, painted on the walls of his private home. Saturn — wild-eyed, manic — devours a human figure. The painting has no clear interpretation, only a visceral impact of absolute dread. It stands outside any artistic tradition and anticipates Expressionism and psychological horror art by a century.',
+          description: 'The most terrifying of Goya\'s Black Paintings, painted on the walls of his private home. Saturn — wild-eyed, manic — devours a human figure. The painting has no clear interpretation, only a visceral impact of absolute dread. It stands outside any artistic tradition and anticipates Expressionism and psychological horror art by a century.',
         },
         {
           title: 'The Ancient of Days',
@@ -1248,7 +1248,7 @@ Romanticism produced a remarkable diversity of national schools — German lands
           medium: 'Watercolor etching',
           location: 'British Museum, London',
           imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Blake_ancient_of_days.jpg/480px-Blake_ancient_of_days.jpg',
-          description: 'Blake's most iconic image: a divine figure — Urizen, Blake's god of reason and limitation — crouches in a circle of fiery light, compass in hand, imposing geometric order on chaos below. The visual power of the image — the muscular god, the radiating light, the downward-reaching arm — is immediately captivating even without knowledge of Blake's mythology.',
+          description: 'Blake\'s most iconic image: a divine figure — Urizen, Blake\'s god of reason and limitation — crouches in a circle of fiery light, compass in hand, imposing geometric order on chaos below. The visual power of the image — the muscular god, the radiating light, the downward-reaching arm — is immediately captivating even without knowledge of Blake\'s mythology.',
         },
         {
           title: 'The Nightmare',
@@ -1261,14 +1261,14 @@ Romanticism produced a remarkable diversity of national schools — German lands
           description: 'One of the most influential Romantic paintings ever made. A sleeping woman lies across a bed while a grotesque incubus crouches on her chest and a wild-eyed horse peers through dark curtains. Fuseli painted the unconscious — dreams, nightmares, erotic terror — decades before Freud named these experiences. Its influence on horror, fantasy, and Surrealism is incalculable.',
         },
         {
-          title: 'Snow Storm — Steam-Boat off a Harbour's Mouth',
+          title: 'Snow Storm — Steam-Boat off a Harbour\'s Mouth',
           artist: 'J.M.W. Turner',
           year: '1842',
           type: 'painting',
           medium: 'Oil on canvas',
           location: 'Tate Britain, London',
           imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Joseph_Mallord_William_Turner_-_Snow_Storm_-_Steam-Boat_off_a_Harbour%27s_Mouth.jpg/1280px-Joseph_Mallord_William_Turner_-_Snow_Storm_-_Steam-Boat_off_a_Harbour%27s_Mouth.jpg',
-          description: 'Turner's supreme statement on the Sublime. A steamship struggles in a vortex of snow, water, and wind that virtually dissolves the vessel into pure atmospheric sensation. Turner reportedly had himself lashed to the mast to experience the storm directly. When critics called it "soapsuds and whitewash," he replied he did not paint for such people.',
+          description: 'Turner\'s supreme statement on the Sublime. A steamship struggles in a vortex of snow, water, and wind that virtually dissolves the vessel into pure atmospheric sensation. Turner reportedly had himself lashed to the mast to experience the storm directly. When critics called it "soapsuds and whitewash," he replied he did not paint for such people.',
         },
         {
           title: 'Ophelia',
@@ -1278,43 +1278,43 @@ Romanticism produced a remarkable diversity of national schools — German lands
           medium: 'Oil on canvas',
           location: 'Tate Britain, London',
           imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/John_Everett_Millais_-_Ophelia_-_Google_Art_Project.jpg/1280px-John_Everett_Millais_-_Ophelia_-_Google_Art_Project.jpg',
-          description: 'The Pre-Raphaelite masterwork of Romantic sensibility. Ophelia drifts in a flower-studded stream, her face serene in the moment of drowning. Millais's botanically precise rendering of every plant and flower (the model Elizabeth Siddal reportedly caught pneumonia posing in a bath for months) creates an image of beauty and death of haunting power.',
+          description: 'The Pre-Raphaelite masterwork of Romantic sensibility. Ophelia drifts in a flower-studded stream, her face serene in the moment of drowning. Millais\'s botanically precise rendering of every plant and flower (the model Elizabeth Siddal reportedly caught pneumonia posing in a bath for months) creates an image of beauty and death of haunting power.',
         },
       ],
 
       tattooTips: {
         intro: `Romanticism is the art historical movement most naturally aligned with contemporary tattoo culture. Its celebration of the individual, its embrace of darkness and the supernatural, its preference for emotional intensity over rational order, its love of nature's overwhelming power, its engagement with death, transformation, and the spiritual — all of these preoccupations map directly onto the most enduring themes in serious tattooing. Understanding Romanticism is not just useful for tattooers; it is almost a description of what meaningful tattooing already is.`,
         design: [
-          'Embrace the Rückenfigur (back-turned figure) for mystery and scale: Friedrich's signature motif — the figure seen from behind, facing a vast landscape — creates a powerful compositional strategy for tattoos. It places the viewer in the position of the subject, creates a sense of scale, and leaves the emotional interpretation open. Use it for landscape sleeves or back pieces where a human figure is needed to anchor the composition.',
+          'Embrace the Rückenfigur (back-turned figure) for mystery and scale: Friedrich\'s signature motif — the figure seen from behind, facing a vast landscape — creates a powerful compositional strategy for tattoos. It places the viewer in the position of the subject, creates a sense of scale, and leaves the emotional interpretation open. Use it for landscape sleeves or back pieces where a human figure is needed to anchor the composition.',
           'Use nature as psychological extension: In Romantic landscape painting, the weather, light, and atmospheric conditions are never neutral — they mirror the emotional state of the subject or the intended feeling of the piece. When designing nature-based tattoos, make deliberate choices about light (stormy, golden, misty) that reinforce the emotional intention of the work.',
-          'Mine disaster and extremity for compositional power: Géricault's Raft of the Medusa demonstrates how to organize a complex group of figures in extreme physical and psychological states into a coherent, powerful composition. The diagonal rising wave of bodies — from prostrate despair at the bottom to desperate hope at the top — is a compositional template applicable to any multi-figure tattoo.',
+          'Mine disaster and extremity for compositional power: Géricault\'s Raft of the Medusa demonstrates how to organize a complex group of figures in extreme physical and psychological states into a coherent, powerful composition. The diagonal rising wave of bodies — from prostrate despair at the bottom to desperate hope at the top — is a compositional template applicable to any multi-figure tattoo.',
           'Use the diagonal as the primary line of force: Romantic compositions rejected Neoclassical horizontal stability for dynamic diagonal axes. For any piece intending emotional urgency — a storm scene, a figure in motion, an action composition — organize the primary lines of the design along a strong diagonal rather than a vertical or horizontal.',
           'Incorporate atmospheric perspective aggressively: Romantic landscape paintings use atmospheric perspective more dramatically than any previous tradition — foreground elements are dark and crisp, while the middle and far distance dissolve into luminous haze. In sleeve and back piece landscapes, push this atmospheric dissolution as far as possible to create depth and mystery.',
-          'Consider the storm as a compositional subject: The storm — waves, lightning, swirling clouds, wind-bent trees — is one of the most powerful compositional subjects available for tattooing. Study Turner's vortex compositions for how to organize chaotic natural forces into a dynamic, readable design. The key is finding a single strong spiral or diagonal within the apparent chaos.',
+          'Consider the storm as a compositional subject: The storm — waves, lightning, swirling clouds, wind-bent trees — is one of the most powerful compositional subjects available for tattooing. Study Turner\'s vortex compositions for how to organize chaotic natural forces into a dynamic, readable design. The key is finding a single strong spiral or diagonal within the apparent chaos.',
           'Use nocturnal settings for emotional depth: Night, moonlight, and the boundary between visible and invisible are quintessentially Romantic. For tattoos where mystery, introspection, or the supernatural are the intended mood, a nocturnal setting achieves effects that daytime compositions cannot.',
           'Reference Fuseli and Blake for supernatural and visionary subjects: Both artists worked extensively with dream imagery, supernatural beings, and the visual representation of psychological states — an almost exactly parallel project to what tattooers working with personal symbolism and spiritual imagery do today. Their figure types (muscular, ecstatic, windswept) are directly applicable.',
         ],
         technical: [
-          'Develop a vocabulary for atmospheric effects: Turner's achievement was rendering atmosphere — fog, spray, smoke, blizzard — as a primary subject rather than a background condition. In tattooing, the ability to create soft, luminous, atmospheric areas requires mastery of whip shading, feathering, and the gradual dissolution of form into white or open skin.',
+          'Develop a vocabulary for atmospheric effects: Turner\'s achievement was rendering atmosphere — fog, spray, smoke, blizzard — as a primary subject rather than a background condition. In tattooing, the ability to create soft, luminous, atmospheric areas requires mastery of whip shading, feathering, and the gradual dissolution of form into white or open skin.',
           'Use color temperature to create emotional atmosphere: Romantic painters were highly sophisticated users of color temperature — warm firelight against cold moonlight, warm skin against icy snow, golden sunsets bleeding into blue-grey dusk. In color tattooing, manipulating the temperature of adjacent areas (warm vs. cool) creates emotional atmosphere more effectively than increasing saturation.',
           'Study how Delacroix built his color: He applied color in small, separate strokes of adjacent hues that mix optically rather than physically — directly anticipating Impressionist technique. In color tattooing, particularly for loose, expressive pieces, similar approaches (adjacent strokes of warm and cool, light and dark) create vibration and energy that blended color cannot.',
           'Handle darkness differently from Baroque: Romantic darkness is not tenebristic — it is atmospheric. The shadows in Friedrich or Turner are not black voids; they are dark blue-grey, slightly luminous, hinting at detail. Achieving Romantic darkness in tattooing requires working with dark blues and cool greys rather than pure black, and maintaining slight value differentiation within the shadow areas.',
-          'Build figurative work with expressive freedom: Unlike Neoclassical precision, Romantic figure painting was allowed — even encouraged — to show the marks of making: Delacroix's figures have a loose, slightly rough energy that is part of their expressiveness. In figurative tattoo work with a Romantic sensibility, allow for slightly less clinical precision in favor of expressiveness at the edges of forms.',
-          'Capture movement and wind: One of Romanticism's primary subjects — figures, trees, and fabric caught in storm-force movement — requires understanding how forms behave under directional force. Hair, drapery, and leaves all follow the same wind logic. Rendering believable movement is a key technical skill for Romantic-themed tattoos.',
+          'Build figurative work with expressive freedom: Unlike Neoclassical precision, Romantic figure painting was allowed — even encouraged — to show the marks of making: Delacroix\'s figures have a loose, slightly rough energy that is part of their expressiveness. In figurative tattoo work with a Romantic sensibility, allow for slightly less clinical precision in favor of expressiveness at the edges of forms.',
+          'Capture movement and wind: One of Romanticism\'s primary subjects — figures, trees, and fabric caught in storm-force movement — requires understanding how forms behave under directional force. Hair, drapery, and leaves all follow the same wind logic. Rendering believable movement is a key technical skill for Romantic-themed tattoos.',
           'Develop skills in landscape shading: Romantic landscape painting — particularly in the German and English traditions — demands the ability to create subtle variations in a limited tonal range: the difference between a misty valley and a clear sky is a matter of extremely controlled, graduated shading in the lightest areas of the value scale.',
-          'Study Goya's technical economy: The Black Paintings are some of the most technically economical paintings in history — vast areas of tone with minimal marks, achieving maximum psychological impact through simplification. For dark, psychologically intense imagery, Goya's approach suggests that less is often more: a face emerging from minimal darkness is more disturbing than one embedded in elaborate detail.',
+          'Study Goya\'s technical economy: The Black Paintings are some of the most technically economical paintings in history — vast areas of tone with minimal marks, achieving maximum psychological impact through simplification. For dark, psychologically intense imagery, Goya\'s approach suggests that less is often more: a face emerging from minimal darkness is more disturbing than one embedded in elaborate detail.',
         ],
         inspiration: `Romanticism is so thoroughly woven into contemporary tattoo culture that most tattoers are working in its tradition without knowing it. The entire tradition of neo-traditional tattooing — with its romantic imagery of wolves, storms, skulls, ravens, and solitary figures in landscapes — is essentially Romantic art. The psychological portrait tradition that engages with trauma, memory, and inner states is directly Romantic. The prevalence of nature themes (forests, oceans, mountains) as vehicles for emotional expression rather than mere decoration is Romantic. For tattoers who want to deepen their engagement with this tradition, spending time with Friedrich's landscapes, Géricault's figural compositions, Turner's atmospheric vortices, and Goya's dark psychology will clarify and deepen what is already present in their work. For specific compositional models: Friedrich's Wanderer is one of the most transferable single compositions in art history for back pieces and sleeve-ending shoulder compositions. The Raft of the Medusa diagonal is unsurpassed for multi-figure compositions on the back or thigh. Turner's vortex compositions work extraordinary well wrapped around a forearm or upper arm.`,
       },
 
       quiz: [
         {
-          question: 'Which Romantic painter's "Black Paintings" — created on the walls of his private home — are considered among the darkest and most psychologically disturbing images in Western art history?',
+          question: 'Which Romantic painter\'s "Black Paintings" — created on the walls of his private home — are considered among the darkest and most psychologically disturbing images in Western art history?',
           options: ['Eugène Delacroix', 'Caspar David Friedrich', 'Francisco Goya', 'Henry Fuseli'],
           correctIndex: 2,
         },
         {
-          question: 'Caspar David Friedrich's recurring motif of a solitary figure seen from behind, facing a vast landscape, is called what in German?',
+          question: 'Caspar David Friedrich\'s recurring motif of a solitary figure seen from behind, facing a vast landscape, is called what in German?',
           options: ['Weltschmerz', 'Rückenfigur', 'Sehnsucht', 'Wanderlust'],
           correctIndex: 1,
         },
@@ -1329,12 +1329,12 @@ Romanticism produced a remarkable diversity of national schools — German lands
           correctIndex: 1,
         },
         {
-          question: 'Géricault's The Raft of the Medusa depicts which type of event?',
+          question: 'Géricault\'s The Raft of the Medusa depicts which type of event?',
           options: ['A mythological battle at sea', 'A naval battle during the Napoleonic Wars', 'The aftermath of a real shipwreck caused by government incompetence', 'A storm at sea during the voyages of discovery'],
           correctIndex: 2,
         },
         {
-          question: 'J.M.W. Turner's late paintings are significant partly because they anticipate which later movement?',
+          question: 'J.M.W. Turner\'s late paintings are significant partly because they anticipate which later movement?',
           options: ['Surrealism and Dada', 'Impressionism and Abstract Expressionism', 'Pop Art and Minimalism', 'Realism and Naturalism'],
           correctIndex: 1,
         },
@@ -1349,7 +1349,7 @@ Romanticism produced a remarkable diversity of national schools — German lands
           correctIndex: 0,
         },
         {
-          question: 'Henry Fuseli's The Nightmare (1781) is significant because it was among the first artworks to depict what?',
+          question: 'Henry Fuseli\'s The Nightmare (1781) is significant because it was among the first artworks to depict what?',
           options: [
             'Industrial subjects in oil painting',
             'Non-Western subjects in European painting',
@@ -1373,7 +1373,7 @@ Romanticism produced a remarkable diversity of national schools — German lands
           options: [
             'To indicate the time of day in outdoor scenes',
             'To create depth by dissolving distant forms into luminous haze and cooler tones',
-            'To demonstrate the painter's technical skill with gradients',
+            'To demonstrate the painter\'s technical skill with gradients',
             'To indicate weather conditions relevant to the narrative',
           ],
           correctIndex: 1,
