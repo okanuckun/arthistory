@@ -5,24 +5,24 @@ import { ArrowLeft } from 'lucide-react';
 interface MovementDetailProps {
   movement: ArtMovement;
   onBack: () => void;
+  onQuizComplete: (movementId: string, score: number, total: number) => void;
+  existingScore?: { score: number; total: number };
 }
 
-const MovementDetail = ({ movement, onBack }: MovementDetailProps) => {
+const MovementDetail = ({ movement, onBack, onQuizComplete, existingScore }: MovementDetailProps) => {
   const content = movement.content;
   if (!content) return null;
 
   return (
     <div className="max-w-3xl mx-auto px-6 py-12">
-      {/* Back button */}
       <button
         onClick={onBack}
         className="flex items-center gap-2 text-sm font-body text-muted-foreground hover:text-foreground transition-colors mb-12 active:scale-[0.97]"
       >
         <ArrowLeft className="w-4 h-4" />
-        Zaman Çizelgesi
+        Timeline
       </button>
 
-      {/* Header */}
       <div className="opacity-0 animate-fade-up mb-16">
         <span className="text-xs font-body tracking-[0.2em] uppercase text-muted-foreground block mb-3">
           {String(movement.number).padStart(2, '0')} — {movement.period}
@@ -30,23 +30,19 @@ const MovementDetail = ({ movement, onBack }: MovementDetailProps) => {
         <h1 className="font-display text-5xl md:text-6xl font-medium text-warm-bright tracking-tight leading-[1.1] mb-6">
           {movement.name}
         </h1>
-
-        {/* Color palette */}
         <div className="flex gap-1.5 mb-8">
           {movement.colorPalette.map((color, i) => (
             <div key={i} className="w-6 h-6 rounded-sm" style={{ backgroundColor: color }} />
           ))}
         </div>
-
         <p className="text-base font-body text-foreground/80 leading-relaxed max-w-prose" style={{ textWrap: 'pretty' as any }}>
           {content.summary}
         </p>
       </div>
 
-      {/* Characteristics */}
       <section className="opacity-0 animate-fade-up mb-16" style={{ animationDelay: '150ms' }}>
         <h2 className="font-display text-2xl text-gold-light mb-6 tracking-tight">
-          Dönemin Özellikleri
+          Key Characteristics
         </h2>
         <ul className="space-y-3">
           {content.characteristics.map((item, i) => (
@@ -58,10 +54,9 @@ const MovementDetail = ({ movement, onBack }: MovementDetailProps) => {
         </ul>
       </section>
 
-      {/* Artists */}
       <section className="opacity-0 animate-fade-up mb-16" style={{ animationDelay: '300ms' }}>
         <h2 className="font-display text-2xl text-gold-light mb-8 tracking-tight">
-          Öne Çıkan Sanatçılar
+          Notable Artists
         </h2>
         <div className="space-y-6">
           {content.artists.map((artist, i) => (
@@ -81,9 +76,14 @@ const MovementDetail = ({ movement, onBack }: MovementDetailProps) => {
         </div>
       </section>
 
-      {/* Quiz */}
       <section className="opacity-0 animate-fade-up" style={{ animationDelay: '450ms' }}>
-        <Quiz questions={content.quiz} movementName={movement.name} />
+        <Quiz
+          questions={content.quiz}
+          movementName={movement.name}
+          movementId={movement.id}
+          onComplete={onQuizComplete}
+          existingScore={existingScore}
+        />
       </section>
     </div>
   );
