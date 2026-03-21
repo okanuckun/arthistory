@@ -17,7 +17,7 @@ const TimelineItem = ({ movement, onClick, index, quizScore }: TimelineItemProps
 
   return (
     <div
-      className="opacity-0 animate-fade-up group relative flex items-start gap-6 cursor-pointer"
+      className="opacity-0 animate-fade-up group relative flex items-start gap-3 sm:gap-6 cursor-pointer"
       style={{ animationDelay: `${Math.min(index * 80, 800)}ms` }}
       onClick={() => !isLocked && onClick(movement.id)}
     >
