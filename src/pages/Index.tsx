@@ -134,9 +134,18 @@ const Index = () => {
         <Navbar />
         <MovementDetail
           movement={selectedMovement}
-          onBack={() => setSelectedId(null)}
+          onBack={() => { detailTour.finish(); setSelectedId(null); }}
           onQuizComplete={handleQuizComplete}
           existingScore={scores[selectedMovement.id]}
+        />
+        <TourOverlay
+          active={detailTour.active}
+          step={detailTour.step}
+          currentStep={detailTour.currentStep}
+          totalSteps={detailTour.totalSteps}
+          onNext={detailTour.next}
+          onPrev={detailTour.prev}
+          onFinish={detailTour.finish}
         />
       </>
     );
