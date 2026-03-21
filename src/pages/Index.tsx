@@ -4,7 +4,7 @@ import TimelineItem from '@/components/TimelineItem';
 import MovementDetail from '@/components/MovementDetail';
 import Navbar from '@/components/Navbar';
 import TourOverlay from '@/components/TourOverlay';
-import { useTour, TourStep } from '@/hooks/use-tour';
+import { useTour, useDetailTour, TourStep } from '@/hooks/use-tour';
 import { useAuth } from '@/contexts/AuthContext';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { supabase } from '@/integrations/supabase/client';
