@@ -127,6 +127,7 @@ const Navbar = () => {
 
         <button
           onClick={() => navigate(isLeaderboard ? '/' : '/leaderboard')}
+          data-tour="leaderboard"
           className={`p-2 rounded-lg transition-all active:scale-[0.95] ${
             isLeaderboard ? 'text-gold bg-secondary' : 'text-muted-foreground hover:text-foreground hover:bg-secondary'
           }`}
