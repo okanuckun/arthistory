@@ -12,7 +12,7 @@ interface MovementDetailProps {
 
 const MovementDetail = ({ movement, onBack, onQuizComplete, existingScore }: MovementDetailProps) => {
   const content = movement.content;
-  const { speak, stop, pause, resume, isSpeaking, isPaused } = useTTS();
+  const { speak, stop, pause, resume, isSpeaking, isPaused, isLoading } = useTTS();
   if (!content) return null;
 
   const buildReadText = () => {
