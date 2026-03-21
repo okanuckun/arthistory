@@ -62,7 +62,7 @@ const Navbar = () => {
   const currentLang = LANGUAGES.find(l => l.code === language);
 
   return (
-    <nav className="flex items-center justify-between px-6 py-4 border-b border-border/50">
+    <nav className="flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4 pt-[max(0.75rem,env(safe-area-inset-top))] border-b border-border/50">
       <button
         onClick={() => navigate('/')}
         className="flex flex-col items-start hover:opacity-80 transition-opacity"
@@ -75,7 +75,7 @@ const Navbar = () => {
         </span>
       </button>
 
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-1 sm:gap-2">
         {/* Language selector */}
         <div className="relative" ref={langRef}>
           <button
@@ -85,7 +85,7 @@ const Navbar = () => {
             <span>{currentLang?.flag}</span>
           </button>
           {langOpen && (
-            <div className="absolute right-0 top-full mt-1 bg-card border border-border rounded-lg shadow-lg py-1 z-50 min-w-[140px]">
+            <div className="absolute right-0 top-full mt-1 bg-card border border-border rounded-lg shadow-lg shadow-black/20 py-1 z-50 min-w-[140px] max-h-[70vh] overflow-y-auto">
               {LANGUAGES.map(lang => (
                 <button
                   key={lang.code}

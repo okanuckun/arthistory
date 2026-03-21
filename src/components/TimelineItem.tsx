@@ -17,7 +17,7 @@ const TimelineItem = ({ movement, onClick, index, quizScore }: TimelineItemProps
 
   return (
     <div
-      className="opacity-0 animate-fade-up group relative flex items-start gap-6 cursor-pointer"
+      className="opacity-0 animate-fade-up group relative flex items-start gap-3 sm:gap-6 cursor-pointer"
       style={{ animationDelay: `${Math.min(index * 80, 800)}ms` }}
       onClick={() => !isLocked && onClick(movement.id)}
     >
@@ -38,19 +38,19 @@ const TimelineItem = ({ movement, onClick, index, quizScore }: TimelineItemProps
           isLocked ? 'opacity-35' : 'opacity-100'
         } ${!isLocked ? 'group-hover:translate-x-1' : ''}`}
       >
-        <div className="flex items-start justify-between mb-1">
-          <div className="flex items-baseline gap-3">
-            <span className="text-xs font-body tracking-widest uppercase text-muted-foreground">
+        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-1 gap-1">
+          <div className="flex items-baseline gap-2 sm:gap-3 min-w-0">
+            <span className="text-xs font-body tracking-widest uppercase text-muted-foreground shrink-0">
               {String(movement.number).padStart(2, '0')}
             </span>
             <h3
-              className={`font-display text-xl font-medium tracking-tight ${
+              className={`font-display text-lg sm:text-xl font-medium tracking-tight leading-tight ${
                 isActive ? 'text-gold-light' : isCompleted ? 'text-foreground' : 'text-muted-foreground'
               }`}
             >
               {movement.name}
             </h3>
-            {isLocked && <Lock className="w-3.5 h-3.5 text-muted-foreground/50" />}
+            {isLocked && <Lock className="w-3.5 h-3.5 text-muted-foreground/50 shrink-0" />}
           </div>
 
           {quizScore && (
