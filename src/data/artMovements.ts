@@ -1,4 +1,7 @@
 import stPetersBasilica from '@/assets/st-peters-basilica.jpeg';
+import vitruvianMan from '@/assets/vitruvian-man.jpg';
+import davidMichelangelo from '@/assets/david-michelangelo.jpg';
+import arnolfiniPortrait from '@/assets/arnolfini-portrait.jpg';
 
 export interface QuizQuestion {
   question: string;
@@ -164,7 +167,7 @@ Two technical inventions defined the era's visual language above all else: linea
           type: 'sculpture',
           medium: 'White Carrara marble',
           location: `Galleria dell'Accademia, Florence`,
-          imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Michelangelo%27s_David_-_right_view_2.jpg/480px-Michelangelo%27s_David_-_right_view_2.jpg',
+          imageUrl: davidMichelangelo,
           description: 'The definitive statement on the Renaissance ideal of the heroic human body. Michelangelo captured David in the moment before battle -- coiled with tension, every muscle and vein rendered with anatomical precision. At 5.17 meters, it dominates any room it inhabits.',
         },
         {
@@ -194,7 +197,7 @@ Two technical inventions defined the era's visual language above all else: linea
           type: 'drawing',
           medium: 'Pen, ink, and watercolor on paper',
           location: `Gallerie dell'Accademia, Venice`,
-          imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Da_Vinci_Vitruve_Luc_Viatour.jpg/506px-Da_Vinci_Vitruve_Luc_Viatour.jpg',
+          imageUrl: vitruvianMan,
           description: 'The ultimate Renaissance image of human proportion. Based on the writings of the Roman architect Vitruvius, Leonardo inscribed the ideal male figure within both a circle and a square -- demonstrating the relationship between human geometry and the geometry of the cosmos.',
         },
         {
@@ -204,7 +207,7 @@ Two technical inventions defined the era's visual language above all else: linea
           type: 'painting',
           medium: 'Oil on oak panel',
           location: 'National Gallery, London',
-          imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Van_Eyck_-_Arnolfini_Portrait.jpg/470px-Van_Eyck_-_Arnolfini_Portrait.jpg',
+          imageUrl: arnolfiniPortrait,
           description: `A landmark of Northern Renaissance painting. Van Eyck's mastery of oil paint created a surface of jewel-like detail -- every texture from velvet to brass to fur rendered with breathtaking precision. The convex mirror in the background reflects the entire room, including two mysterious witnesses.`,
         },
         {
