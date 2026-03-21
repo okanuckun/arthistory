@@ -52,7 +52,54 @@ const Index = () => {
     },
   ];
 
+  const detailTourSteps: TourStep[] = [
+    {
+      target: '[data-tour="detail-summary"]',
+      title: 'Akım Özeti',
+      content: 'Akımın tarihçesi, kökeni ve genel felsefesi hakkında detaylı açıklama. Sesli dinleme özelliğiyle metni kulaklıktan takip edebilirsin.',
+      placement: 'bottom',
+    },
+    {
+      target: '[data-tour="detail-characteristics"]',
+      title: 'Temel Özellikler',
+      content: 'Akımı tanımlayan sanatsal özellikler — renk kullanımı, kompozisyon, teknik ve felsefi yaklaşımlar.',
+      placement: 'top',
+    },
+    {
+      target: '[data-tour="detail-artists"]',
+      title: 'Önemli Sanatçılar',
+      content: 'Akımın öncü ve en etkili sanatçıları, yaşam yılları ve sanatsal katkıları.',
+      placement: 'top',
+    },
+    {
+      target: '[data-tour="detail-tattoo"]',
+      title: 'Dövme Rehberi',
+      content: 'Bu akımdan ilham alan dövme tasarım ipuçları — teknik öneriler, tasarım fikirleri ve ilham kaynakları.',
+      placement: 'top',
+    },
+    {
+      target: '[data-tour="detail-quiz"]',
+      title: 'Bilgi Testi',
+      content: 'Her akımın sonunda 10 soruluk quiz ile öğrendiklerini test et. Puanların sıralama tablosuna yansır!',
+      placement: 'top',
+    },
+  ];
+
   const tour = useTour(tourSteps);
+  const detailTour = useDetailTour(detailTourSteps);
+
+  // After homepage tour finishes, navigate into first movement for detail tour
+  const handleHomeTourFinish = () => {
+    tour.finish();
+    if (!detailTour.isCompleted) {
+      const firstActive = artMovements.find(m => m.status !== 'locked');
+      if (firstActive) {
+        setSelectedId(firstActive.id);
+        // Detail tour will start via effect
+        setTimeout(() => detailTour.start(), 1000);
+      }
+    }
+  };
 
   useEffect(() => {
     if (!user) return;
