@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { QuizQuestion } from '@/data/artMovements';
-import { CheckCircle2, XCircle, RotateCcw } from 'lucide-react';
+import { CheckCircle2, XCircle, RotateCcw, Share2 } from 'lucide-react';
+import ScoreCard from './ScoreCard';
 
 interface QuizProps {
   questions: QuizQuestion[];
