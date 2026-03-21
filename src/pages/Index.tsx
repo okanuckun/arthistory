@@ -19,6 +19,41 @@ const Index = () => {
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [scores, setScores] = useState<ScoreMap>({});
 
+  const tourSteps: TourStep[] = [
+    {
+      target: '[data-tour="timeline-item"]',
+      title: 'Sanat Akımlarını Keşfet',
+      content: 'Her akıma tıklayarak detaylı bilgi, eserler, sanatçılar ve quizlere ulaşabilirsin.',
+      placement: 'right',
+    },
+    {
+      target: '[data-tour="language"]',
+      title: 'Dil Seçimi',
+      content: 'İçerikleri farklı dillerde okuyabilirsin — Türkçe, İngilizce, Korece, İspanyolca.',
+      placement: 'bottom',
+    },
+    {
+      target: '[data-tour="theme"]',
+      title: 'Tema Değiştir',
+      content: 'Altın ve koyu tema arasında geçiş yaparak okuma deneyimini kişiselleştir.',
+      placement: 'bottom',
+    },
+    {
+      target: '[data-tour="updates"]',
+      title: 'Güncellemeler',
+      content: 'Yeni eklenen akımlar ve özellikler hakkında bildirim al.',
+      placement: 'bottom',
+    },
+    {
+      target: '[data-tour="leaderboard"]',
+      title: 'Sıralama Tablosu',
+      content: 'Quiz puanlarını diğer kullanıcılarla karşılaştır ve en iyi ol!',
+      placement: 'bottom',
+    },
+  ];
+
+  const tour = useTour(tourSteps);
+
   useEffect(() => {
     if (!user) return;
     supabase
