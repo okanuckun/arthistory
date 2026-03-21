@@ -1,78 +1,114 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { artMovements } from '@/data/artMovements';
 import TimelineItem from '@/components/TimelineItem';
 import MovementDetail from '@/components/MovementDetail';
+import Navbar from '@/components/Navbar';
+import { useAuth } from '@/contexts/AuthContext';
+import { supabase } from '@/integrations/supabase/client';
+
+interface ScoreMap {
+  [movementId: string]: { score: number; total: number };
+}
 
 const Index = () => {
+  const { user } = useAuth();
   const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [scores, setScores] = useState<ScoreMap>({});
 
-  const selectedMovement = selectedId
-    ? artMovements.find(m => m.id === selectedId)
-    : null;
+  useEffect(() => {
+    if (!user) return;
+    supabase
+      .from('quiz_scores')
+      .select('movement_id, score, total')
+      .eq('user_id', user.id)
+      .then(({ data }) => {
+        if (data) {
+          const map: ScoreMap = {};
+          data.forEach(row => { map[row.movement_id] = { score: row.score, total: row.total }; });
+          setScores(map);
+        }
+      });
+  }, [user]);
+
+  const handleQuizComplete = async (movementId: string, score: number, total: number) => {
+    if (!user) return;
+    setScores(prev => ({ ...prev, [movementId]: { score, total } }));
+
+    await supabase.from('quiz_scores').upsert(
+      { user_id: user.id, movement_id: movementId, score, total },
+      { onConflict: 'user_id,movement_id' }
+    );
+  };
+
+  const selectedMovement = selectedId ? artMovements.find(m => m.id === selectedId) : null;
 
   if (selectedMovement && selectedMovement.content) {
     return (
-      <MovementDetail
-        movement={selectedMovement}
-        onBack={() => setSelectedId(null)}
-      />
+      <>
+        <Navbar />
+        <MovementDetail
+          movement={selectedMovement}
+          onBack={() => setSelectedId(null)}
+          onQuizComplete={handleQuizComplete}
+          existingScore={scores[selectedMovement.id]}
+        />
+      </>
     );
   }
 
   const totalMovements = artMovements.length;
-  const completedCount = artMovements.filter(m => m.status === 'completed').length;
-  const activeCount = artMovements.filter(m => m.status === 'active').length;
+  const liveCount = artMovements.filter(m => m.status !== 'locked').length;
+  const upcomingCount = totalMovements - liveCount;
 
   return (
-    <div className="min-h-screen">
-      {/* Header */}
-      <header className="max-w-3xl mx-auto px-6 pt-16 pb-12">
-        <div className="opacity-0 animate-fade-up flex items-end justify-between mb-12">
-          <div>
-            <p className="text-xs font-body tracking-[0.25em] uppercase text-muted-foreground mb-3">
-              Sanat Tarihi Yolculuğu
-            </p>
-            <h1 className="font-display text-4xl md:text-5xl font-medium text-warm-bright tracking-tight leading-[1.05]">
-              Büyük Sanat<br />
-              <span className="text-gold italic">Akımları</span>
-            </h1>
+    <>
+      <Navbar />
+      <div className="min-h-screen">
+        <header className="max-w-3xl mx-auto px-6 pt-12 pb-10">
+          <div className="opacity-0 animate-fade-up flex items-end justify-between mb-10">
+            <div>
+              <p className="text-xs font-body tracking-[0.25em] uppercase text-muted-foreground mb-3">
+                A Journey Through Art History
+              </p>
+              <h1 className="font-display text-4xl md:text-5xl font-medium text-warm-bright tracking-tight leading-[1.05]">
+                The Great Art<br />
+                <span className="text-gold italic">Movements</span>
+              </h1>
+            </div>
+            <div className="flex gap-6 text-right opacity-0 animate-fade-up" style={{ animationDelay: '200ms' }}>
+              <div>
+                <p className="font-display text-2xl text-warm-bright">{totalMovements}</p>
+                <p className="text-[10px] font-body tracking-wider uppercase text-muted-foreground">Total</p>
+              </div>
+              <div>
+                <p className="font-display text-2xl text-warm-bright">{liveCount}</p>
+                <p className="text-[10px] font-body tracking-wider uppercase text-muted-foreground">Live</p>
+              </div>
+              <div>
+                <p className="font-display text-2xl text-warm-bright">{upcomingCount}</p>
+                <p className="text-[10px] font-body tracking-wider uppercase text-muted-foreground">Soon</p>
+              </div>
+            </div>
           </div>
-          <div className="flex gap-6 text-right opacity-0 animate-fade-up" style={{ animationDelay: '200ms' }}>
-            <div>
-              <p className="font-display text-2xl text-warm-bright">{totalMovements}</p>
-              <p className="text-[10px] font-body tracking-wider uppercase text-muted-foreground">Akım</p>
-            </div>
-            <div>
-              <p className="font-display text-2xl text-warm-bright">{completedCount + activeCount}</p>
-              <p className="text-[10px] font-body tracking-wider uppercase text-muted-foreground">Yayında</p>
-            </div>
-            <div>
-              <p className="font-display text-2xl text-warm-bright">{totalMovements - completedCount - activeCount}</p>
-              <p className="text-[10px] font-body tracking-wider uppercase text-muted-foreground">Yakında</p>
-            </div>
+          <div className="h-px bg-border mb-2 opacity-0 animate-fade-in" style={{ animationDelay: '400ms' }} />
+        </header>
+
+        <main className="max-w-3xl mx-auto px-6 pb-24">
+          <div className="relative">
+            <div className="absolute left-[19px] top-0 bottom-0 w-px bg-border" />
+            {artMovements.map((movement, i) => (
+              <TimelineItem
+                key={movement.id}
+                movement={movement}
+                onClick={setSelectedId}
+                index={i}
+                quizScore={scores[movement.id]}
+              />
+            ))}
           </div>
-        </div>
-
-        <div className="h-px bg-border mb-2 opacity-0 animate-fade-in" style={{ animationDelay: '400ms' }} />
-      </header>
-
-      {/* Timeline */}
-      <main className="max-w-3xl mx-auto px-6 pb-24">
-        <div className="relative">
-          {/* Vertical line */}
-          <div className="absolute left-[19px] top-0 bottom-0 w-px bg-border" />
-
-          {artMovements.map((movement, i) => (
-            <TimelineItem
-              key={movement.id}
-              movement={movement}
-              onClick={setSelectedId}
-              index={i}
-            />
-          ))}
-        </div>
-      </main>
-    </div>
+        </main>
+      </div>
+    </>
   );
 };
 
