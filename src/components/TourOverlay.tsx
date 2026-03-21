@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from 'react';
 import { TourStep } from '@/hooks/use-tour';
+import { useLanguage } from '@/contexts/LanguageContext';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface TourOverlayProps {
@@ -13,6 +14,7 @@ interface TourOverlayProps {
 }
 
 const TourOverlay = ({ active, step, currentStep, totalSteps, onNext, onPrev, onFinish }: TourOverlayProps) => {
+  const { t } = useLanguage();
   const [rect, setRect] = useState<DOMRect | null>(null);
   const [tooltipPos, setTooltipPos] = useState({ top: 0, left: 0 });
   const tooltipRef = useRef<HTMLDivElement>(null);
