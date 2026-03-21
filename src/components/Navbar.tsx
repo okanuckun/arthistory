@@ -62,7 +62,7 @@ const Navbar = () => {
   const currentLang = LANGUAGES.find(l => l.code === language);
 
   return (
-    <nav className="flex items-center justify-between px-6 py-4 border-b border-border/50">
+    <nav className="flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4 pt-[max(0.75rem,env(safe-area-inset-top))] border-b border-border/50">
       <button
         onClick={() => navigate('/')}
         className="flex flex-col items-start hover:opacity-80 transition-opacity"
