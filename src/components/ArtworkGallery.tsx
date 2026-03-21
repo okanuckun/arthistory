@@ -74,22 +74,28 @@ const ArtworkGallery = ({ artworks, movementName }: ArtworkGalleryProps) => {
       {/* Lightbox */}
       {selected && (
         <div
-          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4 md:p-8"
+          className="fixed inset-0 z-50 bg-black/95 flex items-end md:items-center justify-center md:p-8 animate-fade-in"
           onClick={() => setSelected(null)}
+          style={{ paddingTop: 'env(safe-area-inset-top)', paddingBottom: 'env(safe-area-inset-bottom)' }}
         >
           <div
-            className="relative max-w-4xl w-full bg-background rounded-xl overflow-hidden border border-border shadow-2xl flex flex-col md:flex-row max-h-[90vh]"
+            className="relative w-full md:max-w-4xl bg-background md:rounded-xl rounded-t-2xl overflow-hidden border-t md:border border-border/50 shadow-2xl flex flex-col md:flex-row max-h-[92vh] md:max-h-[90vh]"
             onClick={e => e.stopPropagation()}
           >
+            {/* Mobile drag handle */}
+            <div className="md:hidden flex justify-center pt-3 pb-1 shrink-0">
+              <div className="w-10 h-1 rounded-full bg-muted-foreground/30" />
+            </div>
+
             <button
               onClick={() => setSelected(null)}
-              className="absolute top-4 right-4 z-10 p-1.5 rounded-full bg-black/50 text-white/80 hover:text-white transition-colors"
+              className="absolute top-3 right-3 md:top-4 md:right-4 z-10 p-2 rounded-full bg-black/60 text-white/80 hover:text-white transition-colors active:scale-95"
             >
               <X className="w-4 h-4" />
             </button>
 
             {/* Image side */}
-            <div className="md:w-1/2 bg-black flex items-center justify-center min-h-[240px]">
+            <div className="shrink-0 md:w-1/2 bg-black flex items-center justify-center h-[35vh] md:h-auto md:min-h-[400px]">
               {failedImages.has(selected.imageUrl) ? (
                 <div className="flex flex-col items-center gap-3 p-8">
                   <Palette className="w-12 h-12 text-muted-foreground/30" />
@@ -99,42 +105,42 @@ const ArtworkGallery = ({ artworks, movementName }: ArtworkGalleryProps) => {
                 <img
                   src={selected.imageUrl}
                   alt={selected.title}
-                  className="w-full h-full object-contain max-h-[60vh] md:max-h-[90vh]"
+                  className="w-full h-full object-contain"
                   onError={() => handleImageError(selected.imageUrl)}
                 />
               )}
             </div>
 
             {/* Info side */}
-            <div className="md:w-1/2 p-6 md:p-8 overflow-y-auto">
-              <span className="text-[10px] font-body tracking-[0.2em] uppercase text-gold/70 mb-2 block">
+            <div className="md:w-1/2 p-5 md:p-8 overflow-y-auto flex-1 min-h-0">
+              <span className="text-[10px] font-body tracking-[0.2em] uppercase text-gold/70 mb-1.5 block">
                 {typeLabel[selected.type]}
               </span>
-              <h3 className="font-display text-2xl text-warm-bright mb-1 leading-tight">
+              <h3 className="font-display text-xl md:text-2xl text-warm-bright mb-0.5 leading-tight">
                 {selected.title}
               </h3>
-              <p className="font-display text-base text-muted-foreground mb-6">
+              <p className="font-display text-sm md:text-base text-muted-foreground mb-4 md:mb-6">
                 {selected.artist}
               </p>
 
-              <div className="space-y-3 mb-6">
-                <div className="flex items-center gap-2 text-sm font-body text-foreground/70">
+              <div className="flex flex-wrap gap-x-4 gap-y-2 mb-4 md:mb-6 md:flex-col md:gap-3">
+                <div className="flex items-center gap-2 text-xs md:text-sm font-body text-foreground/70">
                   <Calendar className="w-3.5 h-3.5 text-gold/60 shrink-0" />
                   {selected.year}
                 </div>
-                <div className="flex items-start gap-2 text-sm font-body text-foreground/70">
-                  <Palette className="w-3.5 h-3.5 text-gold/60 shrink-0 mt-0.5" />
-                  {selected.medium}
+                <div className="flex items-center gap-2 text-xs md:text-sm font-body text-foreground/70">
+                  <Palette className="w-3.5 h-3.5 text-gold/60 shrink-0" />
+                  <span className="line-clamp-1">{selected.medium}</span>
                 </div>
-                <div className="flex items-start gap-2 text-sm font-body text-foreground/70">
-                  <MapPin className="w-3.5 h-3.5 text-gold/60 shrink-0 mt-0.5" />
-                  {selected.location}
+                <div className="flex items-center gap-2 text-xs md:text-sm font-body text-foreground/70">
+                  <MapPin className="w-3.5 h-3.5 text-gold/60 shrink-0" />
+                  <span className="line-clamp-1">{selected.location}</span>
                 </div>
               </div>
 
-              <div className="h-px bg-border mb-6" />
+              <div className="h-px bg-border mb-4 md:mb-6" />
 
-              <p className="text-sm font-body text-foreground/75 leading-relaxed" style={{ textWrap: 'pretty' as any }}>
+              <p className="text-sm font-body text-foreground/75 leading-relaxed pb-4" style={{ textWrap: 'pretty' as any }}>
                 {selected.description}
               </p>
             </div>
