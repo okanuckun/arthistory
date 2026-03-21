@@ -197,7 +197,7 @@ Two technical inventions defined the era's visual language above all else: linea
           type: 'drawing',
           medium: 'Pen, ink, and watercolor on paper',
           location: `Gallerie dell'Accademia, Venice`,
-          imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Da_Vinci_Vitruve_Luc_Viatour.jpg/506px-Da_Vinci_Vitruve_Luc_Viatour.jpg',
+          imageUrl: vitruvianMan,
           description: 'The ultimate Renaissance image of human proportion. Based on the writings of the Roman architect Vitruvius, Leonardo inscribed the ideal male figure within both a circle and a square -- demonstrating the relationship between human geometry and the geometry of the cosmos.',
         },
         {
