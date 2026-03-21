@@ -288,6 +288,8 @@ const translations: Record<Language, Record<string, string>> = {
     'detail.loading': '로딩 중…',
     'detail.continue': '이어서 듣기',
     'detail.restart': '처음부터',
+    'updates.title': '새로운 소식',
+    'updates.empty': '아직 업데이트가 없습니다. 기대해주세요!',
   },
 };
 
