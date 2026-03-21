@@ -116,7 +116,7 @@ const MovementDetail = ({ movement, onBack, onQuizComplete, existingScore }: Mov
         )}
       </div>
 
-      <div className="opacity-0 animate-fade-up mb-16">
+      <div className="opacity-0 animate-fade-up mb-16" data-tour="detail-summary">
         <span className="text-xs font-body tracking-[0.2em] uppercase text-muted-foreground block mb-3">
           {String(movement.number).padStart(2, '0')} — {movement.period}
         </span>
@@ -153,7 +153,7 @@ const MovementDetail = ({ movement, onBack, onQuizComplete, existingScore }: Mov
         </div>
       </div>
 
-      <section className="opacity-0 animate-fade-up mb-16" style={{ animationDelay: '150ms' }}>
+      <section className="opacity-0 animate-fade-up mb-16" style={{ animationDelay: '150ms' }} data-tour="detail-characteristics">
         <h2 className="font-display text-2xl text-gold-light mb-6 tracking-tight">
           {t('detail.characteristics')}
         </h2>
@@ -171,7 +171,7 @@ const MovementDetail = ({ movement, onBack, onQuizComplete, existingScore }: Mov
         <ArtworkGallery artworks={artworksTranslated} movementName={movement.name} />
       )}
 
-      <section className="opacity-0 animate-fade-up mb-16" style={{ animationDelay: '300ms' }}>
+      <section className="opacity-0 animate-fade-up mb-16" style={{ animationDelay: '300ms' }} data-tour="detail-artists">
         <h2 className="font-display text-2xl text-gold-light mb-8 tracking-tight">
           {t('detail.artists')}
         </h2>
@@ -194,7 +194,7 @@ const MovementDetail = ({ movement, onBack, onQuizComplete, existingScore }: Mov
       </section>
 
       {tattooTips && (
-        <section className="opacity-0 animate-fade-up mb-16" style={{ animationDelay: '400ms' }}>
+        <section className="opacity-0 animate-fade-up mb-16" style={{ animationDelay: '400ms' }} data-tour="detail-tattoo">
           <h2 className="font-display text-2xl text-gold-light mb-3 tracking-tight">
             {t('detail.tattoo_guide')}
           </h2>
@@ -250,7 +250,7 @@ const MovementDetail = ({ movement, onBack, onQuizComplete, existingScore }: Mov
         </section>
       )}
 
-      <section className="opacity-0 animate-fade-up" style={{ animationDelay: '550ms' }}>
+      <section className="opacity-0 animate-fade-up" style={{ animationDelay: '550ms' }} data-tour="detail-quiz">
         <Quiz
           questions={content.quiz}
           movementName={movement.name}
