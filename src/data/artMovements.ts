@@ -21,7 +21,7 @@ export interface Artwork {
   title: string;
   artist: string;
   year: string;
-  type: 'painting\' | \'sculpture\' | \'architecture\' | \'drawing\' | \'fresco';
+  type: 'painting' | 'sculpture' | 'architecture' | 'drawing' | 'fresco';
   medium: string;
   location: string;
   imageUrl: string;
@@ -29,7 +29,7 @@ export interface Artwork {
 }
 
 export interface MovementOrigin {
-  type: 'reaction\' | \'evolution\' | \'parallel';
+  type: 'reaction' | 'evolution' | 'parallel';
   targetId: string;
   targetName: string;
   explanation: string;
@@ -51,7 +51,7 @@ export interface ArtMovement {
   name: string;
   period: string;
   colorPalette: string[];
-  status: 'completed\' | \'active\' | \'locked';
+  status: 'completed' | 'active' | 'locked';
   content?: MovementContent;
 }
 
