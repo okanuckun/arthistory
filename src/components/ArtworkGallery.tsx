@@ -74,18 +74,14 @@ const ArtworkGallery = ({ artworks, movementName }: ArtworkGalleryProps) => {
       {/* Lightbox */}
       {selected && (
         <div
-          className="fixed inset-0 z-50 bg-black/95 flex items-end md:items-center justify-center md:p-8 animate-fade-in"
+          className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-3 md:p-8 animate-fade-in"
           onClick={() => setSelected(null)}
-          style={{ paddingTop: 'env(safe-area-inset-top)', paddingBottom: 'env(safe-area-inset-bottom)' }}
+          style={{ paddingTop: 'max(12px, env(safe-area-inset-top))', paddingBottom: 'max(12px, env(safe-area-inset-bottom))' }}
         >
           <div
-            className="relative w-full md:max-w-4xl bg-background md:rounded-xl rounded-t-2xl overflow-hidden border-t md:border border-border/50 shadow-2xl flex flex-col md:flex-row max-h-[92vh] md:max-h-[90vh]"
+            className="relative w-full max-w-4xl bg-background rounded-xl overflow-hidden border border-border/50 shadow-2xl flex flex-col md:flex-row max-h-[90vh]"
             onClick={e => e.stopPropagation()}
           >
-            {/* Mobile drag handle */}
-            <div className="md:hidden flex justify-center pt-3 pb-1 shrink-0">
-              <div className="w-10 h-1 rounded-full bg-muted-foreground/30" />
-            </div>
 
             <button
               onClick={() => setSelected(null)}
