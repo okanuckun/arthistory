@@ -8,6 +8,7 @@ import { AuthProvider, useAuth } from "@/contexts/AuthContext";
 import Index from "./pages/Index.tsx";
 import Auth from "./pages/Auth.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import Leaderboard from "./pages/Leaderboard.tsx";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +28,7 @@ const AppRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<Index />} />
+      <Route path="/leaderboard" element={<Leaderboard />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
