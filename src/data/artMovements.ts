@@ -214,7 +214,7 @@ Two technical inventions defined the era's visual language above all else: linea
           type: 'architecture',
           medium: 'Travertine marble, brick, concrete',
           location: 'Vatican City',
-          imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/St_Peter%27s_Basilica%2C_view_from_Sant%27Angelo_Castle.jpg/1280px-St_Peter%27s_Basilica%2C_view_from_Sant%27Angelo_Castle.jpg',
+          imageUrl: stPetersBasilica,
           description: `The greatest architectural achievement of the Renaissance. Michelangelo's dome -- designed when he was 72 -- became the model for dome architecture worldwide. The basilica synthesizes a century of Renaissance architectural thought into a single overwhelming monument to human ambition and faith.`,
         },
       ],
