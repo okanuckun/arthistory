@@ -206,7 +206,7 @@ Two technical inventions defined the era's visual language above all else: linea
           description: `A landmark of Northern Renaissance painting. Van Eyck's mastery of oil paint created a surface of jewel-like detail -- every texture from velvet to brass to fur rendered with breathtaking precision. The convex mirror in the background reflects the entire room, including two mysterious witnesses.`,
         },
         {
-          title: 'St. Peter's Basilica',
+          title: `St. Peter's Basilica`,
           artist: 'Bramante, Michelangelo, della Porta',
           year: '1506 - 1626',
           type: 'architecture',
