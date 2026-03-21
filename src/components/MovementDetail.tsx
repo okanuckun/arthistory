@@ -1,6 +1,7 @@
 import { ArtMovement } from '@/data/artMovements';
 import Quiz from './Quiz';
-import { ArrowLeft, Palette, Wrench, Sparkles } from 'lucide-react';
+import { ArrowLeft, Palette, Wrench, Sparkles, Volume2, Pause, Square } from 'lucide-react';
+import { useTTS } from '@/hooks/use-tts';
 
 interface MovementDetailProps {
   movement: ArtMovement;
