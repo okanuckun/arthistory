@@ -1,6 +1,6 @@
 import { ArtMovement } from '@/data/artMovements';
 import Quiz from './Quiz';
-import { ArrowLeft, Palette, Wrench, Sparkles, Volume2, Pause, Square } from 'lucide-react';
+import { ArrowLeft, Palette, Wrench, Sparkles, Volume2, Pause, Square, Loader2 } from 'lucide-react';
 import { useTTS } from '@/hooks/use-tts';
 
 interface MovementDetailProps {
@@ -12,7 +12,7 @@ interface MovementDetailProps {
 
 const MovementDetail = ({ movement, onBack, onQuizComplete, existingScore }: MovementDetailProps) => {
   const content = movement.content;
-  const { speak, stop, pause, resume, isSpeaking, isPaused } = useTTS();
+  const { speak, stop, pause, resume, isSpeaking, isPaused, isLoading } = useTTS();
   if (!content) return null;
 
   const buildReadText = () => {
@@ -51,13 +51,21 @@ const MovementDetail = ({ movement, onBack, onQuizComplete, existingScore }: Mov
         </button>
         <button
           onClick={handleSpeak}
+          disabled={isLoading}
           className={`flex items-center gap-2 text-sm font-body px-3 py-1.5 rounded-md transition-all active:scale-[0.97] ${
-            isSpeaking
+            isLoading
+              ? 'text-muted-foreground border border-border/50 opacity-70 cursor-wait'
+              : isSpeaking
               ? 'bg-primary/10 text-primary border border-primary/20'
               : 'text-muted-foreground hover:text-foreground hover:bg-muted/50 border border-border/50'
           }`}
         >
-          {isSpeaking && !isPaused ? (
+          {isLoading ? (
+            <>
+              <Loader2 className="w-4 h-4 animate-spin" />
+              Yükleniyor...
+            </>
+          ) : isSpeaking && !isPaused ? (
             <>
               <Pause className="w-4 h-4" />
               Duraklat
