@@ -116,7 +116,7 @@ const MovementDetail = ({ movement, onBack, onQuizComplete, existingScore }: Mov
         )}
       </div>
 
-      <div className="opacity-0 animate-fade-up mb-16">
+      <div className="opacity-0 animate-fade-up mb-16" data-tour="detail-summary">
         <span className="text-xs font-body tracking-[0.2em] uppercase text-muted-foreground block mb-3">
           {String(movement.number).padStart(2, '0')} — {movement.period}
         </span>
