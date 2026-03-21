@@ -26,6 +26,7 @@ const Quiz = ({ questions, movementName, movementId, onComplete, existingScore }
     setSubmitted(true);
     const score = questions.reduce((acc, q, i) => acc + (answers[i] === q.correctIndex ? 1 : 0), 0);
     onComplete(movementId, score, questions.length);
+    setShowScoreCard(true);
   };
 
   const handleReset = () => {
