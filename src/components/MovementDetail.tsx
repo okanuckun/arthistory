@@ -1,7 +1,7 @@
 import { ArtMovement } from '@/data/artMovements';
 import Quiz from './Quiz';
 import ArtworkGallery from './ArtworkGallery';
-import { ArrowLeft, Palette, Wrench, Sparkles, Volume2, Pause, Square, Loader2 } from 'lucide-react';
+import { ArrowLeft, Palette, Wrench, Sparkles, Volume2, Pause, Square, Loader2, RotateCcw } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useTranslatedContent } from '@/hooks/use-translation';
 import { useTTS } from '@/hooks/use-tts';
@@ -18,7 +18,7 @@ const MovementDetail = ({ movement, onBack, onQuizComplete, existingScore }: Mov
   if (!content) return null;
   const { t } = useLanguage();
   const { translated, isTranslating } = useTranslatedContent(movement.id, content);
-  const { speak, stop, pause, resume, isSpeaking, isPaused, isLoading } = useTTS();
+  const { speak, stop, pause, resume, restart, isSpeaking, isPaused, isLoading, hasResumable, getSavedProgress } = useTTS(movement.id);
 
   const summary = translated?.summary || content.summary;
   const summaryParagraphs = summary.split('\n\n').filter(Boolean);
@@ -39,6 +39,14 @@ const MovementDetail = ({ movement, onBack, onQuizComplete, existingScore }: Mov
     description: translated?.artworks?.[i]?.description || a.description,
   }));
 
+  const buildFullText = () => {
+    return [
+      summary,
+      characteristics.join('. '),
+      artists.map(a => `${a.name}. ${a.description}`).join(' '),
+    ].join('\n\n');
+  };
+
   const handleReadAloud = () => {
     if (isSpeaking && !isPaused) {
       pause();
@@ -48,12 +56,18 @@ const MovementDetail = ({ movement, onBack, onQuizComplete, existingScore }: Mov
       resume();
       return;
     }
-    const fullText = [
-      summary,
-      characteristics.join('. '),
-      artists.map(a => `${a.name}. ${a.description}`).join(' '),
-    ].join('\n\n');
-    speak(fullText);
+    // Check for saved progress
+    const saved = getSavedProgress();
+    if (saved) {
+      speak(buildFullText(), saved.chunkIndex);
+    } else {
+      speak(buildFullText());
+    }
+  };
+
+  const handleRestartFromBeginning = () => {
+    restart();
+    speak(buildFullText(), 0);
   };
 
   return (
@@ -66,7 +80,7 @@ const MovementDetail = ({ movement, onBack, onQuizComplete, existingScore }: Mov
         {t('detail.back')}
       </button>
 
-      <div className="flex gap-2 mb-12">
+      <div className="flex flex-wrap gap-2 mb-12">
         <button
           onClick={handleReadAloud}
           disabled={isLoading}
@@ -79,7 +93,7 @@ const MovementDetail = ({ movement, onBack, onQuizComplete, existingScore }: Mov
           ) : (
             <Volume2 className="w-3.5 h-3.5" />
           )}
-          {isLoading ? t('detail.loading') || 'Loading…' : isSpeaking && !isPaused ? t('detail.pause') || 'Pause' : isSpeaking && isPaused ? t('detail.resume') || 'Resume' : t('detail.listen') || 'Listen'}
+          {isLoading ? t('detail.loading') : isSpeaking && !isPaused ? t('detail.pause') : isSpeaking && isPaused ? t('detail.resume') : hasResumable ? t('detail.continue') : t('detail.listen')}
         </button>
         {isSpeaking && (
           <button
@@ -87,7 +101,17 @@ const MovementDetail = ({ movement, onBack, onQuizComplete, existingScore }: Mov
             className="flex items-center gap-2 text-xs font-body px-3 py-1.5 rounded-full border border-border/50 text-muted-foreground hover:text-foreground hover:border-destructive/30 transition-all active:scale-[0.97]"
           >
             <Square className="w-3 h-3" />
-            {t('detail.stop') || 'Stop'}
+            {t('detail.stop')}
+          </button>
+        )}
+        {(hasResumable || isSpeaking) && (
+          <button
+            onClick={handleRestartFromBeginning}
+            disabled={isLoading}
+            className="flex items-center gap-2 text-xs font-body px-3 py-1.5 rounded-full border border-border/50 text-muted-foreground hover:text-foreground hover:border-primary/30 transition-all active:scale-[0.97] disabled:opacity-50"
+          >
+            <RotateCcw className="w-3 h-3" />
+            {t('detail.restart')}
           </button>
         )}
       </div>
