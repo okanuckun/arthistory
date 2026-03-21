@@ -1,3 +1,8 @@
+import altareDellaConfessioneImage from '@/assets/artworks/altare-della-confessione.jpeg';
+import arnolfiniPortraitImage from '@/assets/artworks/arnolfini-portrait.jpg';
+import davidImage from '@/assets/artworks/david.jpg';
+import vitruvianManImage from '@/assets/artworks/vitruvian-man.jpg';
+
 export interface QuizQuestion {
   question: string;
   options: string[];
@@ -172,7 +177,7 @@ Two technical inventions defined the era's visual language above all else: linea
           type: 'sculpture',
           medium: 'White Carrara marble',
           location: 'Galleria dell\'Accademia, Florence',
-          imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/%27David%27_by_Michelangelo_Fir_JBU002.jpg/480px-%27David%27_by_Michelangelo_Fir_JBU002.jpg',
+          imageUrl: davidImage,
           description: 'The definitive statement on the Renaissance ideal of the heroic human body. Michelangelo captured David in the moment before battle — coiled with tension, every muscle and vein rendered with anatomical precision. At 5.17 meters, it dominates any room it inhabits.',
         },
         {
@@ -202,7 +207,7 @@ Two technical inventions defined the era's visual language above all else: linea
           type: 'drawing',
           medium: 'Pen, ink, and watercolor on paper',
           location: 'Gallerie dell\'Accademia, Venice',
-          imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Da_Vinci_Vitruve_Luc_Viatour.jpg/400px-Da_Vinci_Vitruve_Luc_Viatour.jpg',
+          imageUrl: vitruvianManImage,
           description: 'The ultimate Renaissance image of human proportion. Based on the writings of the Roman architect Vitruvius, Leonardo inscribed the ideal male figure within both a circle and a square — demonstrating the relationship between human geometry and the geometry of the cosmos.',
         },
         {
@@ -212,7 +217,7 @@ Two technical inventions defined the era's visual language above all else: linea
           type: 'painting',
           medium: 'Oil on oak panel',
           location: 'National Gallery, London',
-          imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Van_Eyck_-_Arnolfini_Portrait.jpg/350px-Van_Eyck_-_Arnolfini_Portrait.jpg',
+          imageUrl: arnolfiniPortraitImage,
           description: 'A landmark of Northern Renaissance painting. Van Eyck\'s mastery of oil paint created a surface of jewel-like detail — every texture from velvet to brass to fur rendered with breathtaking precision. The convex mirror in the background reflects the entire room, including two mysterious witnesses.',
         },
         {
@@ -222,7 +227,7 @@ Two technical inventions defined the era's visual language above all else: linea
           type: 'architecture',
           medium: 'Travertine marble, brick, concrete',
           location: 'Vatican City',
-          imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/St_Peter%27s_Basilica%2C_view_from_Sant%27Angelo_Castle.jpg/1280px-St_Peter%27s_Basilica%2C_view_from_Sant%27Angelo_Castle.jpg',
+          imageUrl: altareDellaConfessioneImage,
           description: 'The greatest architectural achievement of the Renaissance. Michelangelo\'s dome — designed when he was 72 — became the model for dome architecture worldwide. The basilica synthesizes a century of Renaissance architectural thought into a single overwhelming monument to human ambition and faith.',
         },
       ],
