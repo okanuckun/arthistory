@@ -39,7 +39,7 @@ export function useTTS() {
             apikey: import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY,
             Authorization: `Bearer ${import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY}`,
           },
-          body: JSON.stringify({ text, languageCode: "tr-TR" }),
+          body: JSON.stringify({ text, languageCode: "en-US" }),
         }
       );
 

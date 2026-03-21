@@ -60,7 +60,7 @@ serve(async (req) => {
             input: { text: chunk },
             voice: {
               languageCode,
-              name: languageCode === "tr-TR" ? "tr-TR-Wavenet-E" : "en-US-Wavenet-D",
+              name: languageCode === "tr-TR" ? "tr-TR-Wavenet-E" : "en-US-Wavenet-F",
               ssmlGender: "FEMALE",
             },
             audioConfig: {
