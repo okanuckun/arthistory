@@ -84,6 +84,8 @@ const translations: Record<Language, Record<string, string>> = {
     'detail.loading': 'Loading…',
     'detail.continue': 'Continue',
     'detail.restart': 'From Start',
+    'updates.title': "What's New",
+    'updates.empty': 'No updates yet. Stay tuned!',
   },
   tr: {
     'landing.tagline': 'Dövme Sanatçıları İçin',
@@ -150,6 +152,8 @@ const translations: Record<Language, Record<string, string>> = {
     'detail.loading': 'Yükleniyor…',
     'detail.continue': 'Devam Et',
     'detail.restart': 'Baştan',
+    'updates.title': 'Yenilikler',
+    'updates.empty': 'Henüz güncelleme yok. Takipte kalın!',
   },
   es: {
     'landing.tagline': 'Para Tatuadores',
@@ -216,6 +220,8 @@ const translations: Record<Language, Record<string, string>> = {
     'detail.loading': 'Cargando…',
     'detail.continue': 'Continuar',
     'detail.restart': 'Desde el Inicio',
+    'updates.title': 'Novedades',
+    'updates.empty': 'Sin actualizaciones aún. ¡Mantente atento!',
   },
   ko: {
     'landing.tagline': '타투 아티스트를 위한',
@@ -282,6 +288,8 @@ const translations: Record<Language, Record<string, string>> = {
     'detail.loading': '로딩 중…',
     'detail.continue': '이어서 듣기',
     'detail.restart': '처음부터',
+    'updates.title': '새로운 소식',
+    'updates.empty': '아직 업데이트가 없습니다. 기대해주세요!',
   },
 };
 

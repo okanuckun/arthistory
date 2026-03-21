@@ -14,6 +14,30 @@ export type Database = {
   }
   public: {
     Tables: {
+      app_updates: {
+        Row: {
+          created_at: string
+          description: string
+          id: string
+          title: string
+          version: string | null
+        }
+        Insert: {
+          created_at?: string
+          description: string
+          id?: string
+          title: string
+          version?: string | null
+        }
+        Update: {
+          created_at?: string
+          description?: string
+          id?: string
+          title?: string
+          version?: string | null
+        }
+        Relationships: []
+      }
       content_translations: {
         Row: {
           created_at: string
@@ -85,6 +109,35 @@ export type Database = {
           user_id?: string
         }
         Relationships: []
+      }
+      user_update_reads: {
+        Row: {
+          id: string
+          read_at: string
+          update_id: string
+          user_id: string
+        }
+        Insert: {
+          id?: string
+          read_at?: string
+          update_id: string
+          user_id: string
+        }
+        Update: {
+          id?: string
+          read_at?: string
+          update_id?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "user_update_reads_update_id_fkey"
+            columns: ["update_id"]
+            isOneToOne: false
+            referencedRelation: "app_updates"
+            referencedColumns: ["id"]
+          },
+        ]
       }
     }
     Views: {
