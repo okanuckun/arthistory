@@ -207,7 +207,7 @@ Two technical inventions defined the era's visual language above all else: linea
           type: 'painting',
           medium: 'Oil on oak panel',
           location: 'National Gallery, London',
-          imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Van_Eyck_-_Arnolfini_Portrait.jpg/470px-Van_Eyck_-_Arnolfini_Portrait.jpg',
+          imageUrl: arnolfiniPortrait,
           description: `A landmark of Northern Renaissance painting. Van Eyck's mastery of oil paint created a surface of jewel-like detail -- every texture from velvet to brass to fur rendered with breathtaking precision. The convex mirror in the background reflects the entire room, including two mysterious witnesses.`,
         },
         {
