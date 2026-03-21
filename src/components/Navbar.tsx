@@ -104,6 +104,7 @@ const Navbar = () => {
 
         <button
           onClick={toggleTheme}
+          data-tour="theme"
           className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-secondary transition-all active:scale-[0.95]"
         >
           {theme === 'gold' ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
