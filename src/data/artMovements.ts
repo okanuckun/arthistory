@@ -1518,3 +1518,4 @@ Romanticism produced a remarkable diversity of national schools — German lands
     status: 'locked',
   },
 ];
+
