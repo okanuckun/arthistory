@@ -77,6 +77,11 @@ const translations: Record<Language, Record<string, string>> = {
     'artworks.title': 'Notable Artworks',
     'leaderboard.title': 'Leaderboard',
     'translating': 'Translating...',
+    'detail.listen': 'Listen',
+    'detail.pause': 'Pause',
+    'detail.resume': 'Resume',
+    'detail.stop': 'Stop',
+    'detail.loading': 'Loading…',
   },
   tr: {
     'landing.tagline': 'Dövme Sanatçıları İçin',
@@ -136,6 +141,11 @@ const translations: Record<Language, Record<string, string>> = {
     'artworks.title': 'Önemli Eserler',
     'leaderboard.title': 'Sıralama',
     'translating': 'Çevriliyor...',
+    'detail.listen': 'Dinle',
+    'detail.pause': 'Duraklat',
+    'detail.resume': 'Devam',
+    'detail.stop': 'Durdur',
+    'detail.loading': 'Yükleniyor…',
   },
   es: {
     'landing.tagline': 'Para Tatuadores',
@@ -195,6 +205,11 @@ const translations: Record<Language, Record<string, string>> = {
     'artworks.title': 'Obras Destacadas',
     'leaderboard.title': 'Clasificación',
     'translating': 'Traduciendo...',
+    'detail.listen': 'Escuchar',
+    'detail.pause': 'Pausar',
+    'detail.resume': 'Continuar',
+    'detail.stop': 'Detener',
+    'detail.loading': 'Cargando…',
   },
   ko: {
     'landing.tagline': '타투 아티스트를 위한',
@@ -254,6 +269,11 @@ const translations: Record<Language, Record<string, string>> = {
     'artworks.title': '주요 작품',
     'leaderboard.title': '순위표',
     'translating': '번역 중...',
+    'detail.listen': '듣기',
+    'detail.pause': '일시정지',
+    'detail.resume': '계속',
+    'detail.stop': '정지',
+    'detail.loading': '로딩 중…',
   },
 };
 
