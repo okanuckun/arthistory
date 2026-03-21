@@ -172,7 +172,7 @@ const TourOverlay = ({ active, step, currentStep, totalSteps, onNext, onPrev, on
             onClick={onNext}
             className="flex items-center gap-1.5 text-xs font-body font-medium px-4 py-2 rounded-lg bg-gold/90 text-primary-foreground hover:bg-gold transition-colors active:scale-[0.97]"
           >
-            {isLast ? 'Başla!' : 'İleri'}
+            {isLast ? t('tour.finish') : t('tour.next')}
             {!isLast && <ChevronRight className="w-3.5 h-3.5" />}
           </button>
         </div>
