@@ -102,6 +102,15 @@ const Index = () => {
   return (
     <>
       <Navbar />
+      <TourOverlay
+        active={tour.active}
+        step={tour.step}
+        currentStep={tour.currentStep}
+        totalSteps={tour.totalSteps}
+        onNext={tour.next}
+        onPrev={tour.prev}
+        onFinish={tour.finish}
+      />
       <div className="min-h-screen">
         <header className="max-w-3xl mx-auto px-4 sm:px-6 pt-8 sm:pt-12 pb-6 sm:pb-10">
           <div className="opacity-0 animate-fade-up flex flex-col sm:flex-row sm:items-end sm:justify-between mb-6 sm:mb-10 gap-4">
