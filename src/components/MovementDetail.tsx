@@ -194,7 +194,7 @@ const MovementDetail = ({ movement, onBack, onQuizComplete, existingScore }: Mov
       </section>
 
       {tattooTips && (
-        <section className="opacity-0 animate-fade-up mb-16" style={{ animationDelay: '400ms' }}>
+        <section className="opacity-0 animate-fade-up mb-16" style={{ animationDelay: '400ms' }} data-tour="detail-tattoo">
           <h2 className="font-display text-2xl text-gold-light mb-3 tracking-tight">
             {t('detail.tattoo_guide')}
           </h2>
