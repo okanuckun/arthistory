@@ -35,9 +35,13 @@ const MovementDetail = ({ movement, onBack, onQuizComplete, existingScore }: Mov
             <div key={i} className="w-6 h-6 rounded-sm" style={{ backgroundColor: color }} />
           ))}
         </div>
-        <p className="text-base font-body text-foreground/80 leading-relaxed max-w-prose" style={{ textWrap: 'pretty' as any }}>
-          {content.summary}
-        </p>
+        <div className="space-y-4 max-w-prose">
+          {content.summary.split('\n\n').map((paragraph, i) => (
+            <p key={i} className="text-base font-body text-foreground/80 leading-relaxed" style={{ textWrap: 'pretty' as any }}>
+              {paragraph}
+            </p>
+          ))}
+        </div>
       </div>
 
       <section className="opacity-0 animate-fade-up mb-16" style={{ animationDelay: '150ms' }}>
