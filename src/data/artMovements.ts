@@ -17,10 +17,22 @@ export interface TattooTips {
   inspiration: string;
 }
 
+export interface Artwork {
+  title: string;
+  artist: string;
+  year: string;
+  type: 'painting' | 'sculpture' | 'architecture' | 'drawing' | 'fresco';
+  medium: string;
+  location: string;
+  imageUrl: string;
+  description: string;
+}
+
 export interface MovementContent {
   summary: string;
   characteristics: string[];
   artists: Artist[];
+  artworks: Artwork[];
   tattooTips: TattooTips;
   quiz: QuizQuestion[];
 }
@@ -99,6 +111,109 @@ Two technical inventions defined the era's visual language above all else: linea
           name: 'Albrecht Dürer',
           years: '1471 – 1528',
           description: 'The Northern Renaissance found its greatest voice in Dürer, a German artist who made multiple trips to Italy and synthesized Italian spatial and anatomical knowledge with the Northern European tradition of meticulous observation and intense naturalism. His self-portraits — confident, almost Christ-like — were radical statements of artistic identity and dignity. As a printmaker, he elevated woodcut and engraving to the level of fine art, achieving a tonal range and detail in black-and-white that rivals painting. His Melencolia I is one of the most analyzed images in Western art, dense with symbolism about creativity, knowledge, and melancholy. Dürer essentially brought the Renaissance to Northern Europe single-handedly.',
+        },
+      ],
+
+      artworks: [
+        {
+          title: 'Mona Lisa',
+          artist: 'Leonardo da Vinci',
+          year: '1503 – 1519',
+          type: 'painting',
+          medium: 'Oil on poplar panel',
+          location: 'Musée du Louvre, Paris',
+          imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/402px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg',
+          description: 'The most recognized painting in the world. Leonardo's mastery of sfumato gives the figure an ethereal, atmospheric presence. The ambiguous smile and direct gaze have fascinated viewers for five centuries.',
+        },
+        {
+          title: 'The Creation of Adam',
+          artist: 'Michelangelo',
+          year: '1508 – 1512',
+          type: 'fresco',
+          medium: 'Fresco on plaster',
+          location: 'Sistine Chapel, Vatican City',
+          imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Michelangelo_-_Creation_of_Adam_%28cropped%29.jpg/1280px-Michelangelo_-_Creation_of_Adam_%28cropped%29.jpg',
+          description: 'The iconic image of God reaching toward Adam represents the pinnacle of Renaissance figure painting. The composition's tension between two outstretched hands — almost but not quite touching — is one of the most powerful gestures in art history.',
+        },
+        {
+          title: 'The Birth of Venus',
+          artist: 'Sandro Botticelli',
+          year: 'c. 1484 – 1486',
+          type: 'painting',
+          medium: 'Tempera on canvas',
+          location: 'Uffizi Gallery, Florence',
+          imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Sandro_Botticelli_-_La_nascita_di_Venere_-_Google_Art_Project_-_edited.jpg/1280px-Sandro_Botticelli_-_La_nascita_di_Venere_-_Google_Art_Project_-_edited.jpg',
+          description: 'One of the first large-scale mythological paintings of the Renaissance. Botticelli's Venus embodies the Neoplatonic ideal of divine beauty — her elegant, elongated form rising from the sea in a swirl of wind, flowers, and drapery.',
+        },
+        {
+          title: 'The School of Athens',
+          artist: 'Raphael',
+          year: '1509 – 1511',
+          type: 'fresco',
+          medium: 'Fresco',
+          location: 'Apostolic Palace, Vatican City',
+          imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/%22The_School_of_Athens%22_by_Raffaello_Sanzio_da_Urbino.jpg/1280px-%22The_School_of_Athens%22_by_Raffaello_Sanzio_da_Urbino.jpg',
+          description: 'Raphael's supreme achievement in composition. All the great philosophers of antiquity gather beneath a vast classical arch — Plato and Aristotle at center, surrounded by Socrates, Pythagoras, Euclid, and Diogenes. A visual encyclopedia of human knowledge.',
+        },
+        {
+          title: 'David',
+          artist: 'Michelangelo',
+          year: '1501 – 1504',
+          type: 'sculpture',
+          medium: 'White Carrara marble',
+          location: 'Galleria dell'Accademia, Florence',
+          imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Michelangelo%27s_David_-_right_view_2.jpg/480px-Michelangelo%27s_David_-_right_view_2.jpg',
+          description: 'The definitive statement on the Renaissance ideal of the heroic human body. Michelangelo captured David in the moment before battle — coiled with tension, every muscle and vein rendered with anatomical precision. At 5.17 meters, it dominates any room it inhabits.',
+        },
+        {
+          title: 'The Last Supper',
+          artist: 'Leonardo da Vinci',
+          year: '1495 – 1498',
+          type: 'painting',
+          medium: 'Tempera and oil on plaster',
+          location: 'Santa Maria delle Grazie, Milan',
+          imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/%C3%9Altima_Cena_-_Da_Vinci_5.jpg/1280px-%C3%9Altima_Cena_-_Da_Vinci_5.jpg',
+          description: 'Leonardo revolutionized narrative painting by freezing the precise moment Christ announces his betrayal. Each apostle's reaction is psychologically distinct. The architectural perspective draws the eye directly to Christ's face, making him the calm center of an emotional storm.',
+        },
+        {
+          title: 'Primavera',
+          artist: 'Sandro Botticelli',
+          year: 'c. 1477 – 1482',
+          type: 'painting',
+          medium: 'Tempera on panel',
+          location: 'Uffizi Gallery, Florence',
+          imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Botticelli-primavera.jpg/1280px-Botticelli-primavera.jpg',
+          description: 'A dense allegorical work saturated with Neoplatonic symbolism. Nine mythological figures inhabit an orange grove — Venus, the Three Graces, Mercury, Flora, Zephyr, and Chloris. The flowing lines and interlocking gestures create a visual tapestry of extraordinary elegance.',
+        },
+        {
+          title: 'Vitruvian Man',
+          artist: 'Leonardo da Vinci',
+          year: 'c. 1490',
+          type: 'drawing',
+          medium: 'Pen, ink, and watercolor on paper',
+          location: 'Gallerie dell'Accademia, Venice',
+          imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Da_Vinci_Vitruve_Luc_Viatour.jpg/506px-Da_Vinci_Vitruve_Luc_Viatour.jpg',
+          description: 'The ultimate Renaissance image of human proportion. Based on the writings of the Roman architect Vitruvius, Leonardo inscribed the ideal male figure within both a circle and a square — demonstrating the relationship between human geometry and the geometry of the cosmos.',
+        },
+        {
+          title: 'The Arnolfini Portrait',
+          artist: 'Jan van Eyck',
+          year: '1434',
+          type: 'painting',
+          medium: 'Oil on oak panel',
+          location: 'National Gallery, London',
+          imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Van_Eyck_-_Arnolfini_Portrait.jpg/470px-Van_Eyck_-_Arnolfini_Portrait.jpg',
+          description: 'A landmark of Northern Renaissance painting. Van Eyck's mastery of oil paint created a surface of jewel-like detail — every texture from velvet to brass to fur rendered with breathtaking precision. The convex mirror in the background reflects the entire room, including two mysterious witnesses.',
+        },
+        {
+          title: 'St. Peter's Basilica',
+          artist: 'Bramante, Michelangelo, della Porta',
+          year: '1506 – 1626',
+          type: 'architecture',
+          medium: 'Travertine marble, brick, concrete',
+          location: 'Vatican City',
+          imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/St_Peter%27s_Basilica%2C_view_from_Sant%27Angelo_Castle.jpg/1280px-St_Peter%27s_Basilica%2C_view_from_Sant%27Angelo_Castle.jpg',
+          description: 'The greatest architectural achievement of the Renaissance. Michelangelo's dome — designed when he was 72 — became the model for dome architecture worldwide. The basilica synthesizes a century of Renaissance architectural thought into a single overwhelming monument to human ambition and faith.',
         },
       ],
 
