@@ -4,6 +4,7 @@ import TimelineItem from '@/components/TimelineItem';
 import MovementDetail from '@/components/MovementDetail';
 import Navbar from '@/components/Navbar';
 import { useAuth } from '@/contexts/AuthContext';
+import { useLanguage } from '@/contexts/LanguageContext';
 import { supabase } from '@/integrations/supabase/client';
 
 interface ScoreMap {
@@ -12,6 +13,7 @@ interface ScoreMap {
 
 const Index = () => {
   const { user } = useAuth();
+  const { t } = useLanguage();
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [scores, setScores] = useState<ScoreMap>({});
 
@@ -68,7 +70,7 @@ const Index = () => {
           <div className="opacity-0 animate-fade-up flex items-end justify-between mb-10">
             <div>
               <p className="text-xs font-body tracking-[0.25em] uppercase text-muted-foreground mb-3">
-                A Journey Through Art History
+                {t('header.tagline')}
               </p>
               <h1 className="font-display text-4xl md:text-5xl font-medium text-warm-bright tracking-tight leading-[1.05]">
                 The Great Art<br />
@@ -78,15 +80,15 @@ const Index = () => {
             <div className="flex gap-6 text-right opacity-0 animate-fade-up" style={{ animationDelay: '200ms' }}>
               <div>
                 <p className="font-display text-2xl text-warm-bright">{totalMovements}</p>
-                <p className="text-[10px] font-body tracking-wider uppercase text-muted-foreground">Total</p>
+                <p className="text-[10px] font-body tracking-wider uppercase text-muted-foreground">{t('header.total')}</p>
               </div>
               <div>
                 <p className="font-display text-2xl text-warm-bright">{liveCount}</p>
-                <p className="text-[10px] font-body tracking-wider uppercase text-muted-foreground">Live</p>
+                <p className="text-[10px] font-body tracking-wider uppercase text-muted-foreground">{t('header.live')}</p>
               </div>
               <div>
                 <p className="font-display text-2xl text-warm-bright">{upcomingCount}</p>
-                <p className="text-[10px] font-body tracking-wider uppercase text-muted-foreground">Soon</p>
+                <p className="text-[10px] font-body tracking-wider uppercase text-muted-foreground">{t('header.soon')}</p>
               </div>
             </div>
           </div>

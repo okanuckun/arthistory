@@ -1,5 +1,6 @@
 import { ArtMovement } from '@/data/artMovements';
 import { Lock, CheckCircle2, Award, CalendarClock } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface TimelineItemProps {
   movement: ArtMovement;
@@ -9,6 +10,7 @@ interface TimelineItemProps {
 }
 
 const TimelineItem = ({ movement, onClick, index, quizScore }: TimelineItemProps) => {
+  const { t } = useLanguage();
   const isActive = movement.status === 'active';
   const isCompleted = movement.status === 'completed';
   const isLocked = movement.status === 'locked';
@@ -55,7 +57,7 @@ const TimelineItem = ({ movement, onClick, index, quizScore }: TimelineItemProps
             <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary/10 border border-primary/20 shrink-0 ml-3">
               <Award className="w-3 h-3 text-gold" />
               <span className="text-[10px] font-body font-medium text-gold tracking-wide">
-                {quizScore.score === quizScore.total ? 'Master' : 'Completed'}
+                {quizScore.score === quizScore.total ? t('timeline.master') : t('timeline.completed')}
               </span>
               <span className="text-[9px] font-body text-gold-dim">
                 {quizScore.score}/{quizScore.total}
@@ -81,13 +83,13 @@ const TimelineItem = ({ movement, onClick, index, quizScore }: TimelineItemProps
         {isCompleted && !quizScore && (
           <span className="flex items-center gap-1.5 mt-1 text-xs font-body text-completed">
             <CheckCircle2 className="w-3.5 h-3.5" />
-            Completed
+            {t('timeline.completed')}
           </span>
         )}
 
         {isActive && (
           <span className="inline-block mt-1 text-xs font-body font-medium text-gold tracking-wider uppercase">
-            Explore Now →
+            {t('timeline.explore')}
           </span>
         )}
 
