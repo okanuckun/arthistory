@@ -104,6 +104,16 @@ const Navbar = () => {
           )}
         </div>
 
+        {canInstall && (
+          <button
+            onClick={install}
+            className="p-2 rounded-lg text-gold hover:text-gold/80 hover:bg-secondary transition-all active:scale-[0.95] animate-fade-in"
+            title="Uygulamayı yükle"
+          >
+            <Download className="w-4 h-4" />
+          </button>
+        )}
+
         <button
           onClick={toggleTheme}
           data-tour="theme"
