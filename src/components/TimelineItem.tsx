@@ -20,6 +20,7 @@ const TimelineItem = ({ movement, onClick, index, quizScore }: TimelineItemProps
       className="opacity-0 animate-fade-up group relative flex items-start gap-3 sm:gap-6 cursor-pointer"
       style={{ animationDelay: `${Math.min(index * 80, 800)}ms` }}
       onClick={() => !isLocked && onClick(movement.id)}
+      {...(index === 0 ? { 'data-tour': 'timeline-item' } : {})}
     >
       <div className="flex flex-col items-center shrink-0 w-10">
         <div

@@ -3,6 +3,8 @@ import { artMovements } from '@/data/artMovements';
 import TimelineItem from '@/components/TimelineItem';
 import MovementDetail from '@/components/MovementDetail';
 import Navbar from '@/components/Navbar';
+import TourOverlay from '@/components/TourOverlay';
+import { useTour, TourStep } from '@/hooks/use-tour';
 import { useAuth } from '@/contexts/AuthContext';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { supabase } from '@/integrations/supabase/client';
@@ -16,6 +18,41 @@ const Index = () => {
   const { t } = useLanguage();
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [scores, setScores] = useState<ScoreMap>({});
+
+  const tourSteps: TourStep[] = [
+    {
+      target: '[data-tour="timeline-item"]',
+      title: 'Sanat Akımlarını Keşfet',
+      content: 'Her akıma tıklayarak detaylı bilgi, eserler, sanatçılar ve quizlere ulaşabilirsin.',
+      placement: 'right',
+    },
+    {
+      target: '[data-tour="language"]',
+      title: 'Dil Seçimi',
+      content: 'İçerikleri farklı dillerde okuyabilirsin — Türkçe, İngilizce, Korece, İspanyolca.',
+      placement: 'bottom',
+    },
+    {
+      target: '[data-tour="theme"]',
+      title: 'Tema Değiştir',
+      content: 'Altın ve koyu tema arasında geçiş yaparak okuma deneyimini kişiselleştir.',
+      placement: 'bottom',
+    },
+    {
+      target: '[data-tour="updates"]',
+      title: 'Güncellemeler',
+      content: 'Yeni eklenen akımlar ve özellikler hakkında bildirim al.',
+      placement: 'bottom',
+    },
+    {
+      target: '[data-tour="leaderboard"]',
+      title: 'Sıralama Tablosu',
+      content: 'Quiz puanlarını diğer kullanıcılarla karşılaştır ve en iyi ol!',
+      placement: 'bottom',
+    },
+  ];
+
+  const tour = useTour(tourSteps);
 
   useEffect(() => {
     if (!user) return;
@@ -65,6 +102,15 @@ const Index = () => {
   return (
     <>
       <Navbar />
+      <TourOverlay
+        active={tour.active}
+        step={tour.step}
+        currentStep={tour.currentStep}
+        totalSteps={tour.totalSteps}
+        onNext={tour.next}
+        onPrev={tour.prev}
+        onFinish={tour.finish}
+      />
       <div className="min-h-screen">
         <header className="max-w-3xl mx-auto px-4 sm:px-6 pt-8 sm:pt-12 pb-6 sm:pb-10">
           <div className="opacity-0 animate-fade-up flex flex-col sm:flex-row sm:items-end sm:justify-between mb-6 sm:mb-10 gap-4">

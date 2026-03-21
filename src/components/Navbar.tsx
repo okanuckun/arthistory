@@ -77,7 +77,7 @@ const Navbar = () => {
 
       <div className="flex items-center gap-1 sm:gap-2">
         {/* Language selector */}
-        <div className="relative" ref={langRef}>
+        <div className="relative" ref={langRef} data-tour="language">
           <button
             onClick={() => setLangOpen(!langOpen)}
             className="flex items-center gap-1 px-2 py-1.5 rounded-lg text-muted-foreground hover:text-foreground hover:bg-secondary transition-all active:scale-[0.95] text-xs"
@@ -104,6 +104,7 @@ const Navbar = () => {
 
         <button
           onClick={toggleTheme}
+          data-tour="theme"
           className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-secondary transition-all active:scale-[0.95]"
         >
           {theme === 'gold' ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
@@ -111,6 +112,7 @@ const Navbar = () => {
 
         <button
           onClick={() => navigate(isUpdates ? '/' : '/updates')}
+          data-tour="updates"
           className={`relative p-2 rounded-lg transition-all active:scale-[0.95] ${
             isUpdates ? 'text-gold bg-secondary' : 'text-muted-foreground hover:text-foreground hover:bg-secondary'
           }`}
@@ -125,6 +127,7 @@ const Navbar = () => {
 
         <button
           onClick={() => navigate(isLeaderboard ? '/' : '/leaderboard')}
+          data-tour="leaderboard"
           className={`p-2 rounded-lg transition-all active:scale-[0.95] ${
             isLeaderboard ? 'text-gold bg-secondary' : 'text-muted-foreground hover:text-foreground hover:bg-secondary'
           }`}
