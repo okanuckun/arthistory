@@ -36,6 +36,18 @@ const MovementDetail = ({ movement, onBack, onQuizComplete, existingScore }: Mov
             <div key={i} className="w-6 h-6 rounded-sm" style={{ backgroundColor: color }} />
           ))}
         </div>
+        {content.origin && (
+          <div className="mb-8 border border-primary/20 rounded-lg p-4 bg-surface-elevated">
+            <p className="text-[10px] font-body tracking-[0.2em] uppercase text-gold/70 mb-2">
+              {content.origin.type === 'reaction' ? '⚡ Emerged as a reaction to' : content.origin.type === 'evolution' ? '→ Evolved from' : '◎ Parallel to'}{' '}
+              <span className="text-gold">{content.origin.targetName}</span>
+            </p>
+            <p className="text-sm font-body text-foreground/70 leading-relaxed italic" style={{ textWrap: 'pretty' as any }}>
+              {content.origin.explanation}
+            </p>
+          </div>
+        )}
+
         <p className="text-base font-body text-foreground/80 leading-relaxed max-w-prose" style={{ textWrap: 'pretty' as any }}>
           {content.summary}
         </p>
