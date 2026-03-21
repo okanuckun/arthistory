@@ -85,7 +85,7 @@ const Navbar = () => {
             <span>{currentLang?.flag}</span>
           </button>
           {langOpen && (
-            <div className="absolute right-0 top-full mt-1 bg-card border border-border rounded-lg shadow-lg py-1 z-50 min-w-[140px]">
+            <div className="absolute right-0 top-full mt-1 bg-card border border-border rounded-lg shadow-lg shadow-black/20 py-1 z-50 min-w-[140px] max-h-[70vh] overflow-y-auto">
               {LANGUAGES.map(lang => (
                 <button
                   key={lang.code}
