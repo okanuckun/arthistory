@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from 'react';
 import { TourStep } from '@/hooks/use-tour';
+import { useLanguage } from '@/contexts/LanguageContext';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface TourOverlayProps {
@@ -13,6 +14,7 @@ interface TourOverlayProps {
 }
 
 const TourOverlay = ({ active, step, currentStep, totalSteps, onNext, onPrev, onFinish }: TourOverlayProps) => {
+  const { t } = useLanguage();
   const [rect, setRect] = useState<DOMRect | null>(null);
   const [tooltipPos, setTooltipPos] = useState({ top: 0, left: 0 });
   const tooltipRef = useRef<HTMLDivElement>(null);
@@ -163,14 +165,14 @@ const TourOverlay = ({ active, step, currentStep, totalSteps, onNext, onPrev, on
             className="flex items-center gap-1 text-xs font-body text-muted-foreground hover:text-foreground transition-colors disabled:opacity-30 disabled:pointer-events-none active:scale-95"
           >
             <ChevronLeft className="w-3.5 h-3.5" />
-            Geri
+            {t('tour.prev')}
           </button>
 
           <button
             onClick={onNext}
             className="flex items-center gap-1.5 text-xs font-body font-medium px-4 py-2 rounded-lg bg-gold/90 text-primary-foreground hover:bg-gold transition-colors active:scale-[0.97]"
           >
-            {isLast ? 'Başla!' : 'İleri'}
+            {isLast ? t('tour.finish') : t('tour.next')}
             {!isLast && <ChevronRight className="w-3.5 h-3.5" />}
           </button>
         </div>
