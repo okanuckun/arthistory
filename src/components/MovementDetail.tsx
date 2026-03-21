@@ -17,7 +17,7 @@ const MovementDetail = ({ movement, onBack, onQuizComplete, existingScore }: Mov
   const content = movement.content;
   if (!content) return null;
   const { t } = useLanguage();
-  const { translated, isTranslating } = useTranslatedContent(movement.id, content);
+  const { translated } = useTranslatedContent(movement.id, content);
   const { speak, stop, pause, resume, restart, isSpeaking, isPaused, isLoading, hasResumable, getSavedProgress } = useTTS(movement.id);
 
   const summary = translated?.summary || content.summary;
@@ -115,13 +115,6 @@ const MovementDetail = ({ movement, onBack, onQuizComplete, existingScore }: Mov
           </button>
         )}
       </div>
-
-      {isTranslating && (
-        <div className="mb-6 flex items-center gap-2 text-sm font-body text-gold/70">
-          <div className="w-3 h-3 border-2 border-gold/50 border-t-transparent rounded-full animate-spin" />
-          {t('translating')}
-        </div>
-      )}
 
       <div className="opacity-0 animate-fade-up mb-16">
         <span className="text-xs font-body tracking-[0.2em] uppercase text-muted-foreground block mb-3">
