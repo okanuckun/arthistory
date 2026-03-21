@@ -1,5 +1,6 @@
 import altareDellaConfessioneImage from '@/assets/artworks/altare-della-confessione.jpeg';
 import arnolfiniPortraitImage from '@/assets/artworks/arnolfini-portrait.jpg';
+import birthOfVenusImage from '@/assets/artworks/birth-of-venus.jpg';
 import davidImage from '@/assets/artworks/david.jpg';
 import vitruvianManImage from '@/assets/artworks/vitruvian-man.jpg';
 
