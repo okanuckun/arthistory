@@ -158,7 +158,7 @@ Two technical inventions defined the era's visual language above all else: linea
           type: 'painting',
           medium: 'Tempera on canvas',
           location: 'Uffizi Gallery, Florence',
-          imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Sandro_Botticelli_-_La_nascita_di_Venere_-_Google_Art_Project_-_edited.jpg/1280px-Sandro_Botticelli_-_La_nascita_di_Venere_-_Google_Art_Project_-_edited.jpg',
+          imageUrl: birthOfVenusImage,
           description: 'One of the first large-scale mythological paintings of the Renaissance. Botticelli\'s Venus embodies the Neoplatonic ideal of divine beauty — her elegant, elongated form rising from the sea in a swirl of wind, flowers, and drapery.',
         },
         {
