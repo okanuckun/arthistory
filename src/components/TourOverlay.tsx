@@ -165,7 +165,7 @@ const TourOverlay = ({ active, step, currentStep, totalSteps, onNext, onPrev, on
             className="flex items-center gap-1 text-xs font-body text-muted-foreground hover:text-foreground transition-colors disabled:opacity-30 disabled:pointer-events-none active:scale-95"
           >
             <ChevronLeft className="w-3.5 h-3.5" />
-            Geri
+            {t('tour.prev')}
           </button>
 
           <button
