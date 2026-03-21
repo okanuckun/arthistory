@@ -1,9 +1,9 @@
 import { useState, useEffect, useCallback } from 'react';
-import { useLanguage, Language } from '@/contexts/LanguageContext';
+import { useLanguage } from '@/contexts/LanguageContext';
 import { MovementContent } from '@/data/artMovements';
 import { supabase } from '@/integrations/supabase/client';
 
-interface TranslatedContent {
+export interface TranslatedContent {
   summary?: string;
   characteristics?: string[];
   artists?: { name: string; years: string; description: string }[];
@@ -31,34 +31,9 @@ export const useTranslatedContent = (movementId: string, content: MovementConten
 
     setLoading(true);
 
-    // Check cache first
-    const { data: cached } = await supabase
-      .from('content_translations')
-      .select('field, translated_text')
-      .eq('movement_id', movementId)
-      .eq('language', language);
-
-    if (cached && cached.length > 0) {
-      const map: Record<string, string> = {};
-      cached.forEach(row => { map[row.field] = row.translated_text; });
-
-      if (map['summary']) {
-        try {
-          const parsed = JSON.parse(map['full_content'] || '{}');
-          setTranslated(parsed);
-        } catch {
-          // If full_content isn't cached, use individual fields
-          setTranslated({ summary: map['summary'] });
-        }
-        setLoading(false);
-        return;
-      }
-    }
-
-    // Call edge function for translation
     try {
       const { data, error } = await supabase.functions.invoke('translate-content', {
-        body: { movementId, language },
+        body: { movementId, language, content },
       });
 
       if (error) throw error;
