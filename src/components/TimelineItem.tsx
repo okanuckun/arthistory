@@ -36,18 +36,32 @@ const TimelineItem = ({ movement, onClick, index, quizScore }: TimelineItemProps
           isLocked ? 'opacity-35' : 'opacity-100'
         } ${!isLocked ? 'group-hover:translate-x-1' : ''}`}
       >
-        <div className="flex items-baseline gap-3 mb-1">
-          <span className="text-xs font-body tracking-widest uppercase text-muted-foreground">
-            {String(movement.number).padStart(2, '0')}
-          </span>
-          <h3
-            className={`font-display text-xl font-medium tracking-tight ${
-              isActive ? 'text-gold-light' : isCompleted ? 'text-foreground' : 'text-muted-foreground'
-            }`}
-          >
-            {movement.name}
-          </h3>
-          {isLocked && <Lock className="w-3.5 h-3.5 text-muted-foreground/50" />}
+        <div className="flex items-start justify-between mb-1">
+          <div className="flex items-baseline gap-3">
+            <span className="text-xs font-body tracking-widest uppercase text-muted-foreground">
+              {String(movement.number).padStart(2, '0')}
+            </span>
+            <h3
+              className={`font-display text-xl font-medium tracking-tight ${
+                isActive ? 'text-gold-light' : isCompleted ? 'text-foreground' : 'text-muted-foreground'
+              }`}
+            >
+              {movement.name}
+            </h3>
+            {isLocked && <Lock className="w-3.5 h-3.5 text-muted-foreground/50" />}
+          </div>
+
+          {quizScore && (
+            <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary/10 border border-primary/20 shrink-0 ml-3">
+              <Award className="w-3 h-3 text-gold" />
+              <span className="text-[10px] font-body font-medium text-gold tracking-wide">
+                {quizScore.score === quizScore.total ? 'Master' : 'Completed'}
+              </span>
+              <span className="text-[9px] font-body text-gold-dim">
+                {quizScore.score}/{quizScore.total}
+              </span>
+            </span>
+          )}
         </div>
 
         <p className="text-sm font-body text-muted-foreground mb-2">
