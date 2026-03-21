@@ -13,6 +13,7 @@ interface MovementDetailProps {
 const MovementDetail = ({ movement, onBack, onQuizComplete, existingScore }: MovementDetailProps) => {
   const content = movement.content;
   if (!content) return null;
+  const summaryParagraphs = content.summary.split('\n\n').filter(Boolean);
 
   return (
     <div className="max-w-3xl mx-auto px-6 py-12">
@@ -48,9 +49,17 @@ const MovementDetail = ({ movement, onBack, onQuizComplete, existingScore }: Mov
           </div>
         )}
 
-        <p className="text-base font-body text-foreground/80 leading-relaxed max-w-prose" style={{ textWrap: 'pretty' as any }}>
-          {content.summary}
-        </p>
+        <div className="max-w-prose space-y-5">
+          {summaryParagraphs.map((paragraph, index) => (
+            <p
+              key={index}
+              className="text-base font-body text-foreground/80 leading-relaxed"
+              style={{ textWrap: 'pretty' as any }}
+            >
+              {paragraph}
+            </p>
+          ))}
+        </div>
       </div>
 
       <section className="opacity-0 animate-fade-up mb-16" style={{ animationDelay: '150ms' }}>
