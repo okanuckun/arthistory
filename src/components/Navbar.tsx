@@ -112,6 +112,7 @@ const Navbar = () => {
 
         <button
           onClick={() => navigate(isUpdates ? '/' : '/updates')}
+          data-tour="updates"
           className={`relative p-2 rounded-lg transition-all active:scale-[0.95] ${
             isUpdates ? 'text-gold bg-secondary' : 'text-muted-foreground hover:text-foreground hover:bg-secondary'
           }`}
