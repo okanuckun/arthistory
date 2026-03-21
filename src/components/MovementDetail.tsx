@@ -1,6 +1,7 @@
 import { ArtMovement } from '@/data/artMovements';
 import Quiz from './Quiz';
-import { ArrowLeft, Palette, Wrench, Sparkles } from 'lucide-react';
+import { ArrowLeft, Palette, Wrench, Sparkles, Volume2, Pause, Square } from 'lucide-react';
+import { useTTS } from '@/hooks/use-tts';
 
 interface MovementDetailProps {
   movement: ArtMovement;
@@ -11,17 +12,81 @@ interface MovementDetailProps {
 
 const MovementDetail = ({ movement, onBack, onQuizComplete, existingScore }: MovementDetailProps) => {
   const content = movement.content;
+  const { speak, stop, pause, resume, isSpeaking, isPaused } = useTTS();
   if (!content) return null;
+
+  const buildReadText = () => {
+    const parts: string[] = [];
+    parts.push(movement.name + '. ' + content.summary);
+    parts.push('Temel Özellikler. ' + content.characteristics.join('. '));
+    parts.push('Önemli Sanatçılar. ' + content.artists.map(a => a.name + '. ' + a.description).join('. '));
+    if (content.tattooTips) {
+      parts.push('Dövme Sanatçısı Rehberi. ' + content.tattooTips.intro);
+      parts.push('Tasarım İpuçları. ' + content.tattooTips.design.join('. '));
+      parts.push('Teknik İpuçları. ' + content.tattooTips.technical.join('. '));
+      parts.push(content.tattooTips.inspiration);
+    }
+    return parts.join('. ');
+  };
+
+  const handleSpeak = () => {
+    if (isSpeaking && !isPaused) {
+      pause();
+    } else if (isSpeaking && isPaused) {
+      resume();
+    } else {
+      speak(buildReadText());
+    }
+  };
 
   return (
     <div className="max-w-3xl mx-auto px-6 py-12">
-      <button
-        onClick={onBack}
-        className="flex items-center gap-2 text-sm font-body text-muted-foreground hover:text-foreground transition-colors mb-12 active:scale-[0.97]"
-      >
-        <ArrowLeft className="w-4 h-4" />
-        Timeline
-      </button>
+      <div className="flex items-center justify-between mb-12">
+        <button
+          onClick={onBack}
+          className="flex items-center gap-2 text-sm font-body text-muted-foreground hover:text-foreground transition-colors active:scale-[0.97]"
+        >
+          <ArrowLeft className="w-4 h-4" />
+          Timeline
+        </button>
+        <button
+          onClick={handleSpeak}
+          className={`flex items-center gap-2 text-sm font-body px-3 py-1.5 rounded-md transition-all active:scale-[0.97] ${
+            isSpeaking
+              ? 'bg-primary/10 text-primary border border-primary/20'
+              : 'text-muted-foreground hover:text-foreground hover:bg-muted/50 border border-border/50'
+          }`}
+        >
+          {isSpeaking && !isPaused ? (
+            <>
+              <Pause className="w-4 h-4" />
+              Duraklat
+            </>
+          ) : isSpeaking && isPaused ? (
+            <>
+              <Volume2 className="w-4 h-4" />
+              Devam Et
+            </>
+          ) : (
+            <>
+              <Volume2 className="w-4 h-4" />
+              Sayfayı Oku
+            </>
+          )}
+        </button>
+      </div>
+
+      {isSpeaking && (
+        <div className="flex justify-end mb-4">
+          <button
+            onClick={stop}
+            className="flex items-center gap-1.5 text-xs font-body text-muted-foreground hover:text-destructive transition-colors active:scale-[0.97]"
+          >
+            <Square className="w-3 h-3" />
+            Durdur
+          </button>
+        </div>
+      )}
 
       <div className="opacity-0 animate-fade-up mb-16">
         <span className="text-xs font-body tracking-[0.2em] uppercase text-muted-foreground block mb-3">
