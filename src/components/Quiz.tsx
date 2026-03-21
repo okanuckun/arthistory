@@ -105,14 +105,32 @@ const Quiz = ({ questions, movementName, movementId, onComplete, existingScore }
                   : 'You might want to re-read the content above.'}
               </p>
             </div>
-            <button
-              onClick={handleReset}
-              className="flex items-center gap-2 text-sm font-body text-muted-foreground hover:text-foreground transition-colors active:scale-[0.97]"
-            >
-              <RotateCcw className="w-4 h-4" />
-              Retake
-            </button>
+            <div className="flex items-center gap-3">
+              <button
+                onClick={() => setShowScoreCard(true)}
+                className="flex items-center gap-2 text-sm font-body text-gold hover:text-gold-light transition-colors active:scale-[0.97]"
+              >
+                <Share2 className="w-4 h-4" />
+                Share
+              </button>
+              <button
+                onClick={handleReset}
+                className="flex items-center gap-2 text-sm font-body text-muted-foreground hover:text-foreground transition-colors active:scale-[0.97]"
+              >
+                <RotateCcw className="w-4 h-4" />
+                Retake
+              </button>
+            </div>
           </div>
+
+          {showScoreCard && (
+            <ScoreCard
+              score={score}
+              total={questions.length}
+              movementName={movementName}
+              onClose={() => setShowScoreCard(false)}
+            />
+          )}
         </div>
       )}
 
