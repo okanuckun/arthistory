@@ -64,18 +64,25 @@ const TimelineItem = ({ movement, onClick, index, quizScore }: TimelineItemProps
           ))}
         </div>
 
-        {isCompleted && (
-          <div className="flex items-center gap-3 mt-1">
-            <span className="flex items-center gap-1.5 text-xs font-body text-completed">
-              <CheckCircle2 className="w-3.5 h-3.5" />
-              Completed
-            </span>
-            {quizScore && (
-              <span className="text-xs font-body text-gold-dim">
-                Quiz: {quizScore.score}/{quizScore.total}
+        {quizScore && (
+          <div className="flex items-center gap-3 mt-2">
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary/10 border border-primary/20">
+              <Award className="w-3.5 h-3.5 text-gold" />
+              <span className="text-[11px] font-body font-medium text-gold tracking-wide">
+                {quizScore.score === quizScore.total ? 'Master' : 'Completed'}
               </span>
-            )}
+              <span className="text-[10px] font-body text-gold-dim ml-0.5">
+                {quizScore.score}/{quizScore.total}
+              </span>
+            </span>
           </div>
+        )}
+
+        {isCompleted && !quizScore && (
+          <span className="flex items-center gap-1.5 mt-1 text-xs font-body text-completed">
+            <CheckCircle2 className="w-3.5 h-3.5" />
+            Completed
+          </span>
         )}
 
         {isActive && (
