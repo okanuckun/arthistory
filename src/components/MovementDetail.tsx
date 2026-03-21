@@ -2,6 +2,8 @@ import { ArtMovement } from '@/data/artMovements';
 import Quiz from './Quiz';
 import ArtworkGallery from './ArtworkGallery';
 import { ArrowLeft, Palette, Wrench, Sparkles } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
+import { useTranslatedContent } from '@/hooks/use-translation';
 
 interface MovementDetailProps {
   movement: ArtMovement;
@@ -13,7 +15,27 @@ interface MovementDetailProps {
 const MovementDetail = ({ movement, onBack, onQuizComplete, existingScore }: MovementDetailProps) => {
   const content = movement.content;
   if (!content) return null;
-  const summaryParagraphs = content.summary.split('\n\n').filter(Boolean);
+  const { t } = useLanguage();
+  const { translated, isTranslating } = useTranslatedContent(movement.id, content);
+
+  const summary = translated?.summary || content.summary;
+  const summaryParagraphs = summary.split('\n\n').filter(Boolean);
+  const characteristics = translated?.characteristics || content.characteristics;
+  const artists = content.artists.map((a, i) => ({
+    ...a,
+    description: translated?.artists?.[i]?.description || a.description,
+  }));
+  const tattooTips = content.tattooTips ? {
+    intro: translated?.tattooTips?.intro || content.tattooTips.intro,
+    design: translated?.tattooTips?.design || content.tattooTips.design,
+    technical: translated?.tattooTips?.technical || content.tattooTips.technical,
+    inspiration: translated?.tattooTips?.inspiration || content.tattooTips.inspiration,
+  } : null;
+  const originExplanation = translated?.origin?.explanation || content.origin?.explanation;
+  const artworksTranslated = content.artworks?.map((a, i) => ({
+    ...a,
+    description: translated?.artworks?.[i]?.description || a.description,
+  }));
 
   return (
     <div className="max-w-3xl mx-auto px-6 py-12">
@@ -22,8 +44,15 @@ const MovementDetail = ({ movement, onBack, onQuizComplete, existingScore }: Mov
         className="flex items-center gap-2 text-sm font-body text-muted-foreground hover:text-foreground transition-colors mb-12 active:scale-[0.97]"
       >
         <ArrowLeft className="w-4 h-4" />
-        Timeline
+        {t('detail.back')}
       </button>
+
+      {isTranslating && (
+        <div className="mb-6 flex items-center gap-2 text-sm font-body text-gold/70">
+          <div className="w-3 h-3 border-2 border-gold/50 border-t-transparent rounded-full animate-spin" />
+          {t('translating')}
+        </div>
+      )}
 
       <div className="opacity-0 animate-fade-up mb-16">
         <span className="text-xs font-body tracking-[0.2em] uppercase text-muted-foreground block mb-3">
@@ -40,11 +69,11 @@ const MovementDetail = ({ movement, onBack, onQuizComplete, existingScore }: Mov
         {content.origin && (
           <div className="mb-8 border border-primary/20 rounded-lg p-4 bg-surface-elevated">
             <p className="text-[10px] font-body tracking-[0.2em] uppercase text-gold/70 mb-2">
-              {content.origin.type === 'reaction' ? '⚡ Emerged as a reaction to' : content.origin.type === 'evolution' ? '→ Evolved from' : '◎ Parallel to'}{' '}
+              {content.origin.type === 'reaction' ? t('detail.origin.reaction') : content.origin.type === 'evolution' ? t('detail.origin.evolution') : t('detail.origin.parallel')}{' '}
               <span className="text-gold">{content.origin.targetName}</span>
             </p>
             <p className="text-sm font-body text-foreground/70 leading-relaxed italic" style={{ textWrap: 'pretty' as any }}>
-              {content.origin.explanation}
+              {originExplanation}
             </p>
           </div>
         )}
@@ -64,10 +93,10 @@ const MovementDetail = ({ movement, onBack, onQuizComplete, existingScore }: Mov
 
       <section className="opacity-0 animate-fade-up mb-16" style={{ animationDelay: '150ms' }}>
         <h2 className="font-display text-2xl text-gold-light mb-6 tracking-tight">
-          Key Characteristics
+          {t('detail.characteristics')}
         </h2>
         <ul className="space-y-3">
-          {content.characteristics.map((item, i) => (
+          {characteristics.map((item, i) => (
             <li key={i} className="flex items-start gap-3 text-sm font-body text-foreground/75 leading-relaxed">
               <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0 mt-2" />
               {item}
@@ -76,16 +105,16 @@ const MovementDetail = ({ movement, onBack, onQuizComplete, existingScore }: Mov
         </ul>
       </section>
 
-      {content.artworks && content.artworks.length > 0 && (
-        <ArtworkGallery artworks={content.artworks} movementName={movement.name} />
+      {artworksTranslated && artworksTranslated.length > 0 && (
+        <ArtworkGallery artworks={artworksTranslated} movementName={movement.name} />
       )}
 
       <section className="opacity-0 animate-fade-up mb-16" style={{ animationDelay: '300ms' }}>
         <h2 className="font-display text-2xl text-gold-light mb-8 tracking-tight">
-          Notable Artists
+          {t('detail.artists')}
         </h2>
         <div className="space-y-6">
-          {content.artists.map((artist, i) => (
+          {artists.map((artist, i) => (
             <div
               key={i}
               className="bg-surface-elevated rounded-lg p-6 border border-border/50 hover:border-primary/20 transition-colors"
@@ -102,23 +131,23 @@ const MovementDetail = ({ movement, onBack, onQuizComplete, existingScore }: Mov
         </div>
       </section>
 
-      {content.tattooTips && (
+      {tattooTips && (
         <section className="opacity-0 animate-fade-up mb-16" style={{ animationDelay: '400ms' }}>
           <h2 className="font-display text-2xl text-gold-light mb-3 tracking-tight">
-            Tattoo Artist's Guide
+            {t('detail.tattoo_guide')}
           </h2>
           <p className="text-sm font-body text-foreground/60 leading-relaxed mb-8 max-w-prose" style={{ textWrap: 'pretty' as any }}>
-            {content.tattooTips.intro}
+            {tattooTips.intro}
           </p>
 
           <div className="space-y-8">
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <Palette className="w-4 h-4 text-gold" />
-                <h3 className="font-display text-base text-warm-bright tracking-tight">Design Tips</h3>
+                <h3 className="font-display text-base text-warm-bright tracking-tight">{t('detail.design_tips')}</h3>
               </div>
               <ul className="space-y-4">
-                {content.tattooTips.design.map((tip, i) => (
+                {tattooTips.design.map((tip, i) => (
                   <li key={i} className="flex items-start gap-3 text-sm font-body text-foreground/75 leading-relaxed">
                     <span className="text-xs font-body text-gold/60 shrink-0 mt-0.5 w-4">
                       {String(i + 1).padStart(2, '0')}
@@ -132,10 +161,10 @@ const MovementDetail = ({ movement, onBack, onQuizComplete, existingScore }: Mov
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <Wrench className="w-4 h-4 text-gold" />
-                <h3 className="font-display text-base text-warm-bright tracking-tight">Technical Tips</h3>
+                <h3 className="font-display text-base text-warm-bright tracking-tight">{t('detail.technical_tips')}</h3>
               </div>
               <ul className="space-y-4">
-                {content.tattooTips.technical.map((tip, i) => (
+                {tattooTips.technical.map((tip, i) => (
                   <li key={i} className="flex items-start gap-3 text-sm font-body text-foreground/75 leading-relaxed">
                     <span className="text-xs font-body text-gold/60 shrink-0 mt-0.5 w-4">
                       {String(i + 1).padStart(2, '0')}
@@ -149,10 +178,10 @@ const MovementDetail = ({ movement, onBack, onQuizComplete, existingScore }: Mov
             <div className="bg-surface-elevated rounded-lg p-6 border border-primary/20">
               <div className="flex items-center gap-2 mb-3">
                 <Sparkles className="w-4 h-4 text-gold" />
-                <h3 className="font-display text-base text-warm-bright tracking-tight">Modern Inspiration</h3>
+                <h3 className="font-display text-base text-warm-bright tracking-tight">{t('detail.inspiration')}</h3>
               </div>
               <p className="text-sm font-body text-foreground/70 leading-relaxed" style={{ textWrap: 'pretty' as any }}>
-                {content.tattooTips.inspiration}
+                {tattooTips.inspiration}
               </p>
             </div>
           </div>
