@@ -11,7 +11,6 @@ const Auth = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
-  const [signupSuccess, setSignupSuccess] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -30,36 +29,13 @@ const Auth = () => {
         return;
       }
       const { error } = await signUp(email, password, name.trim());
-      if (error) {
-        setError(error);
-      } else {
-        setSignupSuccess(true);
-      }
+      if (error) setError(error);
     } else {
       const { error } = await signIn(email, password);
       if (error) setError(error);
     }
     setLoading(false);
   };
-
-  if (signupSuccess) {
-    return (
-      <div className="min-h-screen flex items-center justify-center px-6">
-        <div className="max-w-sm w-full text-center">
-          <h2 className="font-display text-2xl text-warm-bright mb-3">Check Your Email</h2>
-          <p className="text-sm font-body text-muted-foreground leading-relaxed">
-            We sent a confirmation link to <span className="text-foreground">{email}</span>. Click it to activate your account.
-          </p>
-          <button
-            onClick={() => { setSignupSuccess(false); setMode('login'); }}
-            className="mt-6 text-sm text-gold font-body hover:text-gold-light transition-colors"
-          >
-            Back to login
-          </button>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div className="min-h-screen flex items-center justify-center px-6">
