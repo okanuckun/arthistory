@@ -250,7 +250,7 @@ const MovementDetail = ({ movement, onBack, onQuizComplete, existingScore }: Mov
         </section>
       )}
 
-      <section className="opacity-0 animate-fade-up" style={{ animationDelay: '550ms' }}>
+      <section className="opacity-0 animate-fade-up" style={{ animationDelay: '550ms' }} data-tour="detail-quiz">
         <Quiz
           questions={content.quiz}
           movementName={movement.name}
