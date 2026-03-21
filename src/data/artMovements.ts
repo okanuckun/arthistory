@@ -52,6 +52,7 @@ export interface ArtMovement {
   period: string;
   colorPalette: string[];
   status: 'completed' | 'active' | 'locked';
+  releaseDate?: string;
   content?: MovementContent;
 }
 
@@ -316,7 +317,8 @@ Two technical inventions defined the era's visual language above all else: linea
     name: 'Baroque',
     period: '1600 – 1750',
     colorPalette: ['#4A3728', '#8B7355', '#2F1B14', '#C4956A', '#1A1A2E'],
-    status: 'active',
+    status: 'locked',
+    releaseDate: '30 Mart Pazar',
     content: {
       origin: {
         type: 'reaction',
@@ -580,7 +582,8 @@ The Baroque also coincided with the Scientific Revolution, the Age of Exploratio
     name: 'Rococo',
     period: '1720 – 1780',
     colorPalette: ['#B5D4C7', '#E8D5B7', '#F5E6CC', '#A8C4B8', '#D4B896'],
-    status: 'active',
+    status: 'locked',
+    releaseDate: '6 Nisan Pazar',
     content: {
       origin: {
         type: 'reaction',
@@ -849,7 +852,8 @@ Rococo eventually collapsed under the weight of its own frivolity. By the 1760s,
     name: 'Neoclassicism',
     period: '1750 – 1850',
     colorPalette: ['#B8A88A', '#8E7F6D', '#C4B196', '#6B5B4A', '#D4C4A8'],
-    status: 'active',
+    status: 'locked',
+    releaseDate: '13 Nisan Pazar',
     content: {
       origin: {
         type: 'reaction',
@@ -1113,7 +1117,8 @@ Neoclassicism was deeply connected to politics in a way few art movements have b
     name: 'Romanticism',
     period: '1780 – 1850',
     colorPalette: ['#6B4423', '#8B6914', '#3E5F8A', '#5C4033', '#A0522D'],
-    status: 'active',
+    status: 'locked',
+    releaseDate: '20 Nisan Pazar',
     content: {
       origin: {
         type: 'reaction',

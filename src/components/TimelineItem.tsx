@@ -1,5 +1,5 @@
 import { ArtMovement } from '@/data/artMovements';
-import { Lock, CheckCircle2, Award } from 'lucide-react';
+import { Lock, CheckCircle2, Award, CalendarClock } from 'lucide-react';
 
 interface TimelineItemProps {
   movement: ArtMovement;
@@ -88,6 +88,13 @@ const TimelineItem = ({ movement, onClick, index, quizScore }: TimelineItemProps
         {isActive && (
           <span className="inline-block mt-1 text-xs font-body font-medium text-gold tracking-wider uppercase">
             Explore Now →
+          </span>
+        )}
+
+        {isLocked && movement.releaseDate && (
+          <span className="flex items-center gap-1.5 mt-1 text-[11px] font-body text-muted-foreground/70">
+            <CalendarClock className="w-3 h-3" />
+            {movement.releaseDate}
           </span>
         )}
       </div>
