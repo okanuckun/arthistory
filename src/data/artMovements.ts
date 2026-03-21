@@ -1,4 +1,7 @@
 import stPetersBasilica from '@/assets/st-peters-basilica.jpeg';
+import vitruvianMan from '@/assets/vitruvian-man.jpg';
+import davidMichelangelo from '@/assets/david-michelangelo.jpg';
+import arnolfiniPortrait from '@/assets/arnolfini-portrait.jpg';
 
 export interface QuizQuestion {
   question: string;
