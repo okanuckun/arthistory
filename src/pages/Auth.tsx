@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { useAuth } from '@/contexts/AuthContext';
 import { Eye, EyeOff, Palette, BookOpen, Sparkles } from 'lucide-react';
+import { useLanguage, LANGUAGES } from '@/contexts/LanguageContext';
 
 const Auth = () => {
   const { signUp, signIn } = useAuth();
+  const { language, setLanguage, t } = useLanguage();
   const [mode, setMode] = useState<'landing' | 'login' | 'signup'>('landing');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -37,21 +39,36 @@ const Auth = () => {
     setLoading(false);
   };
 
+  const currentLang = LANGUAGES.find(l => l.code === language);
+
   if (mode === 'landing') {
     return (
       <div className="min-h-screen flex flex-col justify-between px-6 py-12">
+        {/* Language selector top-right */}
+        <div className="flex justify-end mb-4">
+          <select
+            value={language}
+            onChange={e => setLanguage(e.target.value as any)}
+            className="bg-secondary border border-border rounded-md px-2 py-1 text-xs font-body text-foreground focus:outline-none focus:ring-1 focus:ring-primary"
+          >
+            {LANGUAGES.map(l => (
+              <option key={l.code} value={l.code}>{l.flag} {l.label}</option>
+            ))}
+          </select>
+        </div>
+
         {/* Hero */}
         <div className="flex-1 flex flex-col justify-center max-w-md mx-auto w-full">
           <div className="opacity-0 animate-fade-up">
             <p className="text-[10px] font-body tracking-[0.35em] uppercase text-muted-foreground mb-5">
-              For Tattoo Artists
+              {t('landing.tagline')}
             </p>
             <h1 className="font-display text-4xl md:text-5xl font-medium text-warm-bright tracking-tight leading-[1.05] mb-3">
               The Great Art<br />
               <span className="text-gold italic">Movements</span>
             </h1>
-            <p className="text-sm font-body text-muted-foreground leading-relaxed max-w-[280px] mb-8">
-              Master art history from Renaissance to Contemporary — designed specifically for tattoo artists who want deeper roots in their craft.
+            <p className="text-sm font-body text-muted-foreground leading-relaxed max-w-[300px] mb-8">
+              {t('landing.subtitle')}
             </p>
           </div>
 
@@ -62,8 +79,8 @@ const Auth = () => {
                 <BookOpen className="w-3.5 h-3.5 text-gold" />
               </div>
               <div>
-                <p className="text-sm font-body text-foreground font-medium">22 Art Movements</p>
-                <p className="text-xs font-body text-muted-foreground">Deep-dive lessons with tattoo-specific insights</p>
+                <p className="text-sm font-body text-foreground font-medium">{t('landing.feat1.title')}</p>
+                <p className="text-xs font-body text-muted-foreground">{t('landing.feat1.desc')}</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
@@ -71,8 +88,8 @@ const Auth = () => {
                 <Palette className="w-3.5 h-3.5 text-gold" />
               </div>
               <div>
-                <p className="text-sm font-body text-foreground font-medium">Tattoo Tips & Techniques</p>
-                <p className="text-xs font-body text-muted-foreground">Each movement includes design guidance for ink</p>
+                <p className="text-sm font-body text-foreground font-medium">{t('landing.feat2.title')}</p>
+                <p className="text-xs font-body text-muted-foreground">{t('landing.feat2.desc')}</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
@@ -80,8 +97,8 @@ const Auth = () => {
                 <Sparkles className="w-3.5 h-3.5 text-gold" />
               </div>
               <div>
-                <p className="text-sm font-body text-foreground font-medium">Weekly New Content</p>
-                <p className="text-xs font-body text-muted-foreground">A new movement unlocks every Sunday</p>
+                <p className="text-sm font-body text-foreground font-medium">{t('landing.feat3.title')}</p>
+                <p className="text-xs font-body text-muted-foreground">{t('landing.feat3.desc')}</p>
               </div>
             </div>
           </div>
@@ -92,13 +109,13 @@ const Auth = () => {
               onClick={() => setMode('signup')}
               className="w-full bg-primary text-primary-foreground rounded-lg py-3.5 text-sm font-body font-medium transition-all duration-200 hover:bg-primary/90 active:scale-[0.97] shadow-[0_2px_16px_hsl(var(--gold)/0.2)]"
             >
-              Create Free Account
+              {t('landing.cta.signup')}
             </button>
             <button
               onClick={() => setMode('login')}
               className="w-full bg-secondary text-foreground border border-border rounded-lg py-3.5 text-sm font-body font-medium transition-all duration-200 hover:bg-secondary/80 active:scale-[0.97]"
             >
-              Sign In
+              {t('landing.cta.signin')}
             </button>
           </div>
         </div>
@@ -106,7 +123,7 @@ const Auth = () => {
         {/* Footer */}
         <div className="text-center mt-10 opacity-0 animate-fade-in" style={{ animationDelay: '500ms' }}>
           <p className="text-[10px] font-body tracking-[0.2em] uppercase text-muted-foreground/50">
-            Powered by{' '}
+            {t('landing.powered')}{' '}
             <a
               href="https://monolithstudio.com"
               target="_blank"
@@ -134,10 +151,10 @@ const Auth = () => {
 
         <div className="mb-8">
           <h1 className="font-display text-2xl text-warm-bright tracking-tight leading-[1.1] mb-1">
-            {mode === 'login' ? 'Welcome back' : 'Create your account'}
+            {mode === 'login' ? t('auth.welcome') : t('auth.create')}
           </h1>
           <p className="text-sm font-body text-muted-foreground">
-            {mode === 'login' ? 'Sign in to continue your journey' : 'Start your art history journey'}
+            {mode === 'login' ? t('auth.signin.sub') : t('auth.signup.sub')}
           </p>
         </div>
 
@@ -145,7 +162,7 @@ const Auth = () => {
           {mode === 'signup' && (
             <div>
               <label className="block text-xs font-body text-muted-foreground mb-1.5 tracking-wide uppercase">
-                Display Name
+                {t('auth.name')}
               </label>
               <input
                 type="text"
@@ -153,14 +170,14 @@ const Auth = () => {
                 onChange={e => setName(e.target.value)}
                 maxLength={50}
                 className="w-full bg-secondary border border-border rounded-lg px-4 py-3 text-sm font-body text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary transition-shadow"
-                placeholder="Your name"
+                placeholder={t('auth.name.placeholder')}
               />
             </div>
           )}
 
           <div>
             <label className="block text-xs font-body text-muted-foreground mb-1.5 tracking-wide uppercase">
-              Email
+              {t('auth.email')}
             </label>
             <input
               type="email"
@@ -174,7 +191,7 @@ const Auth = () => {
 
           <div>
             <label className="block text-xs font-body text-muted-foreground mb-1.5 tracking-wide uppercase">
-              Password
+              {t('auth.password')}
             </label>
             <div className="relative">
               <input
@@ -205,17 +222,17 @@ const Auth = () => {
             disabled={loading}
             className="w-full bg-primary text-primary-foreground rounded-lg py-3 text-sm font-body font-medium transition-all duration-200 hover:bg-primary/90 active:scale-[0.97] disabled:opacity-50 shadow-[0_2px_12px_hsl(var(--gold)/0.15)]"
           >
-            {loading ? '...' : mode === 'login' ? 'Sign In' : 'Create Account'}
+            {loading ? '...' : mode === 'login' ? t('auth.signin') : t('auth.signup')}
           </button>
         </form>
 
         <p className="mt-6 text-center text-sm font-body text-muted-foreground">
-          {mode === 'login' ? "Don't have an account? " : 'Already have an account? '}
+          {mode === 'login' ? t('auth.no.account') + ' ' : t('auth.has.account') + ' '}
           <button
             onClick={() => { setMode(mode === 'login' ? 'signup' : 'login'); setError(''); }}
             className="text-gold hover:text-gold-light transition-colors"
           >
-            {mode === 'login' ? 'Sign up' : 'Sign in'}
+            {mode === 'login' ? t('auth.switch.signup') : t('auth.switch.signin')}
           </button>
         </p>
       </div>

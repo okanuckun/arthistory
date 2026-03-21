@@ -195,6 +195,7 @@ const MovementDetail = ({ movement, onBack, onQuizComplete, existingScore }: Mov
           movementId={movement.id}
           onComplete={onQuizComplete}
           existingScore={existingScore}
+          translatedQuiz={translated?.quiz}
         />
       </section>
     </div>
