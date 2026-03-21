@@ -1,3 +1,5 @@
+import stPetersBasilica from '@/assets/st-peters-basilica.jpeg';
+
 export interface QuizQuestion {
   question: string;
   options: string[];
