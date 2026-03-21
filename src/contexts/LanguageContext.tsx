@@ -152,6 +152,8 @@ const translations: Record<Language, Record<string, string>> = {
     'detail.loading': 'Yükleniyor…',
     'detail.continue': 'Devam Et',
     'detail.restart': 'Baştan',
+    'updates.title': 'Yenilikler',
+    'updates.empty': 'Henüz güncelleme yok. Takipte kalın!',
   },
   es: {
     'landing.tagline': 'Para Tatuadores',
