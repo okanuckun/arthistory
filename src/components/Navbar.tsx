@@ -2,9 +2,10 @@ import { useState, useRef, useEffect } from 'react';
 import { useAuth } from '@/contexts/AuthContext';
 import { useTheme } from '@/contexts/ThemeContext';
 import { useLanguage, LANGUAGES, Language } from '@/contexts/LanguageContext';
-import { LogOut, Sun, Moon, Trophy, Globe, Bell } from 'lucide-react';
+import { LogOut, Sun, Moon, Trophy, Globe, Bell, Download } from 'lucide-react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
+import { usePWAInstall } from '@/hooks/use-pwa-install';
 
 const Navbar = () => {
   const { user, displayName, signOut } = useAuth();
