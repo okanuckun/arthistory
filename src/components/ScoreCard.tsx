@@ -16,13 +16,15 @@ const ScoreCard = ({ score, total, movementName, onClose }: ScoreCardProps) => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
+    // Instagram 4:5 portrait
     const w = 1080;
-    const h = 1080;
+    const h = 1350;
     canvas.width = w;
     canvas.height = h;
     const ctx = canvas.getContext('2d')!;
+    const cx = w / 2;
 
-    // Background — deep warm dark
+    // Background
     const bg = ctx.createLinearGradient(0, 0, w, h);
     bg.addColorStop(0, '#1a1612');
     bg.addColorStop(0.5, '#1e1a14');
@@ -31,48 +33,46 @@ const ScoreCard = ({ score, total, movementName, onClose }: ScoreCardProps) => {
     ctx.fillRect(0, 0, w, h);
 
     // Subtle radial glow
-    const glow = ctx.createRadialGradient(w / 2, h * 0.42, 0, w / 2, h * 0.42, 400);
+    const glow = ctx.createRadialGradient(cx, h * 0.4, 0, cx, h * 0.4, 500);
     glow.addColorStop(0, 'rgba(196, 164, 105, 0.08)');
     glow.addColorStop(1, 'rgba(196, 164, 105, 0)');
     ctx.fillStyle = glow;
     ctx.fillRect(0, 0, w, h);
 
-    // Decorative top line
+    // Top decorative line
     ctx.strokeStyle = 'rgba(196, 164, 105, 0.3)';
     ctx.lineWidth = 1;
     ctx.beginPath();
-    ctx.moveTo(w * 0.15, 120);
-    ctx.lineTo(w * 0.85, 120);
+    ctx.moveTo(w * 0.12, 140);
+    ctx.lineTo(w * 0.88, 140);
     ctx.stroke();
 
-    // Small diamond at center of line
-    const cx = w / 2;
+    // Diamond at center of line
     ctx.fillStyle = 'rgba(196, 164, 105, 0.5)';
     ctx.beginPath();
-    ctx.moveTo(cx, 114);
-    ctx.lineTo(cx + 6, 120);
-    ctx.moveTo(cx, 126);
-    ctx.lineTo(cx - 6, 120);
-    ctx.lineTo(cx, 114);
+    ctx.moveTo(cx, 133);
+    ctx.lineTo(cx + 7, 140);
+    ctx.lineTo(cx, 147);
+    ctx.lineTo(cx - 7, 140);
     ctx.closePath();
     ctx.fill();
 
     // Eyebrow text
     ctx.fillStyle = 'rgba(196, 164, 105, 0.6)';
-    ctx.font = '500 14px system-ui, sans-serif';
+    ctx.font = '500 20px system-ui, sans-serif';
     ctx.textAlign = 'center';
-    ctx.letterSpacing = '6px';
-    ctx.fillText('QUIZ RESULT', cx, 170);
+    ctx.letterSpacing = '8px';
+    ctx.fillText('QUIZ RESULT', cx, 200);
 
     // Movement name
     ctx.fillStyle = '#e8dcc8';
-    ctx.font = 'italic 600 52px Georgia, serif';
+    ctx.font = 'italic 600 64px Georgia, serif';
     ctx.letterSpacing = '0px';
-    ctx.fillText(movementName, cx, 260);
+    ctx.fillText(movementName, cx, 300);
 
     // Score circle
-    const scoreY = 500;
-    const radius = 150;
+    const scoreY = 580;
+    const radius = 185;
 
     // Circle background
     ctx.beginPath();
@@ -84,7 +84,7 @@ const ScoreCard = ({ score, total, movementName, onClose }: ScoreCardProps) => {
     ctx.beginPath();
     ctx.arc(cx, scoreY, radius, 0, Math.PI * 2);
     ctx.strokeStyle = 'rgba(196, 164, 105, 0.25)';
-    ctx.lineWidth = 1.5;
+    ctx.lineWidth = 2;
     ctx.stroke();
 
     // Score arc (progress)
@@ -92,65 +92,71 @@ const ScoreCard = ({ score, total, movementName, onClose }: ScoreCardProps) => {
     ctx.beginPath();
     ctx.arc(cx, scoreY, radius, -Math.PI / 2, -Math.PI / 2 + Math.PI * 2 * progress);
     ctx.strokeStyle = '#c4a469';
-    ctx.lineWidth = 3;
+    ctx.lineWidth = 4;
     ctx.lineCap = 'round';
     ctx.stroke();
 
     // Score number
     ctx.fillStyle = '#e8dcc8';
-    ctx.font = '300 96px Georgia, serif';
+    ctx.font = '300 120px Georgia, serif';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
-    ctx.fillText(`${score}`, cx, scoreY - 10);
+    ctx.fillText(`${score}`, cx, scoreY - 12);
 
     // "out of X"
     ctx.fillStyle = 'rgba(196, 164, 105, 0.5)';
-    ctx.font = '400 20px system-ui, sans-serif';
-    ctx.fillText(`out of ${total}`, cx, scoreY + 50);
+    ctx.font = '400 28px system-ui, sans-serif';
+    ctx.fillText(`out of ${total}`, cx, scoreY + 65);
+
+    // Percentage
+    const pct = Math.round(progress * 100);
+    ctx.fillStyle = '#c4a469';
+    ctx.font = '600 36px Georgia, serif';
+    ctx.textBaseline = 'alphabetic';
+    ctx.fillText(`${pct}%`, cx, 830);
 
     // Message
     ctx.fillStyle = 'rgba(232, 220, 200, 0.7)';
-    ctx.font = '400 22px system-ui, sans-serif';
-    ctx.textBaseline = 'alphabetic';
+    ctx.font = '400 28px system-ui, sans-serif';
     const message =
       score === total
         ? 'Perfect Score!'
         : score >= total * 0.6
         ? 'Well Done!'
         : 'Keep Learning!';
-    ctx.fillText(message, cx, 710);
+    ctx.fillText(message, cx, 890);
 
     // Bottom decorative line
     ctx.strokeStyle = 'rgba(196, 164, 105, 0.3)';
     ctx.lineWidth = 1;
     ctx.beginPath();
-    ctx.moveTo(w * 0.15, 780);
-    ctx.lineTo(w * 0.85, 780);
+    ctx.moveTo(w * 0.12, 960);
+    ctx.lineTo(w * 0.88, 960);
     ctx.stroke();
 
     // Brand
     ctx.fillStyle = '#c4a469';
-    ctx.font = '600 28px Georgia, serif';
-    ctx.fillText('The Great Art Movements', cx, 850);
+    ctx.font = '600 36px Georgia, serif';
+    ctx.fillText('The Great Art Movements', cx, 1050);
 
     ctx.fillStyle = 'rgba(196, 164, 105, 0.5)';
-    ctx.font = '400 16px system-ui, sans-serif';
-    ctx.letterSpacing = '3px';
-    ctx.fillText('BY MONOLITH STUDIO', cx, 890);
+    ctx.font = '400 22px system-ui, sans-serif';
+    ctx.letterSpacing = '4px';
+    ctx.fillText('BY MONOLITH STUDIO', cx, 1100);
 
     // Website
     ctx.fillStyle = 'rgba(196, 164, 105, 0.4)';
-    ctx.font = '400 15px system-ui, sans-serif';
-    ctx.letterSpacing = '1px';
-    ctx.fillText('www.monolithstudio.com', cx, 940);
+    ctx.font = '400 20px system-ui, sans-serif';
+    ctx.letterSpacing = '2px';
+    ctx.fillText('arthistory.lovable.app', cx, 1180);
 
-    // Bottom small diamond
+    // Bottom diamond
     ctx.fillStyle = 'rgba(196, 164, 105, 0.3)';
     ctx.beginPath();
-    ctx.moveTo(cx, 970);
-    ctx.lineTo(cx + 5, 976);
-    ctx.lineTo(cx, 982);
-    ctx.lineTo(cx - 5, 976);
+    ctx.moveTo(cx, 1220);
+    ctx.lineTo(cx + 6, 1227);
+    ctx.lineTo(cx, 1234);
+    ctx.lineTo(cx - 6, 1227);
     ctx.closePath();
     ctx.fill();
 
@@ -207,7 +213,8 @@ const ScoreCard = ({ score, total, movementName, onClose }: ScoreCardProps) => {
           <img
             src={imageUrl}
             alt="Score card"
-            className="w-full aspect-square object-cover"
+            className="w-full"
+            style={{ aspectRatio: '4/5' }}
           />
         )}
 
