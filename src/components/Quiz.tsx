@@ -19,6 +19,7 @@ const Quiz = ({ questions, movementName, movementId, onComplete, existingScore, 
   const [answers, setAnswers] = useState<Record<number, number>>({});
   const [submitted, setSubmitted] = useState(!!existingScore);
   const [showScoreCard, setShowScoreCard] = useState(false);
+  const startTimeRef = useRef<number>(Date.now());
 
   const handleSelect = (qIndex: number, optionIndex: number) => {
     if (submitted) return;
