@@ -1399,6 +1399,7 @@ Romanticism produced a remarkable diversity of national schools — German lands
     period: '1840 – 1880',
     colorPalette: ['#8B7D6B', '#A0926B', '#6B6348', '#C4A882', '#4A4A3A'],
     status: 'locked',
+    releaseDate: '4 Mayıs Pazar',
   },
   {
     id: 'impressionism',
@@ -1407,6 +1408,7 @@ Romanticism produced a remarkable diversity of national schools — German lands
     period: '1860 – 1890',
     colorPalette: ['#6B8FAD', '#A2C4D9', '#7BA3BD', '#4A7FA5', '#89B3CC'],
     status: 'locked',
+    releaseDate: '11 Mayıs Pazar',
   },
   {
     id: 'post-impressionism',
@@ -1415,6 +1417,7 @@ Romanticism produced a remarkable diversity of national schools — German lands
     period: '1880 – 1910',
     colorPalette: ['#2E4057', '#4A6FA5', '#1B3A5C', '#6B8FAD', '#0F2744'],
     status: 'locked',
+    releaseDate: '18 Mayıs Pazar',
   },
   {
     id: 'symbolism',
@@ -1423,6 +1426,7 @@ Romanticism produced a remarkable diversity of national schools — German lands
     period: '1880 – 1910',
     colorPalette: ['#C4A832', '#8B7D2A', '#D4B83C', '#6B6320', '#E8D264'],
     status: 'locked',
+    releaseDate: '25 Mayıs Pazar',
   },
   {
     id: 'art-nouveau',
@@ -1431,6 +1435,7 @@ Romanticism produced a remarkable diversity of national schools — German lands
     period: '1890 – 1910',
     colorPalette: ['#E8D5B7', '#C4A882', '#F5E6CC', '#A08060', '#D4C4A8'],
     status: 'locked',
+    releaseDate: '1 Haziran Pazar',
   },
   {
     id: 'fauvism',
@@ -1439,6 +1444,7 @@ Romanticism produced a remarkable diversity of national schools — German lands
     period: '1904 – 1908',
     colorPalette: ['#E84430', '#FF5733', '#C23616', '#FF6B4A', '#A52714'],
     status: 'locked',
+    releaseDate: '8 Haziran Pazar',
   },
   {
     id: 'expressionism',
@@ -1447,6 +1453,7 @@ Romanticism produced a remarkable diversity of national schools — German lands
     period: '1905 – 1933',
     colorPalette: ['#8B6914', '#A07828', '#6B5210', '#C4A832', '#4A3A0A'],
     status: 'locked',
+    releaseDate: '15 Haziran Pazar',
   },
   {
     id: 'cubism',
@@ -1455,6 +1462,7 @@ Romanticism produced a remarkable diversity of national schools — German lands
     period: '1907 – 1922',
     colorPalette: ['#B8A88A', '#8E7F6D', '#6B5B4A', '#C4B196', '#4A4035'],
     status: 'locked',
+    releaseDate: '22 Haziran Pazar',
   },
   {
     id: 'futurism',
@@ -1463,6 +1471,7 @@ Romanticism produced a remarkable diversity of national schools — German lands
     period: '1909 – 1944',
     colorPalette: ['#6B8FAD', '#4A6FA5', '#8B7D6B', '#A0926B', '#3E5F8A'],
     status: 'locked',
+    releaseDate: '29 Haziran Pazar',
   },
   {
     id: 'dadaism',
@@ -1471,6 +1480,7 @@ Romanticism produced a remarkable diversity of national schools — German lands
     period: '1916 – 1924',
     colorPalette: ['#1A1A1A', '#E8E8E8', '#FF0000', '#FFD700', '#0000FF'],
     status: 'locked',
+    releaseDate: '6 Temmuz Pazar',
   },
   {
     id: 'bauhaus',
@@ -1479,6 +1489,7 @@ Romanticism produced a remarkable diversity of national schools — German lands
     period: '1919 – 1933',
     colorPalette: ['#E84430', '#1B5AA5', '#F5C518', '#1A1A1A', '#E8E8E8'],
     status: 'locked',
+    releaseDate: '13 Temmuz Pazar',
   },
   {
     id: 'surrealism',
@@ -1487,6 +1498,7 @@ Romanticism produced a remarkable diversity of national schools — German lands
     period: '1924 – 1966',
     colorPalette: ['#C4A832', '#6B4423', '#3E5F8A', '#8B6914', '#2E4057'],
     status: 'locked',
+    releaseDate: '20 Temmuz Pazar',
   },
   {
     id: 'abstract-expressionism',
@@ -1495,6 +1507,7 @@ Romanticism produced a remarkable diversity of national schools — German lands
     period: '1943 – 1965',
     colorPalette: ['#1A1A1A', '#8B0000', '#FFD700', '#FFFFFF', '#4A4A4A'],
     status: 'locked',
+    releaseDate: '27 Temmuz Pazar',
   },
   {
     id: 'pop-art',
@@ -1503,6 +1516,7 @@ Romanticism produced a remarkable diversity of national schools — German lands
     period: '1955 – 1970',
     colorPalette: ['#FF1493', '#00BFFF', '#FFD700', '#FF4500', '#32CD32'],
     status: 'locked',
+    releaseDate: '3 Ağustos Pazar',
   },
   {
     id: 'minimalism',
@@ -1511,6 +1525,7 @@ Romanticism produced a remarkable diversity of national schools — German lands
     period: '1960 – 1975',
     colorPalette: ['#E8E8E8', '#B0B0B0', '#1A1A1A', '#FFFFFF', '#808080'],
     status: 'locked',
+    releaseDate: '10 Ağustos Pazar',
   },
   {
     id: 'conceptual-art',
@@ -1519,6 +1534,7 @@ Romanticism produced a remarkable diversity of national schools — German lands
     period: '1960 – Present',
     colorPalette: ['#4A4A4A', '#808080', '#FFFFFF', '#1A1A1A', '#C0C0C0'],
     status: 'locked',
+    releaseDate: '17 Ağustos Pazar',
   },
   {
     id: 'contemporary-art',
@@ -1527,6 +1543,7 @@ Romanticism produced a remarkable diversity of national schools — German lands
     period: '1970 – Present',
     colorPalette: ['#FF6B4A', '#4A6FA5', '#FFD700', '#32CD32', '#8B008B'],
     status: 'locked',
+    releaseDate: '24 Ağustos Pazar',
   },
 ];
 
