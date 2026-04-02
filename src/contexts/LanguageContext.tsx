@@ -392,6 +392,19 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     return (saved as Language) || 'en';
   });
 
+  // Sync language to DB on mount for email preferences
+  useEffect(() => {
+    const syncLang = async () => {
+      const { data: { user } } = await supabase.auth.getUser();
+      if (user) {
+        await supabase
+          .from('notification_preferences')
+          .upsert({ user_id: user.id, language, email_notifications: true }, { onConflict: 'user_id' });
+      }
+    };
+    syncLang();
+  }, []);
+
   const setLanguage = async (lang: Language) => {
     setLanguageState(lang);
     localStorage.setItem('app-language', lang);
