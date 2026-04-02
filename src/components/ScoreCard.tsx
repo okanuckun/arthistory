@@ -148,7 +148,7 @@ const ScoreCard = ({ score, total, movementName, onClose }: ScoreCardProps) => {
     ctx.fillStyle = 'rgba(196, 164, 105, 0.4)';
     ctx.font = '400 20px system-ui, sans-serif';
     ctx.letterSpacing = '2px';
-    ctx.fillText('arthistory.lovable.app', cx, 1180);
+    ctx.fillText('arthistory.monolithstudio.com', cx, 1180);
 
     // Bottom diamond
     ctx.fillStyle = 'rgba(196, 164, 105, 0.3)';
