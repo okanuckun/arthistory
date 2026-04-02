@@ -59,9 +59,9 @@ const ScoreCard = ({ score, total, movementName, onClose }: ScoreCardProps) => {
 
     // Eyebrow text
     ctx.fillStyle = 'rgba(196, 164, 105, 0.6)';
-    ctx.font = '500 20px system-ui, sans-serif';
+    ctx.font = '500 28px system-ui, sans-serif';
     ctx.textAlign = 'center';
-    ctx.letterSpacing = '8px';
+    ctx.letterSpacing = '10px';
     ctx.fillText('QUIZ RESULT', cx, 200);
 
     // Movement name
