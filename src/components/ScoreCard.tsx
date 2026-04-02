@@ -117,7 +117,7 @@ const ScoreCard = ({ score, total, movementName, onClose }: ScoreCardProps) => {
 
     // Message
     ctx.fillStyle = 'rgba(232, 220, 200, 0.7)';
-    ctx.font = '400 28px system-ui, sans-serif';
+    ctx.font = '400 36px system-ui, sans-serif';
     const message =
       score === total
         ? 'Perfect Score!'
