@@ -105,7 +105,7 @@ const ScoreCard = ({ score, total, movementName, onClose }: ScoreCardProps) => {
 
     // "out of X"
     ctx.fillStyle = 'rgba(196, 164, 105, 0.5)';
-    ctx.font = '400 28px system-ui, sans-serif';
+    ctx.font = '400 36px system-ui, sans-serif';
     ctx.fillText(`out of ${total}`, cx, scoreY + 65);
 
     // Percentage
