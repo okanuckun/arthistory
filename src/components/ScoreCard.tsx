@@ -66,7 +66,7 @@ const ScoreCard = ({ score, total, movementName, onClose }: ScoreCardProps) => {
 
     // Movement name
     ctx.fillStyle = '#e8dcc8';
-    ctx.font = 'italic 600 64px Georgia, serif';
+    ctx.font = 'italic 600 80px Georgia, serif';
     ctx.letterSpacing = '0px';
     ctx.fillText(movementName, cx, 300);
 
