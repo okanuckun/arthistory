@@ -1,0 +1,1 @@
+ALTER TABLE public.notification_preferences ADD COLUMN language text NOT NULL DEFAULT 'en';
