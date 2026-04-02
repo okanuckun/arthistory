@@ -140,7 +140,7 @@ const ScoreCard = ({ score, total, movementName, onClose }: ScoreCardProps) => {
     ctx.fillText('The Great Art Movements', cx, 1050);
 
     ctx.fillStyle = 'rgba(196, 164, 105, 0.5)';
-    ctx.font = '400 22px system-ui, sans-serif';
+    ctx.font = '400 28px system-ui, sans-serif';
     ctx.letterSpacing = '4px';
     ctx.fillText('BY MONOLITH STUDIO', cx, 1100);
 
