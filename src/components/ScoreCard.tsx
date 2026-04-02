@@ -59,14 +59,14 @@ const ScoreCard = ({ score, total, movementName, onClose }: ScoreCardProps) => {
 
     // Eyebrow text
     ctx.fillStyle = 'rgba(196, 164, 105, 0.6)';
-    ctx.font = '500 20px system-ui, sans-serif';
+    ctx.font = '500 28px system-ui, sans-serif';
     ctx.textAlign = 'center';
-    ctx.letterSpacing = '8px';
+    ctx.letterSpacing = '10px';
     ctx.fillText('QUIZ RESULT', cx, 200);
 
     // Movement name
     ctx.fillStyle = '#e8dcc8';
-    ctx.font = 'italic 600 64px Georgia, serif';
+    ctx.font = 'italic 600 80px Georgia, serif';
     ctx.letterSpacing = '0px';
     ctx.fillText(movementName, cx, 300);
 
@@ -98,26 +98,26 @@ const ScoreCard = ({ score, total, movementName, onClose }: ScoreCardProps) => {
 
     // Score number
     ctx.fillStyle = '#e8dcc8';
-    ctx.font = '300 120px Georgia, serif';
+    ctx.font = '300 148px Georgia, serif';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
     ctx.fillText(`${score}`, cx, scoreY - 12);
 
     // "out of X"
     ctx.fillStyle = 'rgba(196, 164, 105, 0.5)';
-    ctx.font = '400 28px system-ui, sans-serif';
+    ctx.font = '400 36px system-ui, sans-serif';
     ctx.fillText(`out of ${total}`, cx, scoreY + 65);
 
     // Percentage
     const pct = Math.round(progress * 100);
     ctx.fillStyle = '#c4a469';
-    ctx.font = '600 36px Georgia, serif';
+    ctx.font = '600 48px Georgia, serif';
     ctx.textBaseline = 'alphabetic';
     ctx.fillText(`${pct}%`, cx, 830);
 
     // Message
     ctx.fillStyle = 'rgba(232, 220, 200, 0.7)';
-    ctx.font = '400 28px system-ui, sans-serif';
+    ctx.font = '400 36px system-ui, sans-serif';
     const message =
       score === total
         ? 'Perfect Score!'
@@ -136,17 +136,17 @@ const ScoreCard = ({ score, total, movementName, onClose }: ScoreCardProps) => {
 
     // Brand
     ctx.fillStyle = '#c4a469';
-    ctx.font = '600 36px Georgia, serif';
+    ctx.font = '600 44px Georgia, serif';
     ctx.fillText('The Great Art Movements', cx, 1050);
 
     ctx.fillStyle = 'rgba(196, 164, 105, 0.5)';
-    ctx.font = '400 22px system-ui, sans-serif';
+    ctx.font = '400 28px system-ui, sans-serif';
     ctx.letterSpacing = '4px';
     ctx.fillText('BY MONOLITH STUDIO', cx, 1100);
 
     // Website
     ctx.fillStyle = 'rgba(196, 164, 105, 0.4)';
-    ctx.font = '400 20px system-ui, sans-serif';
+    ctx.font = '400 26px system-ui, sans-serif';
     ctx.letterSpacing = '2px';
     ctx.fillText('arthistory.monolithstudio.com', cx, 1180);
 
