@@ -86,6 +86,7 @@ export type Database = {
       quiz_scores: {
         Row: {
           completed_at: string
+          duration_seconds: number | null
           id: string
           movement_id: string
           score: number
@@ -94,6 +95,7 @@ export type Database = {
         }
         Insert: {
           completed_at?: string
+          duration_seconds?: number | null
           id?: string
           movement_id: string
           score: number
@@ -102,6 +104,7 @@ export type Database = {
         }
         Update: {
           completed_at?: string
+          duration_seconds?: number | null
           id?: string
           movement_id?: string
           score?: number
