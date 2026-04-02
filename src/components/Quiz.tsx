@@ -9,7 +9,7 @@ interface QuizProps {
   questions: QuizQuestion[];
   movementName: string;
   movementId: string;
-  onComplete: (movementId: string, score: number, total: number) => void;
+  onComplete: (movementId: string, score: number, total: number, durationSeconds: number) => void;
   existingScore?: { score: number; total: number };
   translatedQuiz?: TranslatedContent['quiz'];
 }
