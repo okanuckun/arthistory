@@ -45,7 +45,8 @@ function buildHtml(lang: Lang, movementName: string, releaseDate?: string) {
   return `
     <div style="font-family: 'Georgia', serif; max-width: 600px; margin: 0 auto; background: #1a1a2e; color: #e0d5c1; padding: 40px; border-radius: 12px;">
       <div style="text-align: center; margin-bottom: 30px;">
-        <h1 style="font-size: 28px; color: #d4a853; margin: 0;">🎨 ArtHistory</h1>
+        <h1 style="font-size: 28px; color: #d4a853; margin: 0;">🎨 Monolith Studio</h1>
+        <p style="font-size: 12px; color: #a09880; margin: 4px 0 0; letter-spacing: 2px; text-transform: uppercase;">Art Movements</p>
       </div>
       <div style="background: #16213e; border-radius: 8px; padding: 30px; border-left: 4px solid #d4a853;">
         <h2 style="color: #d4a853; margin-top: 0; font-size: 22px;">${t.heading}</h2>
@@ -123,7 +124,7 @@ Deno.serve(async (req) => {
           'X-Connection-Api-Key': RESEND_API_KEY,
         },
         body: JSON.stringify({
-          from: 'ArtHistory <onboarding@resend.dev>',
+          from: 'Monolith Studio <onboarding@resend.dev>',
           to: [email],
           subject: t.subject(movement_name),
           html: buildHtml(lang, movement_name, release_date),
