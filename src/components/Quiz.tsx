@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { QuizQuestion } from '@/data/artMovements';
 import { CheckCircle2, XCircle, RotateCcw, Share2 } from 'lucide-react';
 import ScoreCard from './ScoreCard';
