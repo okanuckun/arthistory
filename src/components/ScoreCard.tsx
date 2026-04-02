@@ -98,7 +98,7 @@ const ScoreCard = ({ score, total, movementName, onClose }: ScoreCardProps) => {
 
     // Score number
     ctx.fillStyle = '#e8dcc8';
-    ctx.font = '300 120px Georgia, serif';
+    ctx.font = '300 148px Georgia, serif';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
     ctx.fillText(`${score}`, cx, scoreY - 12);
