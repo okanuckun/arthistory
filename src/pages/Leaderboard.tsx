@@ -2,25 +2,29 @@ import { useEffect, useState } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { artMovements } from '@/data/artMovements';
 import Navbar from '@/components/Navbar';
-import { Trophy, Medal } from 'lucide-react';
+import { Trophy, Medal, Clock, ArrowUpDown } from 'lucide-react';
 
 interface UserScore {
   userId: string;
   displayName: string;
   totalScore: number;
   totalPossible: number;
-  movementScores: Record<string, { score: number; total: number }>;
+  totalDuration: number;
+  movementScores: Record<string, { score: number; total: number; duration: number | null }>;
 }
+
+type SortMode = 'score' | 'time';
 
 const Leaderboard = () => {
   const [leaderboard, setLeaderboard] = useState<UserScore[]>([]);
   const [loading, setLoading] = useState(true);
   const [expandedUser, setExpandedUser] = useState<string | null>(null);
+  const [sortMode, setSortMode] = useState<SortMode>('score');
 
   useEffect(() => {
     const fetchLeaderboard = async () => {
       const [scoresRes, profilesRes] = await Promise.all([
-        supabase.from('quiz_scores').select('user_id, movement_id, score, total'),
+        supabase.from('quiz_scores').select('user_id, movement_id, score, total, duration_seconds'),
         supabase.from('profiles').select('user_id, display_name'),
       ]);
 
@@ -37,26 +41,53 @@ const Leaderboard = () => {
             displayName: profileMap[row.user_id] ?? 'Anonymous',
             totalScore: 0,
             totalPossible: 0,
+            totalDuration: 0,
             movementScores: {},
           };
         }
         userMap[row.user_id].totalScore += row.score;
         userMap[row.user_id].totalPossible += row.total;
-        userMap[row.user_id].movementScores[row.movement_id] = { score: row.score, total: row.total };
+        userMap[row.user_id].totalDuration += (row.duration_seconds ?? 0);
+        userMap[row.user_id].movementScores[row.movement_id] = {
+          score: row.score,
+          total: row.total,
+          duration: row.duration_seconds,
+        };
       });
 
-      const sorted = Object.values(userMap).sort((a, b) => {
-        const aPercent = a.totalPossible ? a.totalScore / a.totalPossible : 0;
-        const bPercent = b.totalPossible ? b.totalScore / b.totalPossible : 0;
-        return bPercent - aPercent || b.totalScore - a.totalScore;
-      });
-
-      setLeaderboard(sorted);
+      setLeaderboard(Object.values(userMap));
       setLoading(false);
     };
 
     fetchLeaderboard();
   }, []);
+
+  const sortedLeaderboard = [...leaderboard].sort((a, b) => {
+    if (sortMode === 'score') {
+      const aPercent = a.totalPossible ? a.totalScore / a.totalPossible : 0;
+      const bPercent = b.totalPossible ? b.totalScore / b.totalPossible : 0;
+      if (bPercent !== aPercent) return bPercent - aPercent;
+      // Same score percentage → faster time wins
+      return (a.totalDuration || Infinity) - (b.totalDuration || Infinity);
+    } else {
+      // Sort by time (fastest first), only among those with scores
+      const aTime = a.totalDuration || Infinity;
+      const bTime = b.totalDuration || Infinity;
+      if (aTime !== bTime) return aTime - bTime;
+      // Same time → higher score wins
+      const aPercent = a.totalPossible ? a.totalScore / a.totalPossible : 0;
+      const bPercent = b.totalPossible ? b.totalScore / b.totalPossible : 0;
+      return bPercent - aPercent;
+    }
+  });
+
+  const formatDuration = (seconds: number | null) => {
+    if (!seconds) return '—';
+    const mins = Math.floor(seconds / 60);
+    const secs = seconds % 60;
+    if (mins === 0) return `${secs}s`;
+    return `${mins}m ${secs}s`;
+  };
 
   const getRankIcon = (index: number) => {
     if (index === 0) return <Trophy className="w-4 h-4 text-yellow-400" />;
@@ -89,7 +120,17 @@ const Leaderboard = () => {
               <span className="text-gold italic">Leaderboard</span>
             </h1>
           </div>
-          <div className="h-px bg-border mt-8 opacity-0 animate-fade-in" style={{ animationDelay: '400ms' }} />
+          <div className="flex items-center justify-between mt-8">
+            <div className="h-px bg-border flex-1 opacity-0 animate-fade-in" style={{ animationDelay: '400ms' }} />
+            <button
+              onClick={() => setSortMode(prev => prev === 'score' ? 'time' : 'score')}
+              className="ml-4 flex items-center gap-2 text-xs font-body px-3 py-1.5 rounded-full border border-border/50 text-muted-foreground hover:text-foreground hover:border-primary/30 transition-all active:scale-[0.97] opacity-0 animate-fade-in"
+              style={{ animationDelay: '500ms' }}
+            >
+              <ArrowUpDown className="w-3 h-3" />
+              {sortMode === 'score' ? 'Sort by Time' : 'Sort by Score'}
+            </button>
+          </div>
         </header>
 
         <main className="max-w-3xl mx-auto px-6 pb-24">
@@ -97,13 +138,13 @@ const Leaderboard = () => {
             <div className="flex justify-center py-20">
               <div className="w-6 h-6 border-2 border-primary border-t-transparent rounded-full animate-spin" />
             </div>
-          ) : leaderboard.length === 0 ? (
+          ) : sortedLeaderboard.length === 0 ? (
             <div className="text-center py-20">
               <p className="font-body text-muted-foreground">No scores yet. Be the first to complete a quiz!</p>
             </div>
           ) : (
             <div className="space-y-2">
-              {leaderboard.map((user, i) => {
+              {sortedLeaderboard.map((user, i) => {
                 const pct = user.totalPossible
                   ? Math.round((user.totalScore / user.totalPossible) * 100)
                   : 0;
@@ -128,6 +169,11 @@ const Leaderboard = () => {
                         <p className="font-body text-xs text-muted-foreground mt-0.5">
                           {Object.keys(user.movementScores).length} quiz{Object.keys(user.movementScores).length !== 1 ? 'zes' : ''} completed
                         </p>
+                      </div>
+
+                      <div className="flex items-center gap-1.5 text-muted-foreground shrink-0">
+                        <Clock className="w-3 h-3" />
+                        <span className="text-xs font-body">{formatDuration(user.totalDuration)}</span>
                       </div>
 
                       <div className="text-right shrink-0">
@@ -162,9 +208,15 @@ const Leaderboard = () => {
                                   <span className="text-xs font-body text-muted-foreground">{movement.name}</span>
                                 </div>
                                 {ms ? (
-                                  <span className={`text-xs font-body font-medium ${getScoreColor(ms.score, ms.total)}`}>
-                                    {ms.score}/{ms.total}
-                                  </span>
+                                  <div className="flex items-center gap-3">
+                                    <span className="text-xs font-body text-muted-foreground/60 flex items-center gap-1">
+                                      <Clock className="w-3 h-3" />
+                                      {formatDuration(ms.duration)}
+                                    </span>
+                                    <span className={`text-xs font-body font-medium ${getScoreColor(ms.score, ms.total)}`}>
+                                      {ms.score}/{ms.total}
+                                    </span>
+                                  </div>
                                 ) : (
                                   <span className="text-xs font-body text-muted-foreground/40">—</span>
                                 )}
