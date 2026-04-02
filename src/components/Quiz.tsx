@@ -38,6 +38,7 @@ const Quiz = ({ questions, movementName, movementId, onComplete, existingScore, 
   const handleReset = () => {
     setAnswers({});
     setSubmitted(false);
+    startTimeRef.current = Date.now();
   };
 
   const score = submitted && !existingScore
