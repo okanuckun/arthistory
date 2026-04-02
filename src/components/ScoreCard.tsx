@@ -136,7 +136,7 @@ const ScoreCard = ({ score, total, movementName, onClose }: ScoreCardProps) => {
 
     // Brand
     ctx.fillStyle = '#c4a469';
-    ctx.font = '600 36px Georgia, serif';
+    ctx.font = '600 44px Georgia, serif';
     ctx.fillText('The Great Art Movements', cx, 1050);
 
     ctx.fillStyle = 'rgba(196, 164, 105, 0.5)';
