@@ -111,7 +111,7 @@ const ScoreCard = ({ score, total, movementName, onClose }: ScoreCardProps) => {
     // Percentage
     const pct = Math.round(progress * 100);
     ctx.fillStyle = '#c4a469';
-    ctx.font = '600 36px Georgia, serif';
+    ctx.font = '600 48px Georgia, serif';
     ctx.textBaseline = 'alphabetic';
     ctx.fillText(`${pct}%`, cx, 830);
 
