@@ -30,7 +30,8 @@ const Quiz = ({ questions, movementName, movementId, onComplete, existingScore, 
     if (Object.keys(answers).length < questions.length) return;
     setSubmitted(true);
     const score = questions.reduce((acc, q, i) => acc + (answers[i] === q.correctIndex ? 1 : 0), 0);
-    onComplete(movementId, score, questions.length);
+    const durationSeconds = Math.round((Date.now() - startTimeRef.current) / 1000);
+    onComplete(movementId, score, questions.length, durationSeconds);
     setShowScoreCard(true);
   };
 
