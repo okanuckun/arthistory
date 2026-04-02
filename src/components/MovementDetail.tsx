@@ -9,7 +9,7 @@ import { useTTS } from '@/hooks/use-tts';
 interface MovementDetailProps {
   movement: ArtMovement;
   onBack: () => void;
-  onQuizComplete: (movementId: string, score: number, total: number) => void;
+  onQuizComplete: (movementId: string, score: number, total: number, durationSeconds: number) => void;
   existingScore?: { score: number; total: number };
 }
 

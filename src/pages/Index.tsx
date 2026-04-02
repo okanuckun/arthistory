@@ -116,12 +116,12 @@ const Index = () => {
       });
   }, [user]);
 
-  const handleQuizComplete = async (movementId: string, score: number, total: number) => {
+  const handleQuizComplete = async (movementId: string, score: number, total: number, durationSeconds: number) => {
     if (!user) return;
     setScores(prev => ({ ...prev, [movementId]: { score, total } }));
 
     await supabase.from('quiz_scores').upsert(
-      { user_id: user.id, movement_id: movementId, score, total },
+      { user_id: user.id, movement_id: movementId, score, total, duration_seconds: durationSeconds },
       { onConflict: 'user_id,movement_id' }
     );
   };
