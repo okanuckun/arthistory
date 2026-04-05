@@ -3,6 +3,9 @@ import arnolfiniPortraitImage from '@/assets/artworks/arnolfini-portrait.jpg';
 import birthOfVenusImage from '@/assets/artworks/birth-of-venus.jpg';
 import davidImage from '@/assets/artworks/david.jpg';
 import vitruvianManImage from '@/assets/artworks/vitruvian-man.jpg';
+import ecstasyOfSaintTeresaImage from '@/assets/artworks/ecstasy-of-saint-teresa.jpg';
+import girlWithPearlEarringImage from '@/assets/artworks/girl-with-pearl-earring.jpg';
+import lasMeninasImage from '@/assets/artworks/las-meninas.jpg';
 
 export interface QuizQuestion {
   question: string;
