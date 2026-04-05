@@ -176,4 +176,189 @@ Dos inventos técnicos definieron el lenguaje visual de la época por encima de 
       },
     ],
   },
+
+  baroque: {
+    summary: `El periodo Barroco — que abarca aproximadamente de 1600 a 1750 — representa uno de los capítulos más emocionalmente poderosos de la historia del arte occidental. Nacido en Roma en el apogeo de la Contrarreforma, se extendió rápidamente por la Europa católica y luego hacia el norte protestante, adaptando su lenguaje visual a cada cultura que encontraba. En su esencia, el Barroco fue un arte de la persuasión: diseñado para conmover al espectador, para arrastrarlo en torrentes de sentimiento, para hacer lo espiritual tangible y lo abstracto visceral.
+
+La propia palabra "barroco" puede derivar del portugués "barroco" — una perla de forma irregular — utilizada originalmente como término despectivo por críticos que encontraban el estilo excesivo. La historia revirtió ese juicio. El Barroco nos dio algunas de las pinturas más psicológicamente penetrantes jamás realizadas, algunas de las esculturas más estructuralmente innovadoras de la historia, y un enfoque de la luz y la sombra que nunca ha sido superado.
+
+Dos grandes tradiciones definieron el Barroco. En el sur católico — Italia, España, Flandes — el estilo abrazó la teatralidad, la grandeza y la emoción religiosa abierta. El tenebrismo incisivo de Caravaggio, el mármol imposiblemente dinámico de Bernini, las cascadas de carne y color de Rubens — todo servía para hacer la fe sentida y no meramente comprendida. En el norte protestante — los Países Bajos sobre todo — el Barroco se volvió hacia adentro: alejándose de los retablos y dirigiéndose hacia escenas domésticas, retratos y paisajes, realizados con una intensidad serena y una precisión óptica que representa un logro diferente pero igualmente profundo.
+
+El Barroco también coincidió con la Revolución Científica, la Era de la Exploración y la consolidación de las monarquías absolutas — todo lo cual moldeó su arte. El resultado fue un estilo de asombrosa diversidad: desde los santos amenazantes de Caravaggio en tabernas romanas hasta los interiores holandeses silenciosos y luminosos de Vermeer; desde la extática Santa Teresa de Bernini hasta los despiadados autorretratos de Rembrandt en la vejez. El Barroco abarca multitudes, pero cada rincón está impulsado por un intenso compromiso con la experiencia de estar vivo.`,
+
+    origin: {
+      explanation: 'El Barroco surgió como una ruptura deliberada con los ideales renacentistas de calma, equilibrio y armonía racional. Impulsados en parte por la Contrarreforma de la Iglesia Católica — una campaña para recuperar las almas perdidas ante el protestantismo mediante una experiencia emocional y sensorial abrumadora — los artistas barrocos abandonaron la serena idealización del Renacimiento y la reemplazaron con drama crudo, claroscuro intenso, movimiento dinámico e intensidad psicológica. Donde el Renacimiento buscaba elevar, el Barroco buscaba abrumar.',
+    },
+
+    characteristics: [
+      'Tenebrismo — contraste extremo de luz y sombra, a menudo con una única fuente de luz dramática que penetra la oscuridad casi total',
+      'Movimiento dinámico — figuras captadas en movimiento, paños arremolinados, composiciones construidas sobre ejes diagonales en lugar de verticales',
+      'Intensidad emocional — rostros y gestos que transmiten éxtasis, angustia, terror, arrobamiento y dolor con franqueza psicológica',
+      'Puesta en escena teatral — escenas compuestas como momentos congelados de un drama, invitando al espectador a la narrativa',
+      'Pintura ilusionista de techos — arquitectura en trampantojo y figuras que parecen atravesar el techo hacia el cielo',
+      'Iconografía de la Contrarreforma — santos, martirios y visiones extáticas diseñados para inspirar la devoción católica',
+      'Retrato del poder — monarcas y nobles representados con grandeza, autoridad y atributos simbólicos',
+      'Pintura de género (holandesa) — escenas de la vida doméstica cotidiana elevadas al nivel del gran arte',
+      'Naturaleza muerta como meditación moral — imagenería vanitas que utiliza objetos para contemplar la mortalidad y la naturaleza efímera de la vida',
+      'Drama arquitectónico — fachadas curvas, espacios ovales e interiores teatrales diseñados para crear asombro y desorientación',
+      'Realismo táctil — superficies tratadas con extraordinaria atención a la textura (piel, terciopelo, metal, agua)',
+      'Maestría del escorzo — efectos perspectivos extremos, especialmente en frescos de techo y grupos de figuras',
+      'Paralelismos corales y orquestales — contraparte visual de los grandes desarrollos musicales de la época (Bach, Handel, Vivaldi)',
+      'Ampliación de temas seculares — mitología, pintura histórica y retrato adquiriendo estatus igual al de los temas religiosos',
+    ],
+
+    artists: [
+      {
+        name: 'Caravaggio (Michelangelo Merisi)',
+        years: '1571 – 1610',
+        description: 'El pintor más radical e influyente del Barroco, Caravaggio inventó el tenebrismo — sumergiendo sus composiciones en oscuridad casi total e iluminando las figuras con un único y despiadado haz de luz de precisión casi violenta. Sus santos son gente de la calle; sus Madonnas son modelos de tabernas romanas. Rechazó toda idealización, pintando temas sagrados con una inmediatez física confrontacional que escandalizó a sus contemporáneos y electrizó a generaciones de pintores posteriores. Su propia vida fue tan dramática como sus lienzos — mató a un hombre en una pelea y pasó sus últimos años como fugitivo, muriendo a los 38. Su influencia en Rubens, Rembrandt, Velázquez y virtualmente todos los pintores importantes del siglo XVII es incalculable.',
+      },
+      {
+        name: 'Gian Lorenzo Bernini',
+        years: '1598 – 1680',
+        description: 'El genio supremo de la escultura y arquitectura barrocas, Bernini hizo que el mármol se comportara como tela, carne y nube. Su Apolo y Dafne captura el instante exacto de la metamorfosis — la corteza formándose sobre piel viva — con un virtuosismo que parece desafiar la naturaleza de la piedra. Su Éxtasis de Santa Teresa es simultáneamente una declaración teológica y un retrato psicológico de la experiencia trascendente. Como arquitecto de la Plaza de San Pedro, creó el mayor espacio ceremonial urbano del mundo occidental. Bernini definió esencialmente el aspecto de Roma durante tres siglos, y su concepción de la escultura como evento teatral cambió el medio permanentemente.',
+      },
+      {
+        name: 'Rembrandt van Rijn',
+        years: '1606 – 1669',
+        description: 'El mayor maestro holandés y posiblemente el retratista más psicológicamente penetrante de la historia del arte occidental. El uso de la luz por Rembrandt fue diferente a cualquier otro antes o después — cálida, dorada, emergiendo de una oscuridad indefinida, cayendo sobre los rostros con la suavidad de una revelación. Sus autorretratos tardíos, pintados a través de la ruina financiera y la pérdida personal, se encuentran entre las imágenes más honestas y conmovedoras del envejecimiento humano jamás realizadas. La Ronda Nocturna transformó el retrato grupal en narrativa dramática. Sus grabados — más de 300 sobreviven — demuestran igual maestría en un medio completamente diferente, con una libertad de línea que anticipa el Expresionismo.',
+      },
+      {
+        name: 'Peter Paul Rubens',
+        years: '1577 – 1640',
+        description: 'El pintor definitorio del Barroco flamenco, Rubens operó a escala industrial — dirigiendo un taller que produjo cientos de obras mayores mientras él mismo servía como diplomático, erudito y uno de los hombres más educados de su época. Sus pinturas son explosiones de energía: cuerpos en cascada, caballos encabritados, composiciones arremolinadas que apenas pueden contener su propia vitalidad. Su color — cálido, luminoso, construido en capas translúcidas desde sombras frías hasta luces cálidas — influyó en Delacroix, Renoir y virtualmente todos los pintores interesados en la carne y la vida. Elevó el desnudo femenino a un nuevo estándar de realidad voluptuosa que rompió decisivamente con la idealización renacentista.',
+      },
+      {
+        name: 'Diego Velázquez',
+        years: '1599 – 1660',
+        description: 'Pintor de cámara de Felipe IV de España y uno de los pintores más extraordinarios técnicamente de la historia. Las Meninas — su enigmática obra maestra de complejidad espacial — ha sido llamada la pintura más grande jamás realizada. Velázquez pintó con una libertad y economía de pincelada que anticipa el Impresionismo en dos siglos; de cerca, sus superficies se disuelven en trazos abstractos, pero a distancia se cohesionan en figuras de perfecta realidad. Sus retratos de la familia real española, enanos y bufones fueron pintados con absoluta igualdad psicológica — cada rostro observado con la misma mirada penetrante y no enjuiciadora.',
+      },
+      {
+        name: 'Johannes Vermeer',
+        years: '1632 – 1675',
+        description: 'Vermeer pintó solo unas 34 obras conocidas, pero cada una es un mundo entero. Sus escenas domésticas — mujeres leyendo cartas, vertiendo leche, tocando música en habitaciones bañadas de fría luz nórdica — logran una quietud y perfección óptica que nunca ha sido igualada. Se cree que utilizó una cámara oscura para lograr su extraordinaria precisión espacial y sutileza tonal. Su luz es casi imposiblemente precisa: la forma en que cae sobre una pared blanca, atrapa el borde de una jarra de cerámica o modela los pliegues de una chaqueta de satén constituye el logro óptico más refinado en la historia de la pintura.',
+      },
+    ],
+
+    artworks: [
+      {
+        title: 'La vocación de San Mateo',
+        description: 'Una obra maestra definitoria del Barroco. Cristo entra en una taberna oscura, con el brazo extendido como el de Dios en la Capilla Sixtina, mientras Mateo — un recaudador de impuestos en pleno recuento — mira hacia arriba con incredulidad. La luz diagonal corta la oscuridad con la fuerza de una intervención divina.',
+      },
+      {
+        title: 'La Ronda Nocturna',
+        description: 'La pintura más famosa de la Edad de Oro holandesa. Rembrandt transformó el retrato grupal convencional en una escena dinámica de movimiento y drama. La luz cae desigualmente — algunas figuras brillantemente iluminadas, otras en sombra — creando la sensación de un momento dramático congelado en lugar de una composición posada.',
+      },
+      {
+        title: 'Éxtasis de Santa Teresa',
+        description: 'El logro supremo de Bernini en mármol. Teresa flota sobre una nube, traspasada por una flecha divina, su rostro en estado de éxtasis espiritual. Los pliegues imposiblemente suaves, la nube ingrávida y los rayos dorados de luz divina hacen de esta una de las esculturas más psicológicamente complejas jamás talladas.',
+      },
+      {
+        title: 'La joven de la perla',
+        description: 'A menudo llamada la "Mona Lisa del Norte". Una joven desconocida se gira para mirar por encima del hombro, su mirada directa y sorprendentemente viva. La perla luminosa, el turbante azul frío y amarillo, y la extraordinaria representación de la luz sobre la piel de Vermeer hacen de este uno de los retratos más reconocibles de la historia.',
+      },
+      {
+        title: 'Las Meninas',
+        description: 'Posiblemente la pintura más grande del arte occidental. Velázquez se representa a sí mismo trabajando en un gran lienzo mientras la Infanta Margarita está rodeada por sus damas de honor. La posición del espectador y el espejo del fondo crean un laberinto de complejidad espacial y conceptual que ha fascinado a pintores y filósofos durante siglos.',
+      },
+      {
+        title: 'Judit decapitando a Holofernes',
+        description: 'La obra maestra definitiva de Artemisia Gentileschi. Su Judit no es la heroína delicada de representaciones anteriores — ella y su sirvienta someten a un general masivo con feroz determinación física. El tenebrismo, la sangre carmesí y las expresiones de esfuerzo concentrado de las mujeres hacen de esta una de las pinturas más vísceralmente poderosas del Barroco.',
+      },
+      {
+        title: 'El Descendimiento de la Cruz',
+        description: 'El panel central del famoso tríptico de Rubens. El cuerpo de Cristo — representado con una maestría anatómica impresionante — es descendido de la cruz en una cascada de lino blanco y manos humanas. La energía diagonal y la intensidad emocional de la composición representan el Barroco flamenco en su cúspide absoluta.',
+      },
+      {
+        title: 'Apolo y Dafne',
+        description: 'Bernini captura el instante exacto en que Dafne se transforma en un árbol de laurel para escapar de Apolo — la corteza formándose sobre la piel, los dedos convirtiéndose en hojas, el cabello disolviéndose en ramas. El hecho de que este momento imposible esté representado en mármol es en sí mismo parte del significado: el arte triunfando sobre los límites de la materia.',
+      },
+      {
+        title: 'Autorretrato con dos círculos',
+        description: 'Uno de los autorretratos finales de Rembrandt, pintado en la vejez tras la ruina financiera y la pérdida personal. El rostro envejecido — pintado con extraordinaria libertad y honestidad psicológica — mira hacia afuera con una expresión de profundo autoconocimiento sin sentimentalismo. Los misteriosos círculos del fondo nunca han sido completamente explicados.',
+      },
+      {
+        title: 'Palacio de Versalles',
+        description: 'La expresión máxima de la arquitectura barroca como poder político. El palacio de Luis XIV — con su Galería de los Espejos, jardines formales y fachadas aparentemente infinitas — fue diseñado para hacer sentir a cada visitante la supremacía absoluta de la corona francesa. Se convirtió en el modelo para la arquitectura real en toda Europa durante un siglo.',
+      },
+    ],
+
+    tattooTips: {
+      intro: 'El Barroco es quizás la fuente individual más rica para el tatuaje en toda la historia del arte occidental. Sus preocupaciones — drama, luz emergiendo de la oscuridad, el cuerpo humano bajo estrés emocional y físico extremo, la textura de la piel y la tela representadas con realismo obsesivo — se corresponden directamente con los desafíos y oportunidades del tatuaje. Todo artista serio del tatuaje que trabaje en realismo blanco y negro, retrato neo-tradicional o iconografía religiosa está trabajando a la sombra del Barroco, lo sepa o no.',
+      design: [
+        'Construya composiciones sobre diagonales: El Renacimiento usaba triángulos estables y ejes verticales; el Barroco los desestabilizó deliberadamente con líneas de fuerza diagonales. Una figura que se extiende hacia arriba en ángulo, un rayo de luz que cruza un fondo oscuro — la composición diagonal crea dinamismo y urgencia que se lee poderosamente en la piel.',
+        'Use recorte dramático: Caravaggio frecuentemente cortaba figuras en ángulos inesperados — una mano emergiendo de la oscuridad, un rostro medio en sombra. El recorte ajustado y dramático en un tatuaje crea la misma tensión cinematográfica y obliga al ojo del espectador a completar lo que no puede ver.',
+        'Diseñe con una única fuente de luz: Tenebrismo significa una luz, una sombra, sin relleno ambiental. Elija su fuente de luz imaginaria antes de comenzar y manténgala implacablemente a lo largo de la pieza. Cada superficie, cada pliegue de tela, cada plano del rostro debe ser consistente con esa única fuente.',
+        'Referencia imagenería de martirio y éxtasis: San Sebastián, San Bartolomé y Santa Teresa ofrecen arquetipos compositivos icónicos — el rostro que mira hacia arriba, el cuerpo vulnerable y expuesto, el contraste entre violencia y trascendencia — que se trasladan poderosamente a la imagenería del tatuaje con resonancia emocional universal.',
+        'Explote el contraste entre carne y oscuridad: Los pintores barrocos construyeron sus composiciones alrededor de la emergencia de la piel desde la sombra. En el tatuaje, esto significa tratar el fondo no como espacio vacío sino como oscuridad activa contra la que la figura empuja. Las áreas más oscuras de un tatuaje deben sentirse como sombra envolvente, no solo relleno.',
+        'Use la tela como ritmo compositivo: Rubens y Bernini estaban obsesionados con los paños — la forma en que la tela se tuerce, se agrupa y fluye crea ritmo y movimiento a lo largo de una composición. Incorporar tela, ropa o túnicas en tatuajes figurativos añade complejidad visual y permite al ojo recorrer la pieza.',
+        'Estudie a Bernini para tatuaje tridimensional: Sus esculturas son esencialmente estudios de cómo la forma se lee desde cada ángulo. Para tatuajes que envuelven extremidades o el cuerpo, piense en cómo el diseño se comporta en tres dimensiones — los principios compositivos de Bernini son directamente aplicables.',
+        'Explore la Edad de Oro holandesa para tatuajes de naturaleza muerta y retrato: Las naturalezas muertas vanitas — calaveras junto a flores, relojes de arena, instrumentos musicales — ofrecen imagenería iconográficamente rica para tatuajes significativos. Las escenas de interior de Vermeer ofrecen modelos compositivos íntimos para fondos de mangas.',
+      ],
+      technical: [
+        'Domine la transición del negro absoluto al blanco: El tenebrismo barroco exige un rango completo de valores. En el tatuaje, esto significa estar dispuesto a empacar negros verdaderos — no grises — en las áreas de sombra, y reservar la piel limpia o la tinta blanca para los reflejos más brillantes. El contraste entre estos extremos es la fuente del poder del estilo.',
+        'Estudie específicamente a Caravaggio por la lógica de la luz: Su luz no es naturalista — es teatral, enfocada, casi interrogativa. Entender cómo construía sus fuentes de luz (siempre desde arriba, a menudo desde la izquierda, siempre rozando la forma en lugar de inundarla) transformará su pensamiento sobre la colocación de sombras.',
+        'Superponga tonos de piel para calidez barroca: Los pintores barrocos construían piel cálida y luminosa superponiendo rojos y amarillos cálidos bajo veladuras superficiales más frías. En tatuaje a color, coloque primero los subtonos cálidos, luego enfríe la superficie — esto replica la calidez subsuperficial que hace que la carne barroca se sienta viva.',
+        'Use reflejos dispersos con moderación: En el tenebrismo, los reflejos son raros y preciosos — un borde de luz en un pómulo, el brillo de un ojo, el destello en un labio. Resista la tentación de sobre-iluminar; reserve sus puntos más brillantes para la única área más importante del rostro o la figura.',
+        'Represente la tela con lógica estructural: Al tatuar túnicas, capas o paños en estilo barroco, comprenda la forma subyacente que la tela cubre. Los pliegues siguen la gravedad y la forma debajo — la tela sobre una rodilla levantada crea pliegues diferentes a la tela que cuelga libremente. Estudie los dibujos de paños de Rubens para esta lógica.',
+        'Explote la capacidad de la aguja para la textura: La obsesión barroca con las superficies táctiles — terciopelo, piel, armadura metálica, piel mojada — se traslada directamente al tatuaje. Diferentes configuraciones de agujas y técnicas (mag shaders, liners, punteado) pueden crear cualidades texturales distintas. Construya un vocabulario de texturas y despliéguelas consistentemente.',
+        'No tema la asimetría: Las composiciones barrocas raramente son simétricas — se equilibran mediante tensión en lugar de espejo. Una masa oscura pesada en un lado se contrarresta con una figura brillante en el otro. Aplique este principio a diseños de mangas y piezas de espalda para un resultado más dinámico que la simple simetría bilateral.',
+        'Estudie los grabados de Rembrandt por la calidad de la línea: Sus líneas grabadas van de la finura de una navaja a trazos profundamente mordidos, construyendo forma a través de sombreado cruzado, línea paralela y espacio abierto con extraordinario control. Estas técnicas se trasladan directamente a los enfoques de sombreado en blanco y negro y al estilo de tatuaje ilustrativo.',
+      ],
+      inspiration: 'El tatuaje contemporáneo tiene una deuda profunda y en gran parte no reconocida con el Barroco. Toda la tradición del realismo en blanco y negro — con su luz tenebrista, sus retratos dramáticos, su iconografía religiosa — es esencialmente pintura barroca trasladada a la piel. Artistas como Robert Hernandez, Nikko Hurtado y Paul Booth trabajan en un lenguaje visual que traza directamente hasta Caravaggio y Rembrandt. Para conceptos de manga, considere organizar una manga barroca alrededor de una única fuente de luz dramática — como si una linterna iluminara toda la composición desde un extremo del brazo. Las escenas religiosas, la imagenería de martirio y las naturalezas muertas vanitas ofrecen poderoso material temático. Para el retrato en blanco y negro, estudie los autorretratos tardíos de Rembrandt: la forma en que construía un rostro desde la oscuridad usando el mínimo número de marcas deliberadas es la lección más avanzada en economía tonal disponible para cualquier artista que trabaje con un solo pigmento.',
+    },
+
+    quiz: [
+      {
+        question: '¿Qué técnica pionera de Caravaggio se caracteriza por el contraste extremo entre luz y oscuridad casi total?',
+        options: ['Sfumato', 'Empaste', 'Tenebrismo', 'Puntillismo'],
+      },
+      {
+        question: '¿Qué movimiento religioso y político fue una fuerza impulsora principal detrás del desarrollo del arte Barroco?',
+        options: ['La Reforma', 'La Contrarreforma', 'La Ilustración', 'Las Cruzadas'],
+      },
+      {
+        question: '¿Qué artista barroco es considerado el maestro supremo de la escultura en mármol, responsable del Éxtasis de Santa Teresa?',
+        options: ['Miguel Ángel', 'Donatello', 'Gian Lorenzo Bernini', 'Antonio Canova'],
+      },
+      {
+        question: 'Las Meninas — ampliamente considerada una de las pinturas más grandes jamás realizadas — fue creada por ¿qué artista?',
+        options: ['Francisco Goya', 'El Greco', 'Diego Velázquez', 'Bartolomé Murillo'],
+      },
+      {
+        question: 'La Edad de Oro holandesa, que produjo a Rembrandt y Vermeer, se distinguía del Barroco italiano principalmente en su enfoque en ¿qué?',
+        options: ['Retablos religiosos', 'Retrato real', 'Temas domésticos cotidianos', 'Escenas mitológicas'],
+      },
+      {
+        question: '¿Qué palacio barroco, construido para Luis XIV de Francia, se convirtió en el modelo de la arquitectura real en toda Europa?',
+        options: ['Palacio de Buckingham', 'Palacio de Versalles', 'Palacio de Schönbrunn', 'El Louvre'],
+      },
+      {
+        question: '¿Por qué fue significativa Artemisia Gentileschi en el arte Barroco?',
+        options: [
+          'Inventó el tenebrismo',
+          'Fue una de las primeras mujeres en lograr reconocimiento como pintora importante',
+          'Diseñó la Plaza de San Pedro',
+          'Fundó la tradición de la Edad de Oro holandesa',
+        ],
+      },
+      {
+        question: 'La Ronda Nocturna de Rembrandt fue revolucionaria porque transformó ¿qué tipo de pintura tradicional?',
+        options: ['Pintura de paisaje', 'Pintura de naturaleza muerta', 'Pintura de retrato grupal', 'Pintura de retablo religioso'],
+      },
+      {
+        question: '¿A qué se refiere originalmente la palabra "barroco"?',
+        options: ['Un tipo de palacio ornamentado', 'Una perla de forma irregular', 'Una técnica de iluminación dramática', 'Un tipo de representación teatral'],
+      },
+      {
+        question: 'En el tatuaje y el arte Barroco, ¿cuál es la función principal de las áreas negras profundas y saturadas en una composición?',
+        options: [
+          'Indicar distancia del fondo',
+          'Crear oscuridad activa de la que las figuras emergen dramáticamente',
+          'Sugerir escenarios nocturnos',
+          'Ahorrar tinta y reducir la complejidad',
+        ],
+      },
+    ],
+  },
 };
