@@ -10,6 +10,7 @@ import palaceOfVersaillesImage from '@/assets/artworks/palace-of-versailles.webp
 import apolloAndDaphneImage from '@/assets/artworks/apollo-and-daphne.webp';
 import descentFromCrossImage from '@/assets/artworks/descent-from-the-cross.webp';
 import rembrandtSelfPortraitImage from '@/assets/artworks/rembrandt-self-portrait.jpg';
+import callingOfSaintMatthewImage from '@/assets/artworks/calling-of-saint-matthew.webp';
 
 export interface QuizQuestion {
   question: string;
@@ -404,7 +405,7 @@ The Baroque also coincided with the Scientific Revolution, the Age of Exploratio
           type: 'painting',
           medium: 'Oil on canvas',
           location: 'Contarelli Chapel, San Luigi dei Francesi, Rome',
-          imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Caravaggio_-_The_Calling_of_Saint_Matthew.jpg/1280px-Caravaggio_-_The_Calling_of_Saint_Matthew.jpg',
+          imageUrl: callingOfSaintMatthewImage,
           description: 'A defining Baroque masterpiece. Christ enters a dark tavern, arm outstretched like God\'s in the Sistine Chapel, while Matthew — a tax collector mid-count — looks up in disbelief. The diagonal light cuts through darkness with the force of divine intervention.',
         },
         {
