@@ -464,7 +464,7 @@ The Baroque also coincided with the Scientific Revolution, the Age of Exploratio
           type: 'painting',
           medium: 'Oil on panel',
           location: 'Cathedral of Our Lady, Antwerp',
-          imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/The_Descent_from_the_Cross_-_Rubens.jpg/640px-The_Descent_from_the_Cross_-_Rubens.jpg',
+          imageUrl: descentFromCrossImage,
           description: 'The central panel of Rubens\'s famous triptych. Christ\'s body — rendered with breathtaking anatomical mastery — is lowered from the cross in a cascade of white linen and human hands. The composition\'s diagonal energy and emotional intensity represent Flemish Baroque at its absolute peak.',
         },
         {
@@ -474,7 +474,7 @@ The Baroque also coincided with the Scientific Revolution, the Age of Exploratio
           type: 'sculpture',
           medium: 'Marble',
           location: 'Borghese Gallery, Rome',
-          imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Bernini_Apollo_and_Daphne.jpg/480px-Bernini_Apollo_and_Daphne.jpg',
+          imageUrl: apolloAndDaphneImage,
           description: 'Bernini captures the exact instant Daphne transforms into a laurel tree to escape Apollo — bark forming over skin, fingers becoming leaves, hair dissolving into branches. The fact that this impossible moment is rendered in marble is itself part of the meaning: art triumphing over the limits of matter.',
         },
         {
@@ -484,7 +484,7 @@ The Baroque also coincided with the Scientific Revolution, the Age of Exploratio
           type: 'painting',
           medium: 'Oil on canvas',
           location: 'Kenwood House, London',
-          imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Rembrandt_van_Rijn_-_Self-Portrait_with_Two_Circles_c1665-9.jpg/640px-Rembrandt_van_Rijn_-_Self-Portrait_with_Two_Circles_c1665-9.jpg',
+          imageUrl: rembrandtSelfPortraitImage,
           description: 'One of Rembrandt\'s final self-portraits, painted in old age after financial ruin and personal loss. The aged face — painted with extraordinary freedom and psychological honesty — stares outward with an expression of deep, unsentimental self-knowledge. The mysterious circles in the background have never been fully explained.',
         },
         {
@@ -494,7 +494,7 @@ The Baroque also coincided with the Scientific Revolution, the Age of Exploratio
           type: 'architecture',
           medium: 'Stone, marble, gilded bronze',
           location: 'Versailles, France',
-          imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Versailles_2008_05.jpg/1280px-Versailles_2008_05.jpg',
+          imageUrl: palaceOfVersaillesImage,
           description: 'The ultimate expression of Baroque architecture as political power. Louis XIV\'s palace — with its Hall of Mirrors, formal gardens, and seemingly infinite facades — was designed to make every visitor feel the absolute supremacy of the French crown. It became the template for royal architecture across Europe for a century.',
         },
       ],
