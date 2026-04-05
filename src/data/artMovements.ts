@@ -323,8 +323,7 @@ Two technical inventions defined the era's visual language above all else: linea
     name: 'Baroque',
     period: '1600 – 1750',
     colorPalette: ['#4A3728', '#8B7355', '#2F1B14', '#C4956A', '#1A1A2E'],
-    status: 'locked',
-    releaseDate: '6 Nisan Pazar',
+    status: 'active',
     content: {
       origin: {
         type: 'reaction',
