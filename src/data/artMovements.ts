@@ -3,6 +3,9 @@ import arnolfiniPortraitImage from '@/assets/artworks/arnolfini-portrait.jpg';
 import birthOfVenusImage from '@/assets/artworks/birth-of-venus.jpg';
 import davidImage from '@/assets/artworks/david.jpg';
 import vitruvianManImage from '@/assets/artworks/vitruvian-man.jpg';
+import ecstasyOfSaintTeresaImage from '@/assets/artworks/ecstasy-of-saint-teresa.jpg';
+import girlWithPearlEarringImage from '@/assets/artworks/girl-with-pearl-earring.jpg';
+import lasMeninasImage from '@/assets/artworks/las-meninas.jpg';
 
 export interface QuizQuestion {
   question: string;
@@ -417,7 +420,7 @@ The Baroque also coincided with the Scientific Revolution, the Age of Exploratio
           type: 'sculpture',
           medium: 'White marble, gilded bronze',
           location: 'Santa Maria della Vittoria, Rome',
-          imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Ecstasy_of_Saint_Teresa_September_2015-2a.jpg/640px-Ecstasy_of_Saint_Teresa_September_2015-2a.jpg',
+          imageUrl: ecstasyOfSaintTeresaImage,
           description: 'Bernini\'s supreme achievement in marble. Teresa floats on a cloud, pierced by a divine arrow, her face in a state of spiritual ecstasy. The impossibly soft drapery, the weightless cloud, and the gilded rays of divine light make this one of the most psychologically complex sculptures ever carved.',
         },
         {
@@ -427,7 +430,7 @@ The Baroque also coincided with the Scientific Revolution, the Age of Exploratio
           type: 'painting',
           medium: 'Oil on canvas',
           location: 'Mauritshuis, The Hague',
-          imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/1665_Girl_with_a_Pearl_Earring.jpg/800px-1665_Girl_with_a_Pearl_Earring.jpg',
+          imageUrl: girlWithPearlEarringImage,
           description: 'Often called the "Mona Lisa of the North." An unknown young woman turns to glance over her shoulder, her gaze direct and arrestingly alive. The luminous pearl, the cool blue and yellow turban, and Vermeer\'s extraordinary rendering of light on skin make this one of the most recognizable portraits in history.',
         },
         {
@@ -437,7 +440,7 @@ The Baroque also coincided with the Scientific Revolution, the Age of Exploratio
           type: 'painting',
           medium: 'Oil on canvas',
           location: 'Museo del Prado, Madrid',
-          imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Las_Meninas_01.jpg/800px-Las_Meninas_01.jpg',
+          imageUrl: lasMeninasImage,
           description: 'Possibly the greatest painting in Western art. Velázquez depicts himself at work on a large canvas while the Infanta Margarita stands surrounded by her ladies-in-waiting. The viewer\'s position and the mirror in the background create a labyrinth of spatial and conceptual complexity that has fascinated painters and philosophers for centuries.',
         },
         {
