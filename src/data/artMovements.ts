@@ -6,6 +6,10 @@ import vitruvianManImage from '@/assets/artworks/vitruvian-man.jpg';
 import ecstasyOfSaintTeresaImage from '@/assets/artworks/ecstasy-of-saint-teresa.jpg';
 import girlWithPearlEarringImage from '@/assets/artworks/girl-with-pearl-earring.jpg';
 import lasMeninasImage from '@/assets/artworks/las-meninas.jpg';
+import palaceOfVersaillesImage from '@/assets/artworks/palace-of-versailles.webp';
+import apolloAndDaphneImage from '@/assets/artworks/apollo-and-daphne.webp';
+import descentFromCrossImage from '@/assets/artworks/descent-from-the-cross.webp';
+import rembrandtSelfPortraitImage from '@/assets/artworks/rembrandt-self-portrait.jpg';
 
 export interface QuizQuestion {
   question: string;
