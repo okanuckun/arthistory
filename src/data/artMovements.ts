@@ -11,6 +11,7 @@ import apolloAndDaphneImage from '@/assets/artworks/apollo-and-daphne.webp';
 import descentFromCrossImage from '@/assets/artworks/descent-from-the-cross.webp';
 import rembrandtSelfPortraitImage from '@/assets/artworks/rembrandt-self-portrait.jpg';
 import callingOfSaintMatthewImage from '@/assets/artworks/calling-of-saint-matthew.webp';
+import judithSlayingHolofernesImage from '@/assets/artworks/judith-slaying-holofernes.jpg';
 
 export interface QuizQuestion {
   question: string;
@@ -455,7 +456,7 @@ The Baroque also coincided with the Scientific Revolution, the Age of Exploratio
           type: 'painting',
           medium: 'Oil on canvas',
           location: 'Uffizi Gallery, Florence',
-          imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Artemisia_Gentileschi_-_Judith_Slaying_Holofernes_%28Uffizi%29.jpg/800px-Artemisia_Gentileschi_-_Judith_Slaying_Holofernes_%28Uffizi%29.jpg',
+          imageUrl: judithSlayingHolofernesImage,
           description: 'Artemisia Gentileschi\'s definitive masterpiece. Her Judith is not the delicate heroine of earlier depictions — she and her maidservant wrestle a massive general to the ground with fierce physical determination. The tenebrism, the crimson blood, and the women\'s expressions of concentrated effort make this one of the most viscerally powerful paintings of the Baroque.',
         },
         {
