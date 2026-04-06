@@ -1,0 +1,5 @@
+ALTER TABLE public.profiles
+  ADD COLUMN IF NOT EXISTS bio text DEFAULT '' NOT NULL,
+  ADD COLUMN IF NOT EXISTS avatar_url text DEFAULT '' NOT NULL,
+  ADD COLUMN IF NOT EXISTS instagram_url text DEFAULT '' NOT NULL,
+  ADD COLUMN IF NOT EXISTS website_url text DEFAULT '' NOT NULL;

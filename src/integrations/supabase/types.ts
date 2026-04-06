@@ -91,19 +91,31 @@ export type Database = {
       }
       profiles: {
         Row: {
+          avatar_url: string
+          bio: string
           created_at: string
           display_name: string
+          instagram_url: string
           user_id: string
+          website_url: string
         }
         Insert: {
+          avatar_url?: string
+          bio?: string
           created_at?: string
           display_name: string
+          instagram_url?: string
           user_id: string
+          website_url?: string
         }
         Update: {
+          avatar_url?: string
+          bio?: string
           created_at?: string
           display_name?: string
+          instagram_url?: string
           user_id?: string
+          website_url?: string
         }
         Relationships: []
       }
