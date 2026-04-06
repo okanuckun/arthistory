@@ -124,7 +124,7 @@ Deno.serve(async (req) => {
           'X-Connection-Api-Key': RESEND_API_KEY,
         },
         body: JSON.stringify({
-          from: 'Monolith Studio <onboarding@resend.dev>',
+          from: 'Monolith Studio <noreply@arthistory.monolithstudio.com>',
           to: [email],
           subject: t.subject(movement_name),
           html: buildHtml(lang, movement_name, release_date),
