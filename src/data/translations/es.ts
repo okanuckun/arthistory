@@ -361,4 +361,194 @@ El Barroco también coincidió con la Revolución Científica, la Era de la Expl
       },
     ],
   },
+
+  rococo: {
+    summary: `Rococó — del francés "rocaille", que significa trabajo de conchas o decoración de guijarros — fue el estilo visual dominante de la cultura aristocrática europea desde aproximadamente 1720 hasta 1780. Originado en los salones parisinos y apartamentos privados de la nobleza francesa tras la muerte de Luis XIV, representó un giro decisivo del esplendor público hacia el placer privado: un arte de intimidad, elegancia, ingenio y sensualidad desinhibida.
+
+Si el Barroco fue el arte de la iglesia y la monarquía absoluta, el Rococó fue el arte del salón y el boudoir. Su escala se redujo deliberadamente — de los vastos techos de catedrales a las paredes de íntimos salones, de heroicos grupos de mármol a delicadas figuritas de porcelana. Su paleta se transformó: los tonos oscuros y dramáticos de Caravaggio y Rembrandt dieron paso al champaña, rosa, azul cielo, verde espuma de mar y marfil. Sus temas pasaron del martirio y el éxtasis divino a las fiestas en jardines, los encuentros galantes, la música y los rituales del ocio aristocrático — lo que los franceses llamaban "fêtes galantes".
+
+El Rococó también abrazó las artes decorativas con una seriedad sin precedentes. El mobiliario, la porcelana, la tapicería, la platería y el diseño de interiores fueron elevados al mismo nivel que la pintura y la escultura, y los límites entre ellos se difuminaron deliberadamente. El periodo produjo las porcelanas más finas de la historia europea (Meissen, Sèvres), series de tapices de extraordinario refinamiento e interiores — como el pabellón de Amalienburg en Múnich o el Hôtel de Soubise en París — donde cada superficie parecía disolverse en un sistema entrelazado de curvas, dorados, espejos y paneles pintados.
+
+El Rococó finalmente colapsó bajo el peso de su propia frivolidad. En la década de 1760, críticos de la Ilustración como Diderot condenaban su vacío moral, y las severas virtudes cívicas del Neoclasicismo ya estaban listas para reemplazarlo. Sin embargo, en su mejor momento — en los mejores lienzos de Watteau, Fragonard y Boucher, y en los espectaculares interiores pintados de las iglesias barroco-rococó alemanas y austríacas — alcanzó un tipo de perfección fácil de subestimar: un arte dedicado enteramente al cultivo del deleite es más difícil de crear de lo que parece.`,
+
+    origin: {
+      explanation: 'El Rococó fue una reacción directa a la grandiosidad, el peso y la solemnidad religiosa del Barroco. Cuando la corte francesa se trasladó de Versalles de vuelta a París tras la muerte de Luis XIV en 1715, el gusto aristocrático pasó del espectáculo público abrumador hacia espacios íntimos, lúdicos y sensualmente deleitables. Donde el Barroco era oscuro, el Rococó era pastel; donde el Barroco era monumental y moralmente serio, el Rococó era de pequeña escala, ingenioso y dedicado al placer. Fue el arte de una clase dirigente que quería disfrutar de sus privilegios en lugar de justificarlos.',
+    },
+
+    characteristics: [
+      'Paleta pastel — champaña, rosa, azul cielo, espuma de mar, marfil reemplazando los tonos oscuros y dramáticos del Barroco',
+      'Ornamentación asimétrica — la curva en "S" y "C" como unidad decorativa fundamental, aplicada a marcos, mobiliario y arquitectura',
+      'Fêtes galantes — escenas de fiestas en jardines al aire libre que representan el ocio aristocrático, la música, el baile y el galanteo',
+      'Intimidad de escala — lienzos más pequeños, habitaciones más pequeñas, esculturas más pequeñas diseñadas para el placer privado en lugar del asombro público',
+      'Temas eróticos y amorosos — el galanteo, la seducción y el amor juguetón como temas artísticos legítimos y dominantes',
+      'Diseño interior total — pintura, escultura, mobiliario y artes decorativas unificados en ambientes visuales integrados',
+      'Porcelana y artes decorativas elevadas al estatus de bellas artes — Meissen, Sèvres, Capodimonte',
+      'Temas teatrales y operísticos — figuras de la commedia dell\'arte, bailes de máscaras, escenas teatrales',
+      'Exotismo chino y turco — chinoiserie y turquería como vocabularios decorativos de moda',
+      'Pincelada ligera y plumosa — visible, delicada, casi acariciante — reemplazando la solidez barroca',
+      'Arquitectura curva — salas ovales, grutas incrustadas de conchas, fachadas serpentinas que rechazan los ejes rectos del Barroco',
+      'Iluminación suave y difusa — sin tenebrismo dramático; la luz parece venir de todas partes y de ninguna, bañando las escenas con un resplandor suave',
+      'Fantasía mitológica — Venus, Cupido y las Gracias en escenarios pastorales idealizados',
+      'Artificio autoconsciente — el Rococó reconocía y celebraba su propia irrealidad teatral',
+    ],
+
+    artists: [
+      {
+        name: 'Jean-Antoine Watteau',
+        years: '1684 – 1721',
+        description: 'El inventor y mayor practicante de la fête galante, Watteau creó un género de pintura completamente nuevo — figuras elegantemente vestidas en escenarios de jardines oníricos, impregnadas de una melancolía que contradice sus aparentes placeres. Fue aceptado en la Academia Francesa con una nueva categoría inventada específicamente para su obra. A pesar de morir de tuberculosis a los 36, produjo pinturas de extraordinaria delicadeza poética, particularmente su obra maestra tardía La Enseña de Gersaint — una pintura a escala real que representa la tienda de su marchante de arte, pintada supuestamente en solo ocho días, combinando la observación social de Vermeer con la gracia atmosférica que solo Watteau poseía.',
+      },
+      {
+        name: 'François Boucher',
+        years: '1703 – 1770',
+        description: 'El pintor oficial del placer rococó, Boucher fue el artista favorito de Madame de Pompadour y la figura dominante de la cultura visual de la corte francesa durante tres décadas. Sus escenas mitológicas — Venus reclinada, ninfas bañándose, Cupido desarmado — están pintadas con una brillantez técnica fácil de pasar por alto porque los temas parecen tan decorativos. Su comprensión de cómo representar la carne suave y cálida contra sedas y linos vaporosos como nubes era incomparable. Diderot lo odiaba ("este hombre tiene todo excepto verdad") pero Renoir y Fragonard lo adoraban.',
+      },
+      {
+        name: 'Jean-Honoré Fragonard',
+        years: '1732 – 1806',
+        description: 'El último gran maestro del Rococó y uno de los pintores más técnicamente brillantes del siglo XVIII. El Columpio — una joven en un columpio de jardín, su vestido rosa ondeando, un joven mirándola desde abajo — destila toda la sensibilidad del Rococó en una sola imagen. Pero Fragonard también era capaz de una seriedad extraordinaria: sus paneles decorativos para Madame du Barry y la serie erótica ahora en la Colección Frick demuestran un dominio de la narrativa, la atmósfera y la pincelada que lo colocarían entre los grandes de cualquier época. Sobrevivió a la Revolución reinventándose y murió casi olvidado — una de las ironías más crueles de la historia del arte.',
+      },
+      {
+        name: 'Giovanni Battista Tiepolo',
+        years: '1696 – 1770',
+        description: 'El último gran maestro de la tradición italiana del fresco y el supremo decorador del siglo XVIII. Trabajando entre Venecia, Wurzburgo y Madrid, Tiepolo llenó techos con visiones de imposible ligereza — cielos poblados por dioses, ángeles y figuras alegóricas que parecen flotar sin esfuerzo en una infinidad de aire azul. Donde la pintura de techos barroca era abrumadora, la de Tiepolo era estimulante. Su color — platas frías, azules pálidos, cremas cálidos — transformó la tradición que heredó en algo completamente propio. El techo de la escalinata de la Residencia de Wurzburgo es quizás el mayor encargo rococó jamás ejecutado.',
+      },
+      {
+        name: 'Jean-Baptiste-Siméon Chardin',
+        years: '1699 – 1779',
+        description: 'La contravoz del Rococó francés y uno de los más grandes pintores de naturaleza muerta y de género de la historia. Mientras Boucher pintaba diosas y aristócratas, Chardin pintaba criadas de cocina, ollas de cobre, pescados muertos y niños soplando pompas de jabón — con una gravedad, quietud y sensibilidad material que Diderot reconoció como el verdadero alma de la pintura. Sus naturalezas muertas tienen un peso y una presencia que recuerdan a Zurbarán; sus escenas domésticas anticipan el realismo silencioso del siglo XIX. Representa la tradición dentro del Rococó que valoraba la observación por encima de la fantasía.',
+      },
+      {
+        name: 'Thomas Gainsborough',
+        years: '1727 – 1788',
+        description: 'El mayor retratista británico del siglo XVIII y un artista de notable amplitud que destacó por igual en el retrato y el paisaje — algo inusual para la época. Sus retratos de sociedad — Sr. y Sra. Andrews, El Chico Azul, Sra. Siddons — combinan un don para la semejanza con una extraordinaria elegancia pictórica, particularmente en su representación de telas y fondos de paisajes atmosféricos. Su técnica era genuinamente radical: según se dice, pintaba con pinceles de casi un metro de largo, de pie alejado del lienzo, construyendo la forma a través de una red de trazos plumosos que se disuelven al inspeccionarlos de cerca. En secreto se consideraba un paisajista atrapado en el negocio del retrato.',
+      },
+    ],
+
+    artworks: [
+      {
+        title: 'El Columpio',
+        description: 'La imagen definitoria del Rococó. Una joven se columpia en un jardín mientras un admirador oculto la observa desde abajo. Su vestido rosa, la zapatilla voladora, el artificio teatral del jardín — cada elemento destila la sensibilidad del periodo de placer lúdico y elegante en una sola composición perfecta.',
+      },
+      {
+        title: 'Peregrinación a Citera',
+        description: 'La pintura que definió el género de la fête galante y le ganó a Watteau su lugar en la Academia Francesa. Elegantes parejas se preparan para partir — o acaban de llegar — a la isla del amor. La genialidad de la pintura reside en su ambigüedad: ¿vienen o se van? El tono melancólico bajo la alegría es la firma personal de Watteau.',
+      },
+      {
+        title: 'El Nacimiento de Venus (Boucher)',
+        description: 'La Venus de Boucher es el ideal rococó de belleza femenina — suave, cálida, completamente segura de su propia deseabilidad. La piel nacarada, las cascadas de telas y las jubilosas figuras acompañantes crean una celebración visual del placer sensual que representa el periodo en su momento más desinhibidamente hedonista.',
+      },
+      {
+        title: 'Fresco del Techo de la Residencia de Wurzburgo',
+        description: 'El fresco de techo más grande del mundo, que cubre toda la sala de la escalinata de la Residencia de Wurzburgo. Tiepolo pobló este vasto cielo con figuras alegóricas que representan los cuatro continentes, deidades y un autorretrato. Su luminoso color y sus figuras ingrávidas representan la cúspide absoluta del logro decorativo rococó.',
+      },
+      {
+        title: 'Sr. y Sra. Andrews',
+        description: 'Una reinterpretación revolucionaria del retrato de sociedad, combinando figuras de cuerpo entero con un paisaje de Suffolk genuinamente observado. Los Andrews se sitúan frente a su propiedad con aplomo propietario. El tratamiento plumoso del follaje y el cielo de Gainsborough lo marca como uno de los grandes pintores de la atmósfera de cualquier era.',
+      },
+      {
+        title: 'Las Alegrías de la Maternidad',
+        description: 'Una obra maestra de la pintura mitológica rococó. Venus en su tocador, rodeada de putti y los instrumentos de la belleza, encarna la convicción del periodo de que el cultivo de la belleza es en sí mismo una actividad significativa. La representación de seda, perlas y piel luminosa de Boucher es pintura virtuosa por cualquier estándar.',
+      },
+      {
+        title: 'El Rapto de Europa',
+        description: 'Una característica escena mitológica rococó donde un tema clásico se trata con ligereza sensual en lugar de gravedad heroica. La paleta suave, la composición dinámica y el gesto teatral tipifican cómo los artistas rococó transformaron la mitología clásica en ocasiones para el deleite visual.',
+      },
+      {
+        title: 'Pompas de Jabón',
+        description: 'La contravísión silenciosamente radical de Chardin frente a la opulencia rococó. Un chico sopla una pompa de jabón — un símbolo tradicional de vanitas sobre la fragilidad de la vida — con absorta concentración. La simplicidad doméstica y la genuina observación psicológica de la pintura se distinguen del gusto predominante del periodo por la fantasía.',
+      },
+      {
+        title: 'Interior del Pabellón de Amalienburg',
+        description: 'La Sala de los Espejos de Amalienburg es quizás el interior rococó más perfecto que existe. La decoración chinoiserie de estuco plateado, las paredes azul pálido y los espejos continuos crean un ambiente donde cada superficie se disuelve en luz reflejada y ornamento. Representa la integración total de todas las artes decorativas a la que el Rococó aspiraba.',
+      },
+      {
+        title: 'Diana Saliendo del Baño',
+        description: 'Una de las pinturas mitológicas más célebres de Boucher. Diana y una ninfa descansan después de la caza — su piel blanca como la porcelana brilla contra el cálido paisaje. La franca celebración de la belleza femenina de la pintura, representada con extraordinario refinamiento técnico, epitomiza la convicción del Rococó de que la belleza en sí misma es un tema suficiente para el arte.',
+      },
+    ],
+
+    tattooTips: {
+      intro: 'El Rococó es la fuente de historia del arte más infrautilizada en el tatuaje, y sin buena razón. Su vocabulario visual — gradientes pastel, curvas fluidas, ornamento botánico, cartelas decorativas, escenas figurativas íntimas — ofrece un enorme potencial sin explotar para tatuadores que trabajan en estilos de línea fina, ornamentales y decorativos. Comprender el Rococó es esencialmente una clase magistral en cómo hacer que algo visualmente ligero se sienta sustancial, y cómo organizar elementos decorativos complejos sin perder la elegancia.',
+      design: [
+        'Estudie la curva en S y la curva en C como ADN compositivo: El Rococó rechazó las líneas rectas en favor de curvas continuas. La curva en "S" — usada en poses de figuras, bordes de marcos y flujo compositivo — crea una sensación de movimiento natural y gracia femenina. Para trabajo ornamental y de línea fina, construya sus diseños alrededor de estas curvas en lugar de ejes geométricos.',
+        'Use la asimetría como principio de diseño: Los marcos, cartelas y paneles decorativos rococó casi nunca son simétricos. Un lado crece en una dirección diferente al otro, creando interés visual a través del desequilibrio. Aplique esto a bordes de tatuajes ornamentales, marcos y elementos de relleno para un resultado más orgánico y sofisticado.',
+        'Incorpore elementos botánicos con precisión: La decoración rococó está saturada de rosas, guirnaldas, cintas y flores de jardín — representadas con delicada especificidad en lugar de estilización genérica. Para trabajo botánico de línea fina, estudie grabados y diseños textiles rococó para ideas compositivas que ya están diseñadas para envolver y rellenar formas complejas.',
+        'Explore la chinoiserie para inspiración de diseño: La fascinación rococó por los motivos chinos — pagodas, pájaros, ramas floridas, figuras en paisajes exóticos — produjo un rico lenguaje visual que fusiona sensibilidades orientales y occidentales. Estos elementos ofrecen opciones compositivas frescas para tatuaje ornamental que evitan la iconografía occidental cliché.',
+        'Diseñe escenas narrativas íntimas para ubicaciones en la cara interna del brazo y el muslo: Los temas de pequeña escala, domésticos e íntimos del Rococó — amantes en jardines, mujeres en su tocador, músicos en conversación — tienen la escala ideal para las ubicaciones corporales íntimas que requiere el retrato de línea fina. Estudie los dibujos de Watteau específicamente para la escala y el gesto figural.',
+        'Use cartelas y marcos como elementos de diseño activos: Las cartelas rococó — los marcos ornados alrededor de inscripciones, espejos y paneles — son en sí mismos objetos bellamente diseñados. Incorporar un elegante marco de cartela alrededor de un retrato de línea fina o una escena botánica eleva toda la composición y le da una elegancia de época.',
+        'Considere la paleta para trabajo a color: Los pasteles rococó — rosa rubor, verde salvia, azul polvo, champaña, lavanda — no son simplemente versiones diluidas de colores más fuertes. Son un sistema estético coherente. Para tatuajes a color que se nutren de esta tradición, resista la tentación de aumentar la saturación; la cualidad atenuada, casi empolvada, es esencial para la estética.',
+        'Estudie la pincelada de Fragonard para un estilo figurativo suelto: Su pincelada plumosa, casi impresionista, disuelve la forma en los bordes mientras mantiene la claridad en el centro focal. Este enfoque se traduce en un estilo figurativo de línea fina suelto y gestual que se siente fresco y no literal.',
+      ],
+      technical: [
+        'Logre gradientes pastel mediante capas, no dilución: La paleta suave del Rococó proviene de la cuidadosa superposición de color translúcido, no de simplemente añadir blanco. En tatuaje a color, construya áreas pastel mediante pasadas finas y repetidas — esto crea una profundidad y luminosidad que el color plano diluido no puede lograr.',
+        'Priorice la calidad de la línea para trabajo ornamental: El arte decorativo rococó es fundamentalmente lineal — la gracia de una cartela depende enteramente de la calidad de sus curvas. En tatuaje ornamental de línea fina, invierta en una ejecución de línea perfecta. Una curva ligeramente temblorosa en un marco de inspiración rococó destruye instantáneamente la estética.',
+        'Entienda el espacio negativo como elemento de diseño: Los interiores rococó usaban el espacio entre elementos ornamentales con tanto cuidado como los elementos mismos — el "espacio de respiro" entre curvas y motivos es lo que da al estilo su ligereza. No llene cada rincón de un tatuaje ornamental; deje que la piel se muestre.',
+        'Estudie cómo el Rococó manejaba las transiciones entre elementos decorativos y figurativos: En paneles rococó integrados, las figuras se disuelven en ornamento y el ornamento crece en figuras sin transiciones abruptas. Esta habilidad — fusionar elementos figurativos y decorativos sin costuras — es una de las más valiosas en el tatuaje a gran escala.',
+        'Use tinta blanca selectivamente para realces en trabajo a color: La estética de porcelana rococó — esa cualidad brillante, casi cristalina de la piel y la seda resaltadas — requiere una aplicación de tinta blanca precisa y selectiva. En realismo a color, reserve el blanco para el punto especular más brillante en perlas, ojos o tela de seda.',
+        'Construya volumen con menos contraste que el Barroco: Las figuras rococó se modelan con mucho menos contraste tonal que las barrocas — las áreas de sombra son más claras, los reflejos menos extremos. Para tatuajes inspirados en este periodo, trabaje en el tercio medio de la escala de valores, reservando sus oscuros más profundos solo para pequeñas áreas de acento.',
+        'Ejecute detalles botánicos finos con precisión técnica: La representación de flores y hojas rococó no es impresionista — los pétalos individuales, estambres y serraciones de hojas se observan con precisión. Para trabajo botánico de línea fina inspirado en este periodo, observe flores reales y dibújelas con especificidad antes de estilizar.',
+        'Considere la pátina envejecida como estética: Los interiores rococó reales han envejecido hasta una tonalidad cálida, ligeramente desaturada — el oro se ha suavizado, los azules se han desvanecido ligeramente, los cremas se han calentado. Para tatuajes en este estilo, una paleta ligeramente desaturada y de tonos cálidos puede sentirse más auténticamente rococó que una interpretación brillante y fresca.',
+      ],
+      inspiration: 'El Rococó está experimentando un renacimiento silencioso en el tatuaje contemporáneo, particularmente en las tradiciones de línea fina y ornamentales. Los artistas que trabajan en tatuaje de patrón de encaje, composiciones decorativas de manga y retrato de línea fina recurren cada vez más al lenguaje visual rococó — sus curvas, su ornamento botánico, sus cartelas — como alternativa a las tradiciones Neo-Tradicional y Japonesa. La tradición rococó también ofrece un rico vocabulario para el tatuaje codificado como femenino que escapa tanto de los florales genéricos como de la oscuridad del realismo en blanco y negro. Para piezas decorativas de espalda a gran escala o composiciones de muslo, una escena de jardín de inspiración rococó — figuras en un jardín arquitectónico, rodeadas de ornamento botánico y dispositivos de enmarcado ornamentados — ofrece una arquitectura compositiva que puede desarrollarse a lo largo de múltiples sesiones manteniendo la coherencia visual desde el principio.',
+    },
+
+    quiz: [
+      {
+        question: '¿De qué deriva la palabra "Rococó"?',
+        options: ['Una palabra italiana para ornamento', 'La palabra francesa para trabajo de conchas o decoración de guijarros', 'El nombre de un château francés', 'Un tipo de esmalte de porcelana'],
+      },
+      {
+        question: '¿Qué pintor inventó la "fête galante" — el género de escenas aristocráticas de fiestas en jardines al aire libre?',
+        options: ['François Boucher', 'Jean-Honoré Fragonard', 'Jean-Antoine Watteau', 'Giovanni Tiepolo'],
+      },
+      {
+        question: '¿Qué pintura se considera la imagen definitoria de la sensibilidad rococó?',
+        options: ['El Nacimiento de Venus', 'El Columpio', 'Peregrinación a Citera', 'Diana Saliendo del Baño'],
+      },
+      {
+        question: '¿En qué país surgió principalmente el estilo Rococó antes de extenderse por Europa?',
+        options: ['Italia', 'Alemania', 'Inglaterra', 'Francia'],
+      },
+      {
+        question: '¿Qué pensador de la Ilustración criticó famosamente al Rococó por su vacío moral y falta de verdad?',
+        options: ['Voltaire', 'Rousseau', 'Diderot', 'Montesquieu'],
+      },
+      {
+        question: '¿Qué característica distingue la iluminación rococó de la iluminación barroca?',
+        options: [
+          'El Rococó usaba tenebrismo mientras el Barroco usaba luz suave',
+          'El Rococó usaba luz suave y difusa desde todas las direcciones en lugar de la dramática fuente de luz única del Barroco',
+          'El Rococó usaba luz de velas mientras el Barroco usaba luz natural',
+          'No hay diferencia significativa en sus enfoques de la luz',
+        ],
+      },
+      {
+        question: '¿Qué artista rococó representó una contracorriente a la fantasía del periodo, pintando temas domésticos ordinarios con serena gravedad?',
+        options: ['Boucher', 'Fragonard', 'Tiepolo', 'Chardin'],
+      },
+      {
+        question: '¿Qué es una "chinoiserie" en el contexto de las artes decorativas rococó?',
+        options: [
+          'Un tipo de técnica de esmalte de porcelana rococó',
+          'Arte decorativo europeo que incorpora motivos chinos o del este asiático',
+          'Un tipo específico de ornamento arquitectónico rococó',
+          'Un término francés para papel pintado floral',
+        ],
+      },
+      {
+        question: '¿El encargo más famoso de Giovanni Battista Tiepolo fue el fresco del techo de qué edificio?',
+        options: ['Palacio de Versalles', 'El Louvre', 'Residencia de Wurzburgo', 'Basílica de San Pedro'],
+      },
+      {
+        question: 'En el diseño de tatuajes de inspiración rococó, ¿cuál es la función principal del espacio negativo (piel sin tatuar)?',
+        options: [
+          'Indicar áreas que se completarán después',
+          'Reducir el costo y el tiempo de tatuaje',
+          'Crear la ligereza y el espacio visual de respiro esenciales para la estética rococó',
+          'Mostrar el borde entre elementos decorativos',
+        ],
+      },
+    ],
+  },
 };
