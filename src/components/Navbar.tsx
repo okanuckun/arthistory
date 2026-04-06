@@ -78,12 +78,12 @@ const Navbar = () => {
         </span>
       </button>
 
-      <div className="flex items-center gap-1 sm:gap-2">
+      <div className="flex items-center gap-0.5 sm:gap-2">
         {/* Language selector */}
         <div className="relative" ref={langRef} data-tour="language">
           <button
             onClick={() => setLangOpen(!langOpen)}
-            className="flex items-center gap-1 px-2 py-1.5 rounded-lg text-muted-foreground hover:text-foreground hover:bg-secondary transition-all active:scale-[0.95] text-xs"
+            className="flex items-center gap-1 px-1.5 sm:px-2 py-1.5 rounded-lg text-muted-foreground hover:text-foreground hover:bg-secondary transition-all active:scale-[0.95] text-xs"
           >
             <span>{currentLang?.flag}</span>
           </button>
@@ -108,7 +108,7 @@ const Navbar = () => {
         {canInstall && (
           <button
             onClick={install}
-            className="p-2 rounded-lg text-gold hover:text-gold/80 hover:bg-secondary transition-all active:scale-[0.95] animate-fade-in"
+            className="p-1.5 sm:p-2 rounded-lg text-gold hover:text-gold/80 hover:bg-secondary transition-all active:scale-[0.95] animate-fade-in"
             title="Uygulamayı yükle"
           >
             <Download className="w-4 h-4" />
@@ -118,7 +118,7 @@ const Navbar = () => {
         <button
           onClick={toggleTheme}
           data-tour="theme"
-          className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-secondary transition-all active:scale-[0.95]"
+          className="p-1.5 sm:p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-secondary transition-all active:scale-[0.95]"
         >
           {theme === 'gold' ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
         </button>
@@ -126,7 +126,7 @@ const Navbar = () => {
         <button
           onClick={() => navigate(isUpdates ? '/' : '/updates')}
           data-tour="updates"
-          className={`relative p-2 rounded-lg transition-all active:scale-[0.95] ${
+          className={`relative p-1.5 sm:p-2 rounded-lg transition-all active:scale-[0.95] ${
             isUpdates ? 'text-gold bg-secondary' : 'text-muted-foreground hover:text-foreground hover:bg-secondary'
           }`}
         >
@@ -141,7 +141,7 @@ const Navbar = () => {
         <button
           onClick={() => navigate(isLeaderboard ? '/' : '/leaderboard')}
           data-tour="leaderboard"
-          className={`p-2 rounded-lg transition-all active:scale-[0.95] ${
+          className={`p-1.5 sm:p-2 rounded-lg transition-all active:scale-[0.95] ${
             isLeaderboard ? 'text-gold bg-secondary' : 'text-muted-foreground hover:text-foreground hover:bg-secondary'
           }`}
         >
@@ -150,7 +150,7 @@ const Navbar = () => {
 
         <button
           onClick={() => navigate(isProfile ? '/' : '/profile')}
-          className={`p-2 rounded-lg transition-all active:scale-[0.95] ${
+          className={`p-1.5 sm:p-2 rounded-lg transition-all active:scale-[0.95] ${
             isProfile ? 'text-gold bg-secondary' : 'text-muted-foreground hover:text-foreground hover:bg-secondary'
           }`}
         >
@@ -165,7 +165,7 @@ const Navbar = () => {
 
         <button
           onClick={signOut}
-          className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-secondary transition-all active:scale-[0.95]"
+          className="p-1.5 sm:p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-secondary transition-all active:scale-[0.95]"
         >
           <LogOut className="w-4 h-4" />
         </button>
