@@ -18,6 +18,10 @@ const emailTemplates: Record<Lang, {
   features: string[]
   cta: string
   closing: string
+  installTitle: string
+  installAndroid: string
+  installIos: string
+  installDesktop: string
 }> = {
   en: {
     subject: '🎨 Welcome to Art Movements by Monolith Studio!',
@@ -35,6 +39,10 @@ const emailTemplates: Record<Lang, {
     ],
     cta: 'Start Exploring →',
     closing: 'Elevate your art, elevate your ink.',
+    installTitle: '📱 Install the App on Your Device',
+    installAndroid: '<strong>Android:</strong> Open the link in Chrome → tap the <strong>"Install"</strong> button or the ⋮ menu → "Add to Home Screen"',
+    installIos: '<strong>iPhone/iPad:</strong> Open the link in Safari → tap the <strong>Share button (⬆)</strong> → "Add to Home Screen"',
+    installDesktop: '<strong>Desktop:</strong> Open in Chrome/Edge → click the <strong>install icon</strong> (⊕) in the address bar',
   },
   tr: {
     subject: '🎨 Monolith Studio Art Movements\'a Hoş Geldiniz!',
@@ -52,6 +60,10 @@ const emailTemplates: Record<Lang, {
     ],
     cta: 'Keşfetmeye Başla →',
     closing: 'Sanatını yükselt, mürekkebini yükselt.',
+    installTitle: '📱 Uygulamayı Cihazınıza Yükleyin',
+    installAndroid: '<strong>Android:</strong> Linki Chrome\'da açın → <strong>"Yükle"</strong> butonuna veya ⋮ menüsüne tıklayın → "Ana Ekrana Ekle"',
+    installIos: '<strong>iPhone/iPad:</strong> Linki Safari\'de açın → <strong>Paylaş butonuna (⬆)</strong> dokunun → "Ana Ekrana Ekle"',
+    installDesktop: '<strong>Masaüstü:</strong> Chrome/Edge\'de açın → adres çubuğundaki <strong>yükle simgesine (⊕)</strong> tıklayın',
   },
   es: {
     subject: '🎨 ¡Bienvenido a Art Movements de Monolith Studio!',
@@ -69,6 +81,10 @@ const emailTemplates: Record<Lang, {
     ],
     cta: 'Comenzar a Explorar →',
     closing: 'Eleva tu arte, eleva tu tinta.',
+    installTitle: '📱 Instala la App en Tu Dispositivo',
+    installAndroid: '<strong>Android:</strong> Abre el enlace en Chrome → toca el botón <strong>"Instalar"</strong> o el menú ⋮ → "Añadir a pantalla de inicio"',
+    installIos: '<strong>iPhone/iPad:</strong> Abre el enlace en Safari → toca el <strong>botón Compartir (⬆)</strong> → "Añadir a pantalla de inicio"',
+    installDesktop: '<strong>Escritorio:</strong> Abre en Chrome/Edge → haz clic en el <strong>icono de instalación (⊕)</strong> en la barra de direcciones',
   },
   ko: {
     subject: '🎨 Monolith Studio Art Movements에 오신 것을 환영합니다!',
@@ -86,6 +102,10 @@ const emailTemplates: Record<Lang, {
     ],
     cta: '탐험 시작 →',
     closing: '예술을 높이고, 잉크를 높이세요.',
+    installTitle: '📱 기기에 앱 설치하기',
+    installAndroid: '<strong>Android:</strong> Chrome에서 링크를 열고 → <strong>"설치"</strong> 버튼 또는 ⋮ 메뉴 → "홈 화면에 추가"를 탭하세요',
+    installIos: '<strong>iPhone/iPad:</strong> Safari에서 링크를 열고 → <strong>공유 버튼(⬆)</strong> → "홈 화면에 추가"를 탭하세요',
+    installDesktop: '<strong>데스크톱:</strong> Chrome/Edge에서 열고 → 주소 표시줄의 <strong>설치 아이콘(⊕)</strong>을 클릭하세요',
   },
 }
 
@@ -117,6 +137,14 @@ function buildHtml(lang: Lang) {
           </a>
         </div>
       </div>
+      
+      <div style="background: #16213e; border-radius: 8px; padding: 24px; margin-top: 16px; border-left: 4px solid #a09880;">
+        <h3 style="color: #d4a853; margin-top: 0; font-size: 16px;">${t.installTitle}</h3>
+        <p style="font-size: 13px; line-height: 1.8; color: #e0d5c1; margin: 0;">${t.installAndroid}</p>
+        <p style="font-size: 13px; line-height: 1.8; color: #e0d5c1; margin: 8px 0 0;">${t.installIos}</p>
+        <p style="font-size: 13px; line-height: 1.8; color: #e0d5c1; margin: 8px 0 0;">${t.installDesktop}</p>
+      </div>
+
       <p style="font-size: 14px; color: #a09880; text-align: center; margin-top: 24px;">${t.closing}<br/>— Monolith Studio Team</p>
     </div>
   `
