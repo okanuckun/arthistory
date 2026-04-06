@@ -454,6 +454,11 @@ const translations: Record<Language, Record<string, string>> = {
     'profile.stats': '퀴즈 통계',
     'profile.quizzes_completed': '완료한 퀴즈',
     'profile.avg_score': '평균 점수',
+    'comments.title': '댓글',
+    'comments.placeholder': '이 사조에 대한 생각을 공유하세요...',
+    'comments.submit': '게시',
+    'comments.empty': '아직 댓글이 없습니다. 첫 댓글을 남겨보세요!',
+    'comments.delete': '삭제',
   },
 };
 
