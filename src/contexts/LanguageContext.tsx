@@ -344,6 +344,11 @@ const translations: Record<Language, Record<string, string>> = {
     'profile.stats': 'Estadísticas de Quiz',
     'profile.quizzes_completed': 'Quizzes Completados',
     'profile.avg_score': 'Puntuación Media',
+    'comments.title': 'Comentarios',
+    'comments.placeholder': 'Comparte tus pensamientos sobre este movimiento...',
+    'comments.submit': 'Publicar',
+    'comments.empty': '¡Aún no hay comentarios. Sé el primero!',
+    'comments.delete': 'Eliminar',
   },
   ko: {
     'landing.tagline': '타투 아티스트를 위한',
