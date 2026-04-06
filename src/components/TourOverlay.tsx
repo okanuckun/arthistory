@@ -45,69 +45,81 @@ const TourOverlay = ({ active, step, currentStep, totalSteps, onNext, onPrev, on
 
   // Position tooltip with smart placement fallback
   useEffect(() => {
-    if (!rect || !tooltipRef.current) return;
+    if (!tooltipRef.current) return;
 
-    const tt = tooltipRef.current.getBoundingClientRect();
-    const gap = 12;
-    const margin = 8;
-    const vw = window.innerWidth;
-    const vh = window.innerHeight;
+    // Small delay to let tooltip render and get correct dimensions
+    const raf = requestAnimationFrame(() => {
+      if (!tooltipRef.current) return;
+      const tt = tooltipRef.current.getBoundingClientRect();
+      const gap = 12;
+      const margin = 12; // increased margin for mobile safe areas
+      const vw = window.innerWidth;
+      const vh = window.innerHeight;
 
-    // Try preferred placement, then fall back to one that fits
-    const preferred = step.placement || 'bottom';
-    const placements: Array<'bottom' | 'top' | 'right' | 'left'> = [preferred, 'bottom', 'top', 'right', 'left'];
-    const seen = new Set<string>();
-
-    let top = 0;
-    let left = 0;
-    let found = false;
-
-    for (const p of placements) {
-      if (seen.has(p)) continue;
-      seen.add(p);
-
-      let t = 0;
-      let l = 0;
-
-      if (p === 'bottom') {
-        t = rect.bottom + gap;
-        l = rect.left + rect.width / 2 - tt.width / 2;
-      } else if (p === 'top') {
-        t = rect.top - tt.height - gap;
-        l = rect.left + rect.width / 2 - tt.width / 2;
-      } else if (p === 'right') {
-        t = rect.top + rect.height / 2 - tt.height / 2;
-        l = rect.right + gap;
-      } else {
-        t = rect.top + rect.height / 2 - tt.height / 2;
-        l = rect.left - tt.width - gap;
+      if (!rect) {
+        // Centered fallback
+        setTooltipPos({ top: vh / 2 - tt.height / 2, left: vw / 2 - tt.width / 2 });
+        return;
       }
 
-      // Check if it fits within viewport
-      if (t >= margin && t + tt.height <= vh - margin && l >= margin && l + tt.width <= vw - margin) {
-        top = t;
-        left = l;
-        found = true;
-        break;
+      // Try preferred placement, then fall back to one that fits
+      const preferred = step.placement || 'bottom';
+      const placements: Array<'bottom' | 'top' | 'right' | 'left'> = [preferred, 'bottom', 'top', 'right', 'left'];
+      const seen = new Set<string>();
+
+      let top = 0;
+      let left = 0;
+      let found = false;
+
+      for (const p of placements) {
+        if (seen.has(p)) continue;
+        seen.add(p);
+
+        let t = 0;
+        let l = 0;
+
+        if (p === 'bottom') {
+          t = rect.bottom + gap;
+          l = rect.left + rect.width / 2 - tt.width / 2;
+        } else if (p === 'top') {
+          t = rect.top - tt.height - gap;
+          l = rect.left + rect.width / 2 - tt.width / 2;
+        } else if (p === 'right') {
+          t = rect.top + rect.height / 2 - tt.height / 2;
+          l = rect.right + gap;
+        } else {
+          t = rect.top + rect.height / 2 - tt.height / 2;
+          l = rect.left - tt.width - gap;
+        }
+
+        // Check if it fits within viewport
+        if (t >= margin && t + tt.height <= vh - margin && l >= margin && l + tt.width <= vw - margin) {
+          top = t;
+          left = l;
+          found = true;
+          break;
+        }
       }
-    }
 
-    // If no placement fits perfectly, use preferred but clamp
-    if (!found) {
-      if (preferred === 'bottom' || preferred === 'top') {
-        top = preferred === 'bottom' ? rect.bottom + gap : rect.top - tt.height - gap;
-        left = rect.left + rect.width / 2 - tt.width / 2;
-      } else {
-        top = rect.top + rect.height / 2 - tt.height / 2;
-        left = preferred === 'right' ? rect.right + gap : rect.left - tt.width - gap;
+      // If no placement fits perfectly, use preferred but clamp
+      if (!found) {
+        if (preferred === 'bottom' || preferred === 'top') {
+          top = preferred === 'bottom' ? rect.bottom + gap : rect.top - tt.height - gap;
+          left = rect.left + rect.width / 2 - tt.width / 2;
+        } else {
+          top = rect.top + rect.height / 2 - tt.height / 2;
+          left = preferred === 'right' ? rect.right + gap : rect.left - tt.width - gap;
+        }
       }
-    }
 
-    // Always clamp to viewport
-    left = Math.max(margin, Math.min(left, vw - tt.width - margin));
-    top = Math.max(margin, Math.min(top, vh - tt.height - margin));
+      // Always clamp to viewport with safe margins
+      left = Math.max(margin, Math.min(left, vw - tt.width - margin));
+      top = Math.max(margin, Math.min(top, vh - tt.height - margin));
 
-    setTooltipPos({ top, left });
+      setTooltipPos({ top, left });
+    });
+
+    return () => cancelAnimationFrame(raf);
   }, [rect, step]);
 
   if (!active || !step) return null;
@@ -116,7 +128,7 @@ const TourOverlay = ({ active, step, currentStep, totalSteps, onNext, onPrev, on
   const isFirst = currentStep === 0;
 
   return (
-    <div className="fixed inset-0 z-[100]">
+    <div className="fixed inset-0 z-[100] overflow-hidden touch-none">
       {/* Backdrop with cutout */}
       <svg className="absolute inset-0 w-full h-full" style={{ pointerEvents: 'none' }}>
         <defs>
@@ -159,7 +171,7 @@ const TourOverlay = ({ active, step, currentStep, totalSteps, onNext, onPrev, on
       {/* Tooltip */}
       <div
         ref={tooltipRef}
-        className="absolute z-10 w-[calc(100vw-16px)] max-w-[280px] sm:max-w-[320px] bg-card border border-border rounded-xl shadow-2xl shadow-black/30 p-4 sm:p-5 transition-all duration-300 animate-fade-up"
+        className="absolute z-10 w-[calc(100vw-24px)] max-w-[280px] sm:max-w-[320px] bg-card border border-border rounded-xl shadow-2xl shadow-black/30 p-4 sm:p-5 transition-all duration-300 animate-fade-up"
         style={{
           top: rect ? tooltipPos.top : '50%',
           left: rect ? tooltipPos.left : '50%',

@@ -72,7 +72,7 @@ const MovementDetail = ({ movement, onBack, onQuizComplete, existingScore }: Mov
   };
 
   return (
-    <div className="max-w-3xl mx-auto px-6 py-12">
+    <div className="max-w-3xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
       <button
         onClick={onBack}
         className="flex items-center gap-2 text-sm font-body text-muted-foreground hover:text-foreground transition-colors mb-6 active:scale-[0.97]"
@@ -81,7 +81,7 @@ const MovementDetail = ({ movement, onBack, onQuizComplete, existingScore }: Mov
         {t('detail.back')}
       </button>
 
-      <div className="flex flex-wrap gap-2 mb-12">
+      <div className="flex flex-wrap gap-2 mb-8 sm:mb-12">
         <button
           onClick={handleReadAloud}
           disabled={isLoading}
@@ -121,7 +121,7 @@ const MovementDetail = ({ movement, onBack, onQuizComplete, existingScore }: Mov
         <span className="text-xs font-body tracking-[0.2em] uppercase text-muted-foreground block mb-3">
           {String(movement.number).padStart(2, '0')} — {movement.period}
         </span>
-        <h1 className="font-display text-5xl md:text-6xl font-medium text-warm-bright tracking-tight leading-[1.1] mb-6">
+        <h1 className="font-display text-3xl sm:text-4xl md:text-6xl font-medium text-warm-bright tracking-tight leading-[1.1] mb-4 sm:mb-6">
           {movement.name}
         </h1>
         <div className="flex gap-1.5 mb-8">
