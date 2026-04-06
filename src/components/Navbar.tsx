@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import { useAuth } from '@/contexts/AuthContext';
 import { useTheme } from '@/contexts/ThemeContext';
 import { useLanguage, LANGUAGES, Language } from '@/contexts/LanguageContext';
-import { LogOut, Sun, Moon, Trophy, Globe, Bell, Download } from 'lucide-react';
+import { LogOut, Sun, Moon, Trophy, Globe, Bell, Download, User } from 'lucide-react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { usePWAInstall } from '@/hooks/use-pwa-install';
@@ -16,6 +16,7 @@ const Navbar = () => {
   const location = useLocation();
   const isLeaderboard = location.pathname === '/leaderboard';
   const isUpdates = location.pathname === '/updates';
+  const isProfile = location.pathname === '/profile';
   const [langOpen, setLangOpen] = useState(false);
   const langRef = useRef<HTMLDivElement>(null);
   const [unreadCount, setUnreadCount] = useState(0);
@@ -145,6 +146,15 @@ const Navbar = () => {
           }`}
         >
           <Trophy className="w-4 h-4" />
+        </button>
+
+        <button
+          onClick={() => navigate(isProfile ? '/' : '/profile')}
+          className={`p-2 rounded-lg transition-all active:scale-[0.95] ${
+            isProfile ? 'text-gold bg-secondary' : 'text-muted-foreground hover:text-foreground hover:bg-secondary'
+          }`}
+        >
+          <User className="w-4 h-4" />
         </button>
 
         {displayName && (
