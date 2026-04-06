@@ -12,6 +12,16 @@ import descentFromCrossImage from '@/assets/artworks/descent-from-the-cross.webp
 import rembrandtSelfPortraitImage from '@/assets/artworks/rembrandt-self-portrait.jpg';
 import callingOfSaintMatthewImage from '@/assets/artworks/calling-of-saint-matthew.webp';
 import judithSlayingHolofernesImage from '@/assets/artworks/judith-slaying-holofernes.jpg';
+import rococoSwingImage from '@/assets/rococo/the-swing.jpg';
+import rococoCytheraImage from '@/assets/rococo/pilgrimage-to-cythera.jpg';
+import rococoBirthOfVenusImage from '@/assets/rococo/birth-of-venus.jpg';
+import rococoWurzburgImage from '@/assets/rococo/wurzburg-fresco.webp';
+import rococoAndrewsImage from '@/assets/rococo/mr-mrs-andrews.jpg';
+import rococoMotherhoodImage from '@/assets/rococo/joys-of-motherhood.jpg';
+import rococoEuropaImage from '@/assets/rococo/rape-of-europa.jpg';
+import rococoSoapBubblesImage from '@/assets/rococo/soap-bubbles.jpg';
+import rococoAmalienImage from '@/assets/rococo/amalienburg.jpg';
+import rococoDianaImage from '@/assets/rococo/diana-leaving-bath.jpg';
 
 export interface QuizQuestion {
   question: string;
@@ -671,7 +681,7 @@ Rococo eventually collapsed under the weight of its own frivolity. By the 1760s,
           type: 'painting',
           medium: 'Oil on canvas',
           location: 'The Wallace Collection, London',
-          imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Fragonard%2C_The_Swing.jpg/800px-Fragonard%2C_The_Swing.jpg',
+          imageUrl: rococoSwingImage,
           description: 'The definitive Rococo image. A young woman swings in a garden while a hidden admirer watches from below. Her pink dress, the flying slipper, the garden\'s theatrical artifice — every element distills the period\'s sensibility of playful, elegant pleasure into a single perfect composition.',
         },
         {
@@ -681,7 +691,7 @@ Rococo eventually collapsed under the weight of its own frivolity. By the 1760s,
           type: 'painting',
           medium: 'Oil on canvas',
           location: 'Musée du Louvre, Paris',
-          imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/L%27Embarquement_pour_Cythere%2C_by_Antoine_Watteau%2C_from_C2RMF_retouched.jpg/1280px-L%27Embarquement_pour_Cythere%2C_by_Antoine_Watteau%2C_from_C2RMF_retouched.jpg',
+          imageUrl: rococoCytheraImage,
           description: 'The painting that defined the fête galante genre and earned Watteau his place in the French Academy. Elegant couples prepare to depart — or have just arrived — on the island of love. The painting\'s genius lies in its ambiguity: are they coming or going? The melancholy undertone beneath the gaiety is Watteau\'s personal signature.',
         },
         {
@@ -691,7 +701,7 @@ Rococo eventually collapsed under the weight of its own frivolity. By the 1760s,
           type: 'painting',
           medium: 'Oil on canvas',
           location: 'National Museum of Sweden, Stockholm',
-          imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Fran%C3%A7ois_Boucher_-_The_Birth_of_Venus_-_WGA02717.jpg/800px-Fran%C3%A7ois_Boucher_-_The_Birth_of_Venus_-_WGA02717.jpg',
+          imageUrl: rococoBirthOfVenusImage,
           description: 'Boucher\'s Venus is the Rococo\'s ideal of feminine beauty — soft, warm, utterly confident in her own desirability. The pearlescent skin, cascading draperies, and jubilant attendant figures create a visual celebration of sensual pleasure that represents the period at its most unabashedly hedonistic.',
         },
         {
@@ -701,7 +711,7 @@ Rococo eventually collapsed under the weight of its own frivolity. By the 1760s,
           type: 'fresco',
           medium: 'Fresco',
           location: 'Würzburg Residence, Germany',
-          imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Tiepolo_-_Allegory_of_the_Planets_and_Continents.jpg/1280px-Tiepolo_-_Allegory_of_the_Planets_and_Continents.jpg',
+          imageUrl: rococoWurzburgImage,
           description: 'The largest ceiling fresco in the world, covering the entire staircase hall of the Würzburg Residence. Tiepolo populated this vast sky with allegorical figures representing the four continents, deities, and a self-portrait. Its luminous color and weightless figures represent the absolute peak of Rococo decorative achievement.',
         },
         {
@@ -711,7 +721,7 @@ Rococo eventually collapsed under the weight of its own frivolity. By the 1760s,
           type: 'painting',
           medium: 'Oil on canvas',
           location: 'National Gallery, London',
-          imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Gainsborough_mrsmrAndrews.jpg/1280px-Gainsborough_mrsmrAndrews.jpg',
+          imageUrl: rococoAndrewsImage,
           description: 'A revolutionary rethinking of the society portrait, combining full-length figures with a genuinely observed Suffolk landscape. The Andrews stand before their estate with proprietorial ease. Gainsborough\'s feathery handling of the foliage and sky marks him as one of the great painters of atmosphere in any era.',
         },
         {
@@ -721,7 +731,7 @@ Rococo eventually collapsed under the weight of its own frivolity. By the 1760s,
           type: 'painting',
           medium: 'Oil on canvas',
           location: 'Musée du Louvre, Paris',
-          imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Fran%C3%A7ois_Boucher_-_La_toilette_de_V%C3%A9nus_-_WGA02721.jpg/640px-Fran%C3%A7ois_Boucher_-_La_toilette_de_V%C3%A9nus_-_WGA02721.jpg',
+          imageUrl: rococoMotherhoodImage,
           description: 'A masterwork of Rococo mythological painting. Venus at her toilet, surrounded by putti and the instruments of beauty, embodies the period\'s conviction that the cultivation of beauty is itself a meaningful activity. Boucher\'s rendering of silk, pearls, and luminous skin is virtuoso painting by any standard.',
         },
         {
@@ -731,7 +741,7 @@ Rococo eventually collapsed under the weight of its own frivolity. By the 1760s,
           type: 'painting',
           medium: 'Oil on canvas',
           location: 'Private Collection',
-          imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Jean-Baptiste_Marie_Pierre_-_The_Abduction_of_Europa.jpg/800px-Jean-Baptiste_Marie_Pierre_-_The_Abduction_of_Europa.jpg',
+          imageUrl: rococoEuropaImage,
           description: 'A characteristic Rococo mythological scene where a classical subject is treated with sensual lightness rather than heroic gravity. The soft palette, dynamic composition, and theatrical gesture typify how Rococo artists transformed classical mythology into occasions for visual delight.',
         },
         {
@@ -741,7 +751,7 @@ Rococo eventually collapsed under the weight of its own frivolity. By the 1760s,
           type: 'painting',
           medium: 'Oil on canvas',
           location: 'Metropolitan Museum of Art, New York',
-          imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Jean-Baptiste_Sim%C3%A9on_Chardin_-_Soap_Bubbles.jpg/640px-Jean-Baptiste_Sim%C3%A9on_Chardin_-_Soap_Bubbles.jpg',
+          imageUrl: rococoSoapBubblesImage,
           description: 'Chardin\'s quietly radical counter-vision to Rococo opulence. A boy blows a soap bubble — a traditional vanitas symbol of life\'s fragility — with absorbed concentration. The painting\'s domestic simplicity and genuine psychological observation stand apart from the period\'s prevailing taste for fantasy.',
         },
         {
@@ -751,7 +761,7 @@ Rococo eventually collapsed under the weight of its own frivolity. By the 1760s,
           type: 'architecture',
           medium: 'Silver and pale blue stucco, mirrors, gilded wood',
           location: 'Nymphenburg Palace, Munich',
-          imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Amalienburg-Spiegelsaal.jpg/800px-Amalienburg-Spiegelsaal.jpg',
+          imageUrl: rococoAmalienImage,
           description: 'The Hall of Mirrors at the Amalienburg is perhaps the most perfect Rococo interior in existence. Silver stucco chinoiserie decoration, pale blue walls, and continuous mirrors create an environment where every surface dissolves into reflected light and ornament. It represents the total integration of all decorative arts that Rococo aspired to.',
         },
         {
@@ -761,7 +771,7 @@ Rococo eventually collapsed under the weight of its own frivolity. By the 1760s,
           type: 'painting',
           medium: 'Oil on canvas',
           location: 'Musée du Louvre, Paris',
-          imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Boucher_-_Diana_After_the_Hunt.jpg/800px-Boucher_-_Diana_After_the_Hunt.jpg',
+          imageUrl: rococoDianaImage,
           description: 'One of Boucher\'s most celebrated mythological paintings. Diana and a nymph rest after hunting — their porcelain-white skin gleaming against the warm landscape. The painting\'s frank celebration of feminine beauty, rendered with extraordinary technical refinement, epitomizes Rococo\'s conviction that beauty itself is a sufficient subject for art.',
         },
       ],
