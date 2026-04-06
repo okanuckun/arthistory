@@ -187,7 +187,7 @@ Barok'u iki büyük gelenek tanımladı. Katolik güneyde — İtalya, İspanya,
 Barok aynı zamanda Bilimsel Devrim, Keşifler Çağı ve mutlak monarşilerin güçlenmesiyle de çakıştı — bunların tümü sanatını şekillendirdi. Sonuç, şaşırtıcı bir çeşitlilik gösteren bir üsluptu: Caravaggio'nun Roma meyhanelerindeki ürkütücü azizlerinden Vermeer'in sessiz, ışıltılı Hollanda iç mekânlarına; Bernini'nin vecde kapılmış Azize Teresa'sından Rembrandt'ın yaşlılığındaki acımasız öz-portrelerine. Barok çoğulluğu kucaklar, ancak her köşesi yaşama deneyimiyle yoğun bir bağlılıkla yönlendirilir.`,
 
     origin: {
-      explanation: 'Barok, Rönesans'ın sükunet, denge ve akılcı uyum ideallerinden bilinçli bir kopuş olarak ortaya çıktı. Kısmen Katolik Kilisesi\'nin Karşı-Reform'u — Protestanlığa kaybedilen ruhları ezici duygusal ve duyusal deneyimlerle geri kazanma kampanyası — tarafından yönlendirilen Barok sanatçılar, Rönesans'ın huzurlu idealizasyonunu terk ederek yerine ham drama, yoğun chiaroscuro, dinamik hareket ve psikolojik yoğunluk koydular. Rönesans yüceltmeye çalışırken, Barok ezmeye çalıştı.',
+      explanation: `Barok, Rönesans'ın sükunet, denge ve akılcı uyum ideallerinden bilinçli bir kopuş olarak ortaya çıktı. Kısmen Katolik Kilisesi'nin Karşı-Reform'u — Protestanlığa kaybedilen ruhları ezici duygusal ve duyusal deneyimlerle geri kazanma kampanyası — tarafından yönlendirilen Barok sanatçılar, Rönesans'ın huzurlu idealizasyonunu terk ederek yerine ham drama, yoğun chiaroscuro, dinamik hareket ve psikolojik yoğunluk koydular. Rönesans yüceltmeye çalışırken, Barok ezmeye çalıştı.`,
     },
 
     characteristics: [
