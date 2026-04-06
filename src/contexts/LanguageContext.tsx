@@ -234,6 +234,11 @@ const translations: Record<Language, Record<string, string>> = {
     'profile.stats': 'Quiz İstatistikleri',
     'profile.quizzes_completed': 'Tamamlanan Quiz',
     'profile.avg_score': 'Ortalama Puan',
+    'comments.title': 'Yorumlar',
+    'comments.placeholder': 'Bu akım hakkında düşüncelerinizi paylaşın...',
+    'comments.submit': 'Gönder',
+    'comments.empty': 'Henüz yorum yok. İlk yorumu siz yapın!',
+    'comments.delete': 'Sil',
   },
   es: {
     'landing.tagline': 'Para Tatuadores',
