@@ -1,5 +1,6 @@
 import { ArtMovement } from '@/data/artMovements';
 import Quiz from './Quiz';
+import Comments from './Comments';
 import ArtworkGallery from './ArtworkGallery';
 import { ArrowLeft, Palette, Wrench, Sparkles, Volume2, Pause, Square, Loader2, RotateCcw } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -259,6 +260,10 @@ const MovementDetail = ({ movement, onBack, onQuizComplete, existingScore }: Mov
           existingScore={existingScore}
           translatedQuiz={translated?.quiz}
         />
+      </section>
+
+      <section className="opacity-0 animate-fade-up" style={{ animationDelay: '650ms' }}>
+        <Comments movementId={movement.id} />
       </section>
     </div>
   );
