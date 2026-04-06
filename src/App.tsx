@@ -11,6 +11,7 @@ import Auth from "./pages/Auth.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import Leaderboard from "./pages/Leaderboard.tsx";
 import Updates from "./pages/Updates.tsx";
+import Profile from "./pages/Profile.tsx";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +33,7 @@ const AppRoutes = () => {
       <Route path="/" element={<Index />} />
       <Route path="/leaderboard" element={<Leaderboard />} />
       <Route path="/updates" element={<Updates />} />
+      <Route path="/profile" element={<Profile />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

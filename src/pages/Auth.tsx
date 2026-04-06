@@ -175,6 +175,31 @@ const Auth = () => {
             </div>
           )}
 
+          {mode === 'signup' && (
+            <div>
+              <label className="block text-xs font-body text-muted-foreground mb-1.5 tracking-wide uppercase">
+                {t('auth.language')}
+              </label>
+              <div className="grid grid-cols-2 gap-2">
+                {LANGUAGES.map(l => (
+                  <button
+                    key={l.code}
+                    type="button"
+                    onClick={() => setLanguage(l.code)}
+                    className={`flex items-center gap-2 px-3 py-2.5 rounded-lg border text-sm font-body transition-all ${
+                      language === l.code
+                        ? 'border-primary bg-primary/10 text-gold'
+                        : 'border-border bg-secondary text-muted-foreground hover:border-primary/50'
+                    }`}
+                  >
+                    <span>{l.flag}</span>
+                    <span>{l.label}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+
           <div>
             <label className="block text-xs font-body text-muted-foreground mb-1.5 tracking-wide uppercase">
               {t('auth.email')}
