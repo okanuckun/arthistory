@@ -137,6 +137,14 @@ function buildHtml(lang: Lang) {
           </a>
         </div>
       </div>
+      
+      <div style="background: #16213e; border-radius: 8px; padding: 24px; margin-top: 16px; border-left: 4px solid #a09880;">
+        <h3 style="color: #d4a853; margin-top: 0; font-size: 16px;">${t.installTitle}</h3>
+        <p style="font-size: 13px; line-height: 1.8; color: #e0d5c1; margin: 0;">${t.installAndroid}</p>
+        <p style="font-size: 13px; line-height: 1.8; color: #e0d5c1; margin: 8px 0 0;">${t.installIos}</p>
+        <p style="font-size: 13px; line-height: 1.8; color: #e0d5c1; margin: 8px 0 0;">${t.installDesktop}</p>
+      </div>
+
       <p style="font-size: 14px; color: #a09880; text-align: center; margin-top: 24px;">${t.closing}<br/>— Monolith Studio Team</p>
     </div>
   `
