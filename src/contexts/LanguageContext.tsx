@@ -124,6 +124,11 @@ const translations: Record<Language, Record<string, string>> = {
     'profile.stats': 'Quiz Stats',
     'profile.quizzes_completed': 'Quizzes Completed',
     'profile.avg_score': 'Average Score',
+    'comments.title': 'Comments',
+    'comments.placeholder': 'Share your thoughts on this movement...',
+    'comments.submit': 'Post',
+    'comments.empty': 'No comments yet. Be the first!',
+    'comments.delete': 'Delete',
   },
   tr: {
     'landing.tagline': 'Dövme Sanatçıları İçin',
