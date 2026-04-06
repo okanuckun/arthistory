@@ -24,7 +24,7 @@ const Index = () => {
       target: '[data-tour="timeline-item"]',
       title: t('tour.home.timeline.title'),
       content: t('tour.home.timeline.content'),
-      placement: 'right',
+      placement: 'bottom',
     },
     {
       target: '[data-tour="language"]',
