@@ -59,7 +59,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   }, []);
 
   const signUp = async (email: string, password: string, name: string) => {
-    const { error } = await supabase.auth.signUp({
+    const { data, error } = await supabase.auth.signUp({
       email,
       password,
       options: {
@@ -67,7 +67,37 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
         emailRedirectTo: window.location.origin,
       },
     });
-    return { error: error?.message || null };
+    if (error) return { error: error.message };
+
+    // Fallback: ensure profile exists even if DB trigger fails
+    if (data.user) {
+      const { data: existingProfile } = await supabase
+        .from('profiles')
+        .select('user_id')
+        .eq('user_id', data.user.id)
+        .single();
+
+      if (!existingProfile) {
+        await supabase.from('profiles').insert({
+          user_id: data.user.id,
+          display_name: name,
+        });
+      }
+
+      const { data: existingNotif } = await supabase
+        .from('notification_preferences')
+        .select('user_id')
+        .eq('user_id', data.user.id)
+        .single();
+
+      if (!existingNotif) {
+        await supabase.from('notification_preferences').insert({
+          user_id: data.user.id,
+        });
+      }
+    }
+
+    return { error: null };
   };
 
   const signIn = async (email: string, password: string) => {
