@@ -13,10 +13,17 @@ interface AppUpdate {
   created_at: string;
 }
 
+interface Translation {
+  update_id: string;
+  title: string;
+  description: string;
+}
+
 const Updates = () => {
   const { user } = useAuth();
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [updates, setUpdates] = useState<AppUpdate[]>([]);
+  const [translations, setTranslations] = useState<Map<string, Translation>>(new Map());
   const [readIds, setReadIds] = useState<Set<string>>(new Set());
   const [loading, setLoading] = useState(true);
 
@@ -24,18 +31,44 @@ const Updates = () => {
     const fetchData = async () => {
       if (!user) return;
 
-      const [{ data: updatesData }, { data: readsData }] = await Promise.all([
+      const queries: Promise<any>[] = [
         supabase.from('app_updates').select('*').order('created_at', { ascending: false }),
         supabase.from('user_update_reads').select('update_id').eq('user_id', user.id),
-      ]);
+      ];
 
-      setUpdates(updatesData || []);
-      setReadIds(new Set((readsData || []).map((r: any) => r.update_id)));
+      // Fetch translations for non-English languages
+      if (language !== 'en') {
+        queries.push(
+          supabase
+            .from('app_update_translations')
+            .select('update_id, title, description')
+            .eq('language', language)
+        );
+      }
+
+      const results = await Promise.all(queries);
+      const updatesData = results[0].data || [];
+      const readsData = results[1].data || [];
+
+      setUpdates(updatesData);
+      setReadIds(new Set(readsData.map((r: any) => r.update_id)));
+
+      if (language !== 'en' && results[2]?.data) {
+        const transMap = new Map<string, Translation>();
+        for (const tr of results[2].data) {
+          transMap.set(tr.update_id, tr);
+        }
+        setTranslations(transMap);
+      } else {
+        setTranslations(new Map());
+      }
+
       setLoading(false);
 
       // Mark all unread as read
-      const unreadIds = (updatesData || [])
-        .filter((u: AppUpdate) => !new Set((readsData || []).map((r: any) => r.update_id)).has(u.id))
+      const readSet = new Set(readsData.map((r: any) => r.update_id));
+      const unreadIds = updatesData
+        .filter((u: AppUpdate) => !readSet.has(u.id))
         .map((u: AppUpdate) => ({ user_id: user.id, update_id: u.id }));
 
       if (unreadIds.length > 0) {
@@ -44,7 +77,7 @@ const Updates = () => {
     };
 
     fetchData();
-  }, [user]);
+  }, [user, language]);
 
   // Listen for new updates in realtime
   useEffect(() => {
@@ -57,6 +90,22 @@ const Updates = () => {
 
     return () => { supabase.removeChannel(channel); };
   }, []);
+
+  const getTitle = (update: AppUpdate) => {
+    if (language !== 'en') {
+      const tr = translations.get(update.id);
+      if (tr) return tr.title;
+    }
+    return update.title;
+  };
+
+  const getDescription = (update: AppUpdate) => {
+    if (language !== 'en') {
+      const tr = translations.get(update.id);
+      if (tr) return tr.description;
+    }
+    return update.description;
+  };
 
   const formatDate = (dateStr: string) => {
     return new Date(dateStr).toLocaleDateString(undefined, {
@@ -114,8 +163,8 @@ const Updates = () => {
                           {formatDate(update.created_at)}
                         </span>
                       </div>
-                      <h3 className="font-display text-base text-foreground mb-1.5">{update.title}</h3>
-                      <p className="text-sm font-body text-muted-foreground leading-relaxed">{update.description}</p>
+                      <h3 className="font-display text-base text-foreground mb-1.5">{getTitle(update)}</h3>
+                      <p className="text-sm font-body text-muted-foreground leading-relaxed">{getDescription(update)}</p>
                     </div>
                     {isRead && (
                       <Check className="w-4 h-4 text-muted-foreground/40 flex-shrink-0 mt-1" />
