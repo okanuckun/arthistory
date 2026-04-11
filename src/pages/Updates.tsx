@@ -31,31 +31,23 @@ const Updates = () => {
     const fetchData = async () => {
       if (!user) return;
 
-      const queries: Promise<any>[] = [
+      const [{ data: updatesData }, { data: readsData }] = await Promise.all([
         supabase.from('app_updates').select('*').order('created_at', { ascending: false }),
         supabase.from('user_update_reads').select('update_id').eq('user_id', user.id),
-      ];
+      ]);
+
+      setUpdates(updatesData || []);
+      setReadIds(new Set((readsData || []).map((r: any) => r.update_id)));
 
       // Fetch translations for non-English languages
       if (language !== 'en') {
-        queries.push(
-          supabase
-            .from('app_update_translations')
-            .select('update_id, title, description')
-            .eq('language', language)
-        );
-      }
+        const { data: transData } = await supabase
+          .from('app_update_translations')
+          .select('update_id, title, description')
+          .eq('language', language);
 
-      const results = await Promise.all(queries);
-      const updatesData = results[0].data || [];
-      const readsData = results[1].data || [];
-
-      setUpdates(updatesData);
-      setReadIds(new Set(readsData.map((r: any) => r.update_id)));
-
-      if (language !== 'en' && results[2]?.data) {
         const transMap = new Map<string, Translation>();
-        for (const tr of results[2].data) {
+        for (const tr of (transData || [])) {
           transMap.set(tr.update_id, tr);
         }
         setTranslations(transMap);
