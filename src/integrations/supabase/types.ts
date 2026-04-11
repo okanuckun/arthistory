@@ -14,41 +14,6 @@ export type Database = {
   }
   public: {
     Tables: {
-      app_update_translations: {
-        Row: {
-          created_at: string
-          description: string
-          id: string
-          language: string
-          title: string
-          update_id: string
-        }
-        Insert: {
-          created_at?: string
-          description: string
-          id?: string
-          language: string
-          title: string
-          update_id: string
-        }
-        Update: {
-          created_at?: string
-          description?: string
-          id?: string
-          language?: string
-          title?: string
-          update_id?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "app_update_translations_update_id_fkey"
-            columns: ["update_id"]
-            isOneToOne: false
-            referencedRelation: "app_updates"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
       app_updates: {
         Row: {
           created_at: string
