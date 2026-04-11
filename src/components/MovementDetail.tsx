@@ -168,34 +168,8 @@ const MovementDetail = ({ movement, onBack, onQuizComplete, existingScore }: Mov
         </ul>
       </section>
 
-      {artworksTranslated && artworksTranslated.length > 0 && (
-        <ArtworkGallery artworks={artworksTranslated} movementName={movement.name} />
-      )}
-
-      <section className="opacity-0 animate-fade-up mb-16" style={{ animationDelay: '300ms' }} data-tour="detail-artists">
-        <h2 className="font-display text-2xl text-gold-light mb-8 tracking-tight">
-          {t('detail.artists')}
-        </h2>
-        <div className="space-y-6">
-          {artists.map((artist, i) => (
-            <div
-              key={i}
-              className="bg-surface-elevated rounded-lg p-6 border border-border/50 hover:border-primary/20 transition-colors"
-            >
-              <div className="flex items-baseline gap-3 mb-2">
-                <h3 className="font-display text-lg text-warm-bright">{artist.name}</h3>
-                <span className="text-xs font-body text-muted-foreground">{artist.years}</span>
-              </div>
-              <p className="text-sm font-body text-foreground/70 leading-relaxed" style={{ textWrap: 'pretty' as any }}>
-                {artist.description}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
-
       {tattooTips && (
-        <section className="opacity-0 animate-fade-up mb-16" style={{ animationDelay: '400ms' }} data-tour="detail-tattoo">
+        <section className="opacity-0 animate-fade-up mb-16" style={{ animationDelay: '200ms' }} data-tour="detail-tattoo">
           <h2 className="font-display text-2xl text-gold-light mb-3 tracking-tight">
             {t('detail.tattoo_guide')}
           </h2>
@@ -250,6 +224,32 @@ const MovementDetail = ({ movement, onBack, onQuizComplete, existingScore }: Mov
           </div>
         </section>
       )}
+
+      {artworksTranslated && artworksTranslated.length > 0 && (
+        <ArtworkGallery artworks={artworksTranslated} movementName={movement.name} />
+      )}
+
+      <section className="opacity-0 animate-fade-up mb-16" style={{ animationDelay: '350ms' }} data-tour="detail-artists">
+        <h2 className="font-display text-2xl text-gold-light mb-8 tracking-tight">
+          {t('detail.artists')}
+        </h2>
+        <div className="space-y-6">
+          {artists.map((artist, i) => (
+            <div
+              key={i}
+              className="bg-surface-elevated rounded-lg p-6 border border-border/50 hover:border-primary/20 transition-colors"
+            >
+              <div className="flex items-baseline gap-3 mb-2">
+                <h3 className="font-display text-lg text-warm-bright">{artist.name}</h3>
+                <span className="text-xs font-body text-muted-foreground">{artist.years}</span>
+              </div>
+              <p className="text-sm font-body text-foreground/70 leading-relaxed" style={{ textWrap: 'pretty' as any }}>
+                {artist.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
 
       <section className="opacity-0 animate-fade-up" style={{ animationDelay: '550ms' }} data-tour="detail-quiz">
         <Quiz
