@@ -13,17 +13,10 @@ interface AppUpdate {
   created_at: string;
 }
 
-interface Translation {
-  update_id: string;
-  title: string;
-  description: string;
-}
-
 const Updates = () => {
   const { user } = useAuth();
-  const { t, language } = useLanguage();
+  const { t } = useLanguage();
   const [updates, setUpdates] = useState<AppUpdate[]>([]);
-  const [translations, setTranslations] = useState<Map<string, Translation>>(new Map());
   const [readIds, setReadIds] = useState<Set<string>>(new Set());
   const [loading, setLoading] = useState(true);
 
@@ -38,29 +31,11 @@ const Updates = () => {
 
       setUpdates(updatesData || []);
       setReadIds(new Set((readsData || []).map((r: any) => r.update_id)));
-
-      // Fetch translations for non-English languages
-      if (language !== 'en') {
-        const { data: transData } = await supabase
-          .from('app_update_translations')
-          .select('update_id, title, description')
-          .eq('language', language);
-
-        const transMap = new Map<string, Translation>();
-        for (const tr of (transData || [])) {
-          transMap.set(tr.update_id, tr);
-        }
-        setTranslations(transMap);
-      } else {
-        setTranslations(new Map());
-      }
-
       setLoading(false);
 
       // Mark all unread as read
-      const readSet = new Set(readsData.map((r: any) => r.update_id));
-      const unreadIds = updatesData
-        .filter((u: AppUpdate) => !readSet.has(u.id))
+      const unreadIds = (updatesData || [])
+        .filter((u: AppUpdate) => !new Set((readsData || []).map((r: any) => r.update_id)).has(u.id))
         .map((u: AppUpdate) => ({ user_id: user.id, update_id: u.id }));
 
       if (unreadIds.length > 0) {
@@ -69,7 +44,7 @@ const Updates = () => {
     };
 
     fetchData();
-  }, [user, language]);
+  }, [user]);
 
   // Listen for new updates in realtime
   useEffect(() => {
@@ -82,22 +57,6 @@ const Updates = () => {
 
     return () => { supabase.removeChannel(channel); };
   }, []);
-
-  const getTitle = (update: AppUpdate) => {
-    if (language !== 'en') {
-      const tr = translations.get(update.id);
-      if (tr) return tr.title;
-    }
-    return update.title;
-  };
-
-  const getDescription = (update: AppUpdate) => {
-    if (language !== 'en') {
-      const tr = translations.get(update.id);
-      if (tr) return tr.description;
-    }
-    return update.description;
-  };
 
   const formatDate = (dateStr: string) => {
     return new Date(dateStr).toLocaleDateString(undefined, {
@@ -155,8 +114,8 @@ const Updates = () => {
                           {formatDate(update.created_at)}
                         </span>
                       </div>
-                      <h3 className="font-display text-base text-foreground mb-1.5">{getTitle(update)}</h3>
-                      <p className="text-sm font-body text-muted-foreground leading-relaxed">{getDescription(update)}</p>
+                      <h3 className="font-display text-base text-foreground mb-1.5">{update.title}</h3>
+                      <p className="text-sm font-body text-muted-foreground leading-relaxed">{update.description}</p>
                     </div>
                     {isRead && (
                       <Check className="w-4 h-4 text-muted-foreground/40 flex-shrink-0 mt-1" />
