@@ -59,6 +59,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   }, []);
 
   const signUp = async (email: string, password: string, name: string) => {
+    // First, try signup without trigger dependency
     const { data, error } = await supabase.auth.signUp({
       email,
       password,
@@ -67,37 +68,67 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
         emailRedirectTo: window.location.origin,
       },
     });
-    if (error) return { error: error.message };
 
-    // Fallback: ensure profile exists even if DB trigger fails
+    if (error) {
+      // If trigger fails, the auth error message is "Database error saving new user"
+      // In that case, the user may actually be created — check and handle
+      if (error.message.includes('Database error')) {
+        // Try signing in — user might have been created despite trigger error
+        const { data: signInData, error: signInError } = await supabase.auth.signInWithPassword({
+          email,
+          password,
+        });
+
+        if (signInError) {
+          return { error: 'Sign up failed. Please try again.' };
+        }
+
+        // User exists, ensure profile
+        if (signInData.user) {
+          await ensureProfileExists(signInData.user.id, name);
+        }
+        return { error: null };
+      }
+      return { error: error.message };
+    }
+
+    // Ensure profile exists (fallback if trigger didn't fire or failed silently)
     if (data.user) {
+      await ensureProfileExists(data.user.id, name);
+    }
+
+    return { error: null };
+  };
+
+  const ensureProfileExists = async (userId: string, name: string) => {
+    try {
       const { data: existingProfile } = await supabase
         .from('profiles')
         .select('user_id')
-        .eq('user_id', data.user.id)
-        .single();
+        .eq('user_id', userId)
+        .maybeSingle();
 
       if (!existingProfile) {
-        await supabase.from('profiles').insert({
-          user_id: data.user.id,
+        await supabase.from('profiles').upsert({
+          user_id: userId,
           display_name: name,
-        });
+        }, { onConflict: 'user_id' });
       }
 
       const { data: existingNotif } = await supabase
         .from('notification_preferences')
         .select('user_id')
-        .eq('user_id', data.user.id)
-        .single();
+        .eq('user_id', userId)
+        .maybeSingle();
 
       if (!existingNotif) {
-        await supabase.from('notification_preferences').insert({
-          user_id: data.user.id,
-        });
+        await supabase.from('notification_preferences').upsert({
+          user_id: userId,
+        }, { onConflict: 'user_id' });
       }
+    } catch (err) {
+      console.error('Failed to ensure profile exists:', err);
     }
-
-    return { error: null };
   };
 
   const signIn = async (email: string, password: string) => {
