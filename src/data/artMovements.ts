@@ -606,8 +606,7 @@ The Baroque also coincided with the Scientific Revolution, the Age of Exploratio
     name: 'Rococo',
     period: '1720 – 1780',
     colorPalette: ['#B5D4C7', '#E8D5B7', '#F5E6CC', '#A8C4B8', '#D4B896'],
-    status: 'locked',
-    releaseDate: '13 Nisan Pazar',
+    status: 'active',
     content: {
       origin: {
         type: 'reaction',
